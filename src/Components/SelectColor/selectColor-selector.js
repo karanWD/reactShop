@@ -1,0 +1,1 @@
+export const selectedColorSelector = state => state.selectColor.colorSelected

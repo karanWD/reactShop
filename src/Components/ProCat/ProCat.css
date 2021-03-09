@@ -1,0 +1,49 @@
+.pro-cat h1 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #444;
+  text-align: right;
+  padding-right: 10px;
+}
+.pro-cat .swiper-slide {
+  border-radius: 10px;
+  padding: 10px 0;
+}
+.pro-cat .swiper-slide:nth-child(1) {
+  background-color: #D5E7FF;
+}
+.pro-cat .swiper-slide:nth-child(1) .cat-name {
+  color: #3E4DDB;
+}
+.pro-cat .swiper-slide:nth-child(2) {
+  background-color: #D5FFDD;
+}
+.pro-cat .swiper-slide:nth-child(2) .cat-name {
+  color: #3B914B;
+}
+.pro-cat .swiper-slide:nth-child(3) {
+  background-color: #FFD5D5;
+}
+.pro-cat .swiper-slide:nth-child(3) .cat-name {
+  color: #DB3E3E;
+}
+.pro-cat .swiper-slide:nth-child(4) {
+  background-color: #FFD5F8;
+}
+.pro-cat .swiper-slide:nth-child(4) .cat-name {
+  color: #DB3ED1;
+}
+.pro-cat .swiper-slide:nth-child(5) {
+  background-color: #FFE7D5;
+}
+.pro-cat .swiper-slide:nth-child(5) .cat-name {
+  color: #A37220;
+}
+.pro-cat .swiper-slide:nth-child(6) {
+  background-color: #FFFFD5;
+}
+.pro-cat .swiper-slide:nth-child(6) .cat-name {
+  color: #8D8D1C;
+}
+
+/*# sourceMappingURL=ProCat.css.map */

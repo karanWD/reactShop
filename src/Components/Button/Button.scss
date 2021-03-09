@@ -1,0 +1,19 @@
+.primary{
+  background-color: #3E4DDB;
+  color: white;
+  border:none;
+  border-radius: 7px;
+  box-shadow: 5px 5px 30px rgba(62, 77, 219, 0.52);
+  width: 100%;
+  padding: 15px 0;
+  img{
+    width: 20px;
+    height: 20px;
+ }
+}
+
+@media only screen and (max-width:768px){
+  .primary{
+    padding: 25px 0;
+  }
+}

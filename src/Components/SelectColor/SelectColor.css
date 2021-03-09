@@ -1,0 +1,24 @@
+.detail-color li > img {
+  border-radius: 7px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+}
+.detail-color li > img:hover {
+  border: 1px solid #bbb;
+}
+.detail-color .selected-color {
+  display: flex !important;
+  background-color: #3E4DDB;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.detail-color .selected-color-check {
+  display: flex;
+}
+
+/*# sourceMappingURL=SelectColor.css.map */

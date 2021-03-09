@@ -1,0 +1,13 @@
+.search {
+  background-color: #f5f5f5;
+  border-radius: 50px;
+}
+.search input {
+  background-color: transparent;
+  border: none;
+}
+.search input:focus {
+  outline: transparent;
+}
+
+/*# sourceMappingURL=Search.css.map */

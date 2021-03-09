@@ -1,0 +1,63 @@
+footer{
+  background-color: #D5E7FF;;
+  .footer-curve{
+    border-radius: 0 0 50px 50px ;
+    background-color: white;
+    height: 50px;
+  }
+  border-rad
+  & > section{
+    background-color: #D5E7FF;
+  }
+
+  h1{
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    position: relative;
+    &:after{
+      width: 50px;
+      height: 4px;
+      border-radius: 50px;
+      background-color: #3E4DDB;
+      position: absolute !important;
+      bottom: -10px;
+      right: 0;
+      content: '';
+    }
+  }
+  ul{
+    li{
+      color: #555;
+    }
+  }
+  form{
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    box-shadow: 0 0 50px rgba(0,0,0,0.2);
+    padding:10px;
+    button{
+      border: none;
+      background-color: #3E4DDB;
+      border-radius: 7px;
+      box-shadow: 0 0 10px rgba(62, 77, 219, 0.47);
+      color:white;
+      font-size: 14px;
+      padding:5px 15px;
+    }
+    input{
+      border: none;
+      padding: 5px;
+      &::placeholder{
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  footer .footer-curve{
+    border-radius: 0 0 35px 35px;
+  }
+}
