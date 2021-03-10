@@ -2,25 +2,73 @@ import React,{useEffect,Suspense,lazy} from "react"
 import axios from "axios"
 import {connect} from "react-redux";
 
-import Category from "../Components/Category/Category";
-import Slider from "../Components/Slider/Slider";
-import Banner from "../Components/Banner/Banner";
-import SideCat from "../Components/SideCat/SideCat";
-import ProductContainer from "../Components/ProductContainer/ProductContainer";
-import Carousel from "../Components/Carousel/Carousel";
-import Features from "../Components/Features/Features";
+// import Category from "../Components/Category/Category";
+// import Slider from "../Components/Slider/Slider";
+// import Banner from "../Components/Banner/Banner";
+// import SideCat from "../Components/SideCat/SideCat";
+// import ProductContainer from "../Components/ProductContainer/ProductContainer";
+// import Carousel from "../Components/Carousel/Carousel";
+// import Features from "../Components/Features/Features";
 import {fetchCat} from "../redux/Category/category-actions";
 import {selectCategory, selectThreeBanner} from "../redux/Category/category-selector";
-import Loading from "../Components/Loading/Loading";
+// import Loading from "../Components/Loading/Loading";
 
-// const Category = lazy(()=> import("../Components/Category/Category"))
-// const Slider = lazy(()=> import("../Components/Slider/Slider"))
-// const Banner = lazy(()=> import("../Components/Banner/Banner"))
-// const SideCat = lazy(()=> import("../Components/SideCat/SideCat"))
-// const ProductContainer = lazy(()=> import("../Components/ProductContainer/ProductContainer"))
-// const Carousel = lazy(()=> import("../Components/Carousel/Carousel"))
-// const Features = lazy(()=> import("../Components/Features/Features"))
-
+const Category = lazy(() => {
+    return Promise.all([
+        import("../Components/Category/Category"),
+        new Promise(resolve => setTimeout(resolve, 1000))
+    ])
+        .then(([moduleExports]) => moduleExports);
+})
+const Slider = lazy(() => {
+    return Promise.all([
+        import("../Components/Slider/Slider"),
+        new Promise(resolve => setTimeout(resolve, 1000))
+    ])
+        .then(([moduleExports]) => moduleExports);
+})
+const Banner = lazy(() => {
+    return Promise.all([
+        import("../Components/Banner/Banner"),
+        new Promise(resolve => setTimeout(resolve, 1000))
+    ])
+        .then(([moduleExports]) => moduleExports);
+})
+const SideCat = lazy(() => {
+    return Promise.all([
+        import("../Components/SideCat/SideCat"),
+        new Promise(resolve => setTimeout(resolve, 1000))
+    ])
+        .then(([moduleExports]) => moduleExports);
+})
+const ProductContainer = lazy(() => {
+    return Promise.all([
+        import("../Components/ProductContainer/ProductContainer"),
+        new Promise(resolve => setTimeout(resolve, 1000))
+    ])
+        .then(([moduleExports]) => moduleExports);
+})
+const Carousel = lazy(() => {
+    return Promise.all([
+        import("../Components/Carousel/Carousel"),
+        new Promise(resolve => setTimeout(resolve, 1000))
+    ])
+        .then(([moduleExports]) => moduleExports);
+})
+const Features = lazy(() => {
+    return Promise.all([
+        import("../Components/Features/Features"),
+        new Promise(resolve => setTimeout(resolve, 1000))
+    ])
+        .then(([moduleExports]) => moduleExports);
+})
+const Loading = lazy(() => {
+    return Promise.all([
+        import("../Components/Loading/Loading"),
+        new Promise(resolve => setTimeout(resolve, 1000))
+    ])
+        .then(([moduleExports]) => moduleExports);
+})
 
 const Home = ({catFetch,categoryItems,threeBanners})=>{
 
@@ -35,7 +83,7 @@ const Home = ({catFetch,categoryItems,threeBanners})=>{
     // console.log(categoryItems)
     // console.log(threeBanners)
     return(
-            // <Suspense fallback={<Loading/>}>
+            <Suspense fallback={<Loading/>}>
                 <section className="home">
                     {/*{console.log(categoryItems)}*/}
                     <Carousel/>
@@ -48,8 +96,7 @@ const Home = ({catFetch,categoryItems,threeBanners})=>{
                         <ProductContainer/>
                     </div>
                 </section>
-             // </Suspense>
-
+            </Suspense>
     )
 }
 

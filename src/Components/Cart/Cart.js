@@ -13,6 +13,7 @@ import {
 } from "../../redux/cart/cart-selector";
 import {addCartFail, closeCart, fetchCart} from "../../redux/cart/cart-actions";
 import axios from "axios";
+import {Link} from "react-router-dom";
 import EmptyBasket from "./empty.png"
 
 const Cart = ({cartOpen, cartClose, cartItems, fetchCart, addCartSuccess, addCartFail,cartSuccessText}) => {
@@ -73,7 +74,9 @@ const Cart = ({cartOpen, cartClose, cartItems, fetchCart, addCartSuccess, addCar
                         </div>
                         <div className="cart-footer d-flex  align-items-center justify-content-between">
                             <div className='col-5'>
-                                <Button type="primary" text="پرداخت"/>
+                                <Link to="/checkout">
+                                    <Button type="primary" text="پرداخت" clickHandler={()=>cartClose()}/>
+                                </Link>
                             </div>
                             <div className="col-6 ">
                                 <div className="cart-count d-flex flex-row rtl col px-0 ">
@@ -107,7 +110,7 @@ const Cart = ({cartOpen, cartClose, cartItems, fetchCart, addCartSuccess, addCar
             :
             <section className={`cart-container`}>
 
-                <div className={`cart px-2 ${cartOpen.openCart ? 'open-cart' : ""}`}>
+                <div className={`cart px-0 ${cartOpen.openCart ? 'open-cart' : ""}`}>
                     <div className="bg-white h-100 ">
                         <div
                             className="cart-header d-flex flex-row-reverse justify-content-between align-items-center pt-5 px-3">

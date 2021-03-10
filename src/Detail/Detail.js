@@ -115,7 +115,6 @@ const Loading = lazy(() => {
 // import Loading from "../Components/Loading/Loading";
 
 
-
 const Detail = ({
                     detailData, fetchDetail, proCount, proColor, proSize, match, openCartFunc, proSizeSelected,
                     fetchColorExist, proColorSelected, addCartSuccess, addCartFail, setLoading, loading
@@ -205,28 +204,31 @@ const Detail = ({
                 <section className="mt-lg-3 pt-lg-5 px-lg-5">
                     <div className="d-flex flex-row-reverse flex-wrap  position-relative">
                         <div className="product-gallery col-lg-7 px-0 px-lg-auto">
-                            <ProductGallery/>
-                            {
-                                window.innerWidth < 992
-                                    ?
-                                    <div className="product-info col-lg-5">
-                                        <Breadcrumb/>
-                                        <ProductInfo/>
-                                        <SelectSize/>
-                                        <SelectColor/>
-                                        <SelectCount/>
-                                        <div className="col-lg-7 mt-5 mr-0 ml-auto px-0">
-                                            <Button clickHandler={buyCheck} type="primary" icon="./buyCartIcon.png"
-                                                    text="افزودن به سبد خرید "/>
+                            <Suspense fallback={<Loading/>}>
+                                <ProductGallery/>
+                                {
+                                    window.innerWidth < 992
+                                        ?
+                                        <div className="product-info col-lg-5">
+                                            <Breadcrumb/>
+                                            <ProductInfo/>
+                                            <SelectSize/>
+                                            <SelectColor/>
+                                            <SelectCount/>
+                                            <div className="col-lg-7 mt-5 mr-0 ml-auto px-0">
+                                                <Button clickHandler={buyCheck} type="primary" icon="./buyCartIcon.png"
+                                                        text="افزودن به سبد خرید "/>
+                                            </div>
+                                            <div className="col-lg-8 mr-0 ml-auto px-0">
+                                                <Features page="detail"/>
+                                            </div>
                                         </div>
-                                        <div className="col-lg-8 mr-0 ml-auto px-0">
-                                            <Features page="detail"/>
-                                        </div>
-                                    </div>
-                                    :
-                                    null
-                            }
-                            <ProductDesc/>
+                                        :
+                                        null
+                                }
+                                <ProductDesc/>
+                            </Suspense>
+
                         </div>
                         {
                             window.innerWidth > 992
@@ -255,7 +257,6 @@ const Detail = ({
                                                 <Alert type="error" text="لطفا تعداد را انتخاب کنید"/>
                                             </div>
                                         </div>
-
                                         <div className="col-lg-6 mt-5 mr-0 ml-auto px-0">
                                             <Button clickHandler={buyCheck} type="primary" icon="./buyCartIcon.png"
                                                     text="افزودن به سبد خرید "/>

@@ -1,5 +1,4 @@
 import React, {useEffect} from "react"
-
 import "./Slider.scss"
 import Swiper from 'swiper';
 import 'swiper/swiper-bundle.css';
@@ -23,7 +22,7 @@ const Slider = ({sliderItem, fetchSlider}) => {
                     const swiper = new Swiper('.swiper-slider', {
                         slidesPerView: 1,
                         spaceBetween: 5,
-                        loop: true,
+                        loop: false,
                         breakpoints: {
                             768: {
                                 slidesPerView: 2,

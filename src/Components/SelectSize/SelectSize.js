@@ -9,13 +9,13 @@ import {selectColorData} from "../../redux/selectColor/selectColor-selector";
 import {fetchLoading} from "../../redux/Loading/Loading-actions";
 
 const SelectSize = ({selectSize,fetchSelectSize,fetchSizeExist,match,sizeExist,colorExist,proSizeSelected,proSize,setLoading})=>{
-    const selecctSize = async (event)=>{
-        await setLoading("true")
-        await axios
+    const selecctSize =  (event)=>{
+         setLoading("true")
+         axios
             .get(`https://api.mandegar-shop.ir/api/detail/product/exist/${match.params.proname}/${event.target.getAttribute("id")}/0`)
             .then(res =>fetchSizeExist(res))
             .then(proSizeSelected(event.target.getAttribute("id")))
-            .then(setLoading("false"))
+            // .then(setLoading("false"))
     }
     useEffect(()=>{
         axios

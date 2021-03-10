@@ -133,4 +133,8 @@ a:hover {
   color: #333 !important;
 }
 
+.swiper-wrapper {
+  flex-direction: row-reverse;
+}
+
 /*# sourceMappingURL=index.css.map */

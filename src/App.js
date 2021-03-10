@@ -1,6 +1,6 @@
 import React, {Component, Suspense, lazy} from "react"
 import {BrowserRouter as Router} from "react-router-dom";
-import { Switch,Route} from "react-router"
+import {Switch, Route, Redirect} from "react-router"
 import "./bootstrap.min.css"
 import Nav from "./Components/Nav/Nav";
 // import Home from "./Home/Home";
@@ -12,6 +12,7 @@ import Cart from "./Components/Cart/Cart";
 import {connect} from "react-redux";
 import {cartSelector} from "./redux/cart/cart-selector";
 import Loading from "./Components/Loading/Loading";
+import Checkout from "./Checkout/Checkout";
 
 const Home = lazy(() => {
     return Promise.all([
@@ -28,11 +29,10 @@ const Detail = lazy(() => {
         .then(([moduleExports]) => moduleExports);
 })
 const Products = lazy(() => {
-        return new Promise(resolve => {
-            setTimeout(() => resolve(import("./Products/Products")), 300);
-        });
-    })
-
+    return new Promise(resolve => {
+        setTimeout(() => resolve(import("./Products/Products")), 300);
+    });
+})
 
 
 class App extends Component {
@@ -46,13 +46,16 @@ class App extends Component {
                 <div className="container-fluid px-0">
                     <Router basename="/">
                         <Nav/>
-                        <Switch>
-                            <Suspense fallback={<Loading/>}>
+                        <Suspense fallback={<Loading/>}>
+                            <Switch>
                                 <Route exact path="/" component={Home}/>
                                 <Route path="/products/:catname" component={Products}/>
                                 <Route exact path="/detail/:proname" component={Detail}/>
-                            </Suspense>
-                        </Switch>
+                                <Route exact path="/detail/:proname" component={Detail}/>
+                                <Route exact path="/checkout" component={Checkout} />
+                                <Route path="/*" component={Home}/>
+                            </Switch>
+                        </Suspense>
                         <MobileMenu/>
                         {/*{console.log(this.props.cartOpen.openCart)}*/}
                         {this.props.cartOpen.openCart ? <Cart/> : null}

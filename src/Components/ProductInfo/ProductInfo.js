@@ -18,7 +18,7 @@ const ProductInfo = ({detailInfo}) => {
             </div>
             <div className="product-price  mt-lg-4 text-right">
                 <div className="d-flex flex-row-reverse flex-wrap">
-                    <div className={`last-price rtl ${detailInfo.discount === 0 ? "d-none" : ""}`}>
+                    <div className={`last-price rtl`}>
                         {detailInfo.price}
                         <span className="toman">تومان</span>
                     </div>

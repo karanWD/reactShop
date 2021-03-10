@@ -21,24 +21,24 @@ const Item = ({data})=>{
                             {data.brand}
                         </div>
                         <div className="size mt-3 ">
-                            <ul className="col-12 px-0 d-flex flex-row-reverse flex-wrap">
-                                <li className="">XS</li>
-                                <li className="">-</li>
-                                <li className="">S</li>
-                                <li className="">-</li>
-                                <li className="">M</li>
-                                <li className="">-</li>
-                                <li className="">L</li>
-                                <li className="">-</li>
-                                <li className="">XL</li>
-                                <li className="">-</li>
-                                <li className="">XXL</li>
-                            </ul>
+                            {/*<ul className="col-12 px-0 d-flex flex-row-reverse flex-wrap">*/}
+                            {/*    <li className="">XS</li>*/}
+                            {/*    <li className="">-</li>*/}
+                            {/*    <li className="">S</li>*/}
+                            {/*    <li className="">-</li>*/}
+                            {/*    <li className="">M</li>*/}
+                            {/*    <li className="">-</li>*/}
+                            {/*    <li className="">L</li>*/}
+                            {/*    <li className="">-</li>*/}
+                            {/*    <li className="">XL</li>*/}
+                            {/*    <li className="">-</li>*/}
+                            {/*    <li className="">XXL</li>*/}
+                            {/*</ul>*/}
                         </div>
                         <div className="price-container d-flex flex-row-reverse justify-content-between mt-3">
 
-                            <div className={`last-price rtl ${data.discount === 0?"d-none":""}`}>{data.price - (data.price * data.discount)} <span className="toman">تومان</span></div>
-                            <div className="new-price rtl"> {data.price} <span className="toman">تومان</span> </div>
+                            <div className={`last-price rtl ${data.discount === 0?"d-none":""}`}>{data.price} <span className="toman">تومان</span></div>
+                            <div className="new-price rtl"> {data.price - (data.price * data.discount / 100)} <span className="toman">تومان</span> </div>
                         </div>
 
                         <button className="secondary-btn mt-4">خرید</button>
@@ -46,7 +46,7 @@ const Item = ({data})=>{
                 </div>
             </Link>
             :
-            <h1>Loading</h1>
+            null
     )
 }
 

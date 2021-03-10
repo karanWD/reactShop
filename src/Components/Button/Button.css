@@ -12,6 +12,18 @@
   height: 20px;
 }
 
+.secondary {
+  background-color: #D5E7FF;
+  color: #3E4DDB;
+  border: none;
+  border-radius: 7px;
+  padding: 10px 30px;
+}
+.secondary img {
+  width: 20px;
+  height: 20px;
+}
+
 @media only screen and (max-width: 768px) {
   .primary {
     padding: 25px 0;

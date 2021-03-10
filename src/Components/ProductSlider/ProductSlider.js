@@ -13,9 +13,6 @@ import Loading from "../Loading/Loading";
 
 const ProductSlider =({fetchProductSlider,productSliderItem,name,match}) =>{
     const [title,setTitle] = useState()
-
-
-
     useEffect( () => {
         name==="similar"
             ?
@@ -96,7 +93,8 @@ const ProductSlider =({fetchProductSlider,productSliderItem,name,match}) =>{
     return(
         productSliderItem
             ?
-            <section className="product-slider mt-5 d-flex flex-row-reverse  ">
+
+                <section className="product-slider mt-5 d-flex flex-row-reverse  ">
                 <div className="col-lg-12 px-0">
                     <div className="d-flex flex-row-reverse justify-content-between pl-3">
                         <h1>
@@ -108,7 +106,6 @@ const ProductSlider =({fetchProductSlider,productSliderItem,name,match}) =>{
                             مشاهده همه
                         </div>
                     </div>
-
                     <div className="swiper-container swiper-product-slider">
                         <div className="swiper-wrapper">
                             {
@@ -125,13 +122,13 @@ const ProductSlider =({fetchProductSlider,productSliderItem,name,match}) =>{
                                 )
                             }
                         </div>
-
                     </div>
 
                     <div className="swiper-button-next"></div>
                     <div className="swiper-button-prev"></div>
                 </div>
             </section>
+
             :
            // <Loading/>
         null
