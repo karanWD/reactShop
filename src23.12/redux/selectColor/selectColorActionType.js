@@ -1,0 +1,4 @@
+export const selectColorActionType = {
+    FETCH_COLOR_EXIST : "FETCH_COLOR_EXIST",
+    PRODUCT_COLOR_SELECTED:"PRODUCT_COLOR_SELECTED"
+}

@@ -154,6 +154,7 @@ const Detail = ({
             formData.append("product", detailData.name)
             formData.append("price", detailData.price)
             formData.append("cal_discount", discountPrice)
+            formData.append("number", proCount)
 
             //Setting Cookie and posting the data
             if (localStorage.getItem("cart-cookie")) {

@@ -1,0 +1,52 @@
+.features {
+  margin-top: -50px;
+  border-radius: 50px 50px 0 0;
+  z-index: 1;
+  top: -15px;
+  position: relative;
+  background-color: white;
+}
+.features .img-container {
+  background-color: #EFF1FF;
+  border-radius: 10px;
+}
+.features .title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #3E4DDB;
+  text-align: right;
+}
+.features .desc {
+  font-size: 14px;
+  color: #777;
+  text-align: right;
+}
+
+.detail-features {
+  margin-top: unset !important;
+  position: unset !important;
+  top: unset !important;
+  background-color: unset !important;
+}
+.detail-features h1 {
+  font-size: 12px !important;
+  font-weight: normal !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .features {
+    margin-top: -20px;
+    border-radius: 25px 25px 0 0;
+  }
+
+  .desc {
+    display: none;
+  }
+
+  .features .title {
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=Features.css.map */

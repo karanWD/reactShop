@@ -23,6 +23,10 @@
   width: 20px;
   height: 20px;
 }
+.secondary:hover {
+  background-color: #3E4DDB;
+  color: white;
+}
 
 @media only screen and (max-width: 768px) {
   .primary {

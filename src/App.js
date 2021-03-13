@@ -57,8 +57,8 @@ class App extends Component {
                             </Switch>
                         </Suspense>
                         <MobileMenu/>
-                        {/*{console.log(this.props.cartOpen.openCart)}*/}
                         {this.props.cartOpen.openCart ? <Cart/> : null}
+
                         <Footer/>
                     </Router>
                 </div>

@@ -1,0 +1,29 @@
+.cart-item-container {
+  border-bottom: 1px solid #eee;
+  overflow: hidden;
+  padding: 10px;
+}
+.cart-item-container .discount-num {
+  color: #3E4DDB;
+  font-weight: bold;
+}
+.cart-item-container .title {
+  font-size: 12px;
+  color: #999;
+  font-weight: normal;
+}
+.cart-item-container .value {
+  font-size: 12px;
+  color: #444;
+  font-weight: bold;
+}
+.cart-item-container .product-color .value {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+.cart-item-container img {
+  border-radius: 7px;
+}
+
+/*# sourceMappingURL=CartItem.css.map */

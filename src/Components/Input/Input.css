@@ -13,7 +13,7 @@
   outline: none;
 }
 .input-container input:not(:placeholder-shown) {
-  border: 1px solid #999;
+  border: 1px solid #ddd;
 }
 .input-container input:not(:placeholder-shown) + label {
   transform: translateY(15px) scale(0.95);

@@ -11,6 +11,7 @@ import selectCountReducer from "./selectCount/selectCount-reducer";
 import productsReducer from "./Products/products-reducer";
 import cartReducer from "./cart/cart-reducer";
 import loadingReducer from "./Loading/Loading-reducer";
+import checkoutReducer from "./Checkout/Checkout-reducer";
 
 export default combineReducers({
    carousel:carouselReducer,
@@ -24,6 +25,7 @@ export default combineReducers({
    selectCount:selectCountReducer,
    products:productsReducer,
    cart:cartReducer,
-   loading:loadingReducer
+   loading:loadingReducer,
+   checkout:checkoutReducer
 });
 

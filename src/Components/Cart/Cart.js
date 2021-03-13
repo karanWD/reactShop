@@ -19,14 +19,24 @@ import EmptyBasket from "./empty.png"
 const Cart = ({cartOpen, cartClose, cartItems, fetchCart, addCartSuccess, addCartFail,cartSuccessText}) => {
     let totalCart = []
     totalCart =
+        cartItems
+            ?
+            cartItems.data.map(
+                item => {
+                    return item.total * item.number
+                }
+            )
+            :
+            null
+    let totalItemsCount = []
+    totalItemsCount =
         cartItems ?
             cartItems.data.map(
                 item => {
-                    return item.total
+                    return item.number
                 }
             )
             : null
-
     useEffect(() => {
         axios.get(`https://api.mandegar-shop.ir/api/cart/fetch/${localStorage.getItem("cart-cookie")}`)
             .then(res => {
@@ -65,7 +75,7 @@ const Cart = ({cartOpen, cartClose, cartItems, fetchCart, addCartSuccess, addCar
                             <ul className="px-0 pb-5">
                                 {
                                     cartItems.data.map(item =>
-                                        <li key={item.data}>
+                                        <li key={item.id}>
                                             <CartItem data={item}/>
                                         </li>
                                     )
@@ -81,7 +91,9 @@ const Cart = ({cartOpen, cartClose, cartItems, fetchCart, addCartSuccess, addCar
                             <div className="col-6 ">
                                 <div className="cart-count d-flex flex-row rtl col px-0 ">
                                     <div className="title pr-0">مجموع تعداد:</div>
-                                    <div className="value pr-2">{cartItems.data.length} </div>
+                                    <div className="value pr-2">{
+                                        totalItemsCount.reduce((total, price) => total + price)
+                                    } </div>
                                 </div>
                                 <div className="cart-sum d-flex flex-row rtl col px-0 align-items-center ">
                                     <div className="title pr-0">مجموع:</div>

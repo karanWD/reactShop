@@ -1,0 +1,28 @@
+.payment-container {
+  ul {
+    li {
+      margin: 0 5px;
+      background: #f5f5f5;
+      border-radius: 7px;
+      color: #444;
+      padding: 5px 15px;
+    }
+  }
+
+  .light-btn {
+    background-color: #fff;
+    color: #444;
+    border: none;
+    border-radius: 7px;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    &:hover {
+      background-color: #eee;
+    }
+    .back-icon{
+      width: 10px;
+      height: 10px;
+    }
+  }
+}

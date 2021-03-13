@@ -1,0 +1,13 @@
+.search{
+  background-color: #f5f5f5;
+  //border: 1px solid #f1f1f1;
+  border-radius: 50px;
+  input{
+    background-color: transparent;
+    //width: 100%;
+    border: none;
+    &:focus{
+      outline: transparent;
+    }
+  }
+}
