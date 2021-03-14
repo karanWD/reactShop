@@ -38,7 +38,7 @@ const Carousel = ({carouselItem, carouselFetch}) => {
                                 return (
                                     <SwiperSlide key={item.id}>
                                         <figure>
-                                            <img className="col-12 px-0 d-none d-lg-block"
+                                            <img className="col-12 px-0 "
                                                  src={`https://api.mandegar-shop.ir/images/slider/${item.image}`}
                                                  alt="CarouselImg"/>
                                         </figure>

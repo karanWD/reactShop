@@ -15,8 +15,9 @@ import {addCartFail, closeCart, fetchCart} from "../../redux/cart/cart-actions";
 import axios from "axios";
 import {Link} from "react-router-dom";
 import EmptyBasket from "./empty.png"
+import {openLogin} from "../../redux/Login/Login-actions";
 
-const Cart = ({cartOpen, cartClose, cartItems, fetchCart, addCartSuccess, addCartFail,cartSuccessText}) => {
+const Cart = ({cartOpen, cartClose, cartItems, fetchCart, addCartSuccess, addCartFail, cartSuccessText, openLogin}) => {
     let totalCart = []
     totalCart =
         cartItems
@@ -84,59 +85,67 @@ const Cart = ({cartOpen, cartClose, cartItems, fetchCart, addCartSuccess, addCar
                         </div>
                         <div className="cart-footer d-flex  align-items-center justify-content-between">
                             <div className='col-5'>
-                                <Link to="/checkout">
-                                    <Button type="primary" text="پرداخت" clickHandler={()=>cartClose()}/>
-                                </Link>
+                                {/*<Link to="/checkout">*/}
+                                    <Button
+                                        type="primary" text="پرداخت"
+                                        clickHandler={
+                                            async () => {
+                                                await cartClose()
+                                                await openLogin("login")
+                                        }
+                                    }
+                                />
+                            {/*</Link>*/}
+                        </div>
+                        <div className="col-6 ">
+                            <div className="cart-count d-flex flex-row rtl col px-0 ">
+                                <div className="title pr-0">مجموع تعداد:</div>
+                                <div className="value pr-2">{
+                                    totalItemsCount.reduce((total, price) => total + price)
+                                } </div>
                             </div>
-                            <div className="col-6 ">
-                                <div className="cart-count d-flex flex-row rtl col px-0 ">
-                                    <div className="title pr-0">مجموع تعداد:</div>
-                                    <div className="value pr-2">{
-                                        totalItemsCount.reduce((total, price) => total + price)
-                                    } </div>
-                                </div>
-                                <div className="cart-sum d-flex flex-row rtl col px-0 align-items-center ">
-                                    <div className="title pr-0">مجموع:</div>
-                                    <div className="value pr-2">
-                                        {/*{console.log(cartItems)}*/}
-                                        <div className="new-price rtl d-block">
-                                            {
-                                                // cartItems.data.forEach(
-                                                //     item => {
-                                                //         totalCart = totalCart + item.total
-                                                //     }
-                                                // )
-                                            }
-                                            {
-                                                totalCart.reduce((total, price) => total + price)
-                                            }
-                                            <span className="toman pr-2">تومان</span>
-                                        </div>
+                            <div className="cart-sum d-flex flex-row rtl col px-0 align-items-center ">
+                                <div className="title pr-0">مجموع:</div>
+                                <div className="value pr-2">
+                                    {/*{console.log(cartItems)}*/}
+                                    <div className="new-price rtl d-block">
+                                        {
+                                            // cartItems.data.forEach(
+                                            //     item => {
+                                            //         totalCart = totalCart + item.total
+                                            //     }
+                                            // )
+                                        }
+                                        {
+                                            totalCart.reduce((total, price) => total + price)
+                                        }
+                                        <span className="toman pr-2">تومان</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            :
-            <section className={`cart-container`}>
+            </div>
+</section>
+:
+    <section className={`cart-container`}>
 
-                <div className={`cart px-0 ${cartOpen.openCart ? 'open-cart' : ""}`}>
-                    <div className="bg-white h-100 ">
-                        <div
-                            className="cart-header d-flex flex-row-reverse justify-content-between align-items-center pt-5 px-3">
-                            <h1 className="title mb-0">سبد خرید</h1>
-                            <BackIcon clickHandler={() => cartClose()}/>
-                        </div>
-                        <div className={`empty-basket d-flex justify-content-center align-items-center mt-5 pt-5`}>
-                            <img className="col-12 mt-5 pt-5" src={EmptyBasket} alt=""/>
-                        </div>
-                    </div>
+        <div className={`cart px-0 ${cartOpen.openCart ? 'open-cart' : ""}`}>
+            <div className="bg-white h-100 ">
+                <div
+                    className="cart-header d-flex flex-row-reverse justify-content-between align-items-center pt-5 px-3">
+                    <h1 className="title mb-0">سبد خرید</h1>
+                    <BackIcon clickHandler={() => cartClose()}/>
                 </div>
-            </section>
+                <div className={`empty-basket d-flex justify-content-center align-items-center mt-5 pt-5`}>
+                    <img className="col-12 mt-5 pt-5" src={EmptyBasket} alt=""/>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    )
+)
 }
 
 const mapStateToProps = (state) => ({
@@ -148,6 +157,7 @@ const mapStateToProps = (state) => ({
 })
 const mapDispatchToProps = dispatch => ({
     cartClose: () => dispatch(closeCart()),
-    fetchCart: (data) => dispatch(fetchCart(data))
+    fetchCart: (data) => dispatch(fetchCart(data)),
+    openLogin: (data) => dispatch(openLogin(data))
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Cart)

@@ -13,6 +13,7 @@ import {connect} from "react-redux";
 import {cartSelector} from "./redux/cart/cart-selector";
 import Loading from "./Components/Loading/Loading";
 import Checkout from "./Checkout/Checkout";
+import Login from "./Components/Login/Login";
 
 const Home = lazy(() => {
     return Promise.all([
@@ -39,7 +40,6 @@ class App extends Component {
     constructor(props) {
         super(props);
     }
-
     render() {
         return (
             <Suspense fallback={<Loading/>}>
@@ -58,7 +58,7 @@ class App extends Component {
                         </Suspense>
                         <MobileMenu/>
                         {this.props.cartOpen.openCart ? <Cart/> : null}
-
+                        <Login/>
                         <Footer/>
                     </Router>
                 </div>

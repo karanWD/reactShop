@@ -6,10 +6,20 @@ import cartImg from "./shopping-bag.svg"
 import user from "./user.svg"
 import {connect} from "react-redux";
 import {openCart} from "../../redux/cart/cart-actions";
+import {cartItemsSelector} from "../../redux/cart/cart-selector";
 
 
 
-const Nav = ({openCart}) => {
+const Nav = ({openCart,cartItems}) => {
+    let totalItemsCount = []
+    totalItemsCount =
+        cartItems ?
+            cartItems.data.map(
+                item => {
+                    return item.number
+                }
+            )
+            : null
     return (
         <>
             <nav className="d-none d-lg-flex flex-row-reverse justify-content-between align-items-center mt-4 px-1 px-lg-5">
@@ -29,7 +39,14 @@ const Nav = ({openCart}) => {
                 </div>
                 <div className="d-flex flex-row-reverse ">
                     <div className="profile-btn pt-2"><img className="w-100 px-2" src={user} alt="پروفایل"/></div>
-                    <div className="cart-btn pt-2" onClick={openCart}><img className="w-100 px-2" src={cartImg} alt="سبد خرید"/></div>
+                    <div className="cart-btn pt-2 position-relative" onClick={openCart}>
+                        <img className="w-100 px-2" src={cartImg} alt="سبد خرید"/>
+                        <span className="cartItems-count">
+                            {
+                                totalItemsCount && totalItemsCount.length > 0 ? totalItemsCount.reduce((total, price) => total + price) : 0
+                            }
+                        </span>
+                    </div>
                 </div>
             </nav>
         </>
@@ -40,4 +57,8 @@ const mapDispatchToProps = dispatch => ({
     openCart :() => dispatch(openCart())
 })
 
-export default connect(null,mapDispatchToProps)(Nav)
+const mapStateToProps = state => ({
+    cartItems: cartItemsSelector(state),
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(Nav)

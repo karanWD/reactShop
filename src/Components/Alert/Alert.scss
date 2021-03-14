@@ -1,7 +1,7 @@
 .my-alert{
   .success{
     text-align: center;
-    padding: 20px 0;
+    padding: 15px 0;
     border-radius: 10px;
     background-color: #DCF5E5;
     color:#227240;
@@ -16,5 +16,10 @@
     color: #ec2d3a;
     font-size: 13px;
     font-weight: bold;
+  }
+  img{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
   }
 }

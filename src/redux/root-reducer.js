@@ -12,6 +12,7 @@ import productsReducer from "./Products/products-reducer";
 import cartReducer from "./cart/cart-reducer";
 import loadingReducer from "./Loading/Loading-reducer";
 import checkoutReducer from "./Checkout/Checkout-reducer";
+import loginReducer from "./Login/Login-reducer";
 
 export default combineReducers({
    carousel:carouselReducer,
@@ -26,6 +27,7 @@ export default combineReducers({
    products:productsReducer,
    cart:cartReducer,
    loading:loadingReducer,
-   checkout:checkoutReducer
+   checkout:checkoutReducer,
+   login:loginReducer
 });
 

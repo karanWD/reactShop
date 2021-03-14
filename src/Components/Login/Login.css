@@ -1,3 +1,76 @@
+.login-container ::placeholder {
+  direction: rtl;
+  text-align: right;
+}
+.login-container .login {
+  border-right: 1px solid #eee;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100vh;
+  background-color: #fff;
+  width: 400px;
+  z-index: 99;
+}
+.login-container .login-article {
+  height: 70%;
+  overflow: auto;
+}
+.login-container .open-login {
+  left: 0;
+}
+.login-container .title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #444;
+  text-align: right;
+  padding-right: 10px;
+}
+.login-container .login-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #F8F9FF;
+  border-top: 1px solid #eee;
+  padding: 10px 0;
+  width: 100%;
+}
+.login-container .login-footer .title {
+  font-size: 14px;
+  color: #777;
+  font-weight: normal;
+}
+.login-container .my-alert .error {
+  padding: 5px 15px;
+  width: fit-content;
+  margin-right: 0;
+  margin-left: auto;
+  margin-top: 10px;
+  font-size: 12px;
+}
+.login-container .primary img {
+  display: none;
+}
 
+@media only screen and (max-width: 768px) {
+  .login {
+    top: -100%;
+    left: 0;
+    width: 100% !important;
+    height: 90vh !important;
+  }
+
+  .open-login {
+    top: 0;
+  }
+
+  .primary {
+    padding: 15px 0 !important;
+  }
+
+  .login-footer {
+    bottom: 15px !important;
+  }
+}
 
 /*# sourceMappingURL=Login.css.map */
