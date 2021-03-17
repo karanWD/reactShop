@@ -133,8 +133,14 @@ a:hover {
   color: #333 !important;
 }
 
-.swiper-wrapper {
-  flex-direction: row-reverse;
+.swiper-button-next:after {
+  font-size: 16px !important;
+  color: white;
+}
+
+.swiper-button-prev:after {
+  font-size: 16px !important;
+  color: white;
 }
 
 /*# sourceMappingURL=index.css.map */
