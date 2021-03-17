@@ -67,7 +67,7 @@
     top:-100%;
     left:0;
     width: 100% !important;
-    height: 90vh !important;
+    //height: 90vh !important;
   }
   .open-cart{
     top:0
@@ -77,5 +77,13 @@
   }
   .cart-footer{
     bottom: 15px !important;
+  }
+  .cart-container .cart-article{
+    height: 75%;
+  }
+  .cart-container .cart-footer{
+    position: unset;
+    top:unset;
+    left:unset
   }
 }

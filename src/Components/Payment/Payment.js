@@ -4,17 +4,19 @@ import BackIcon from "../ChevronLeft/ChevronLeft";
 import {openAccordion} from "../../redux/Checkout/Checkout-actions";
 import {connect} from "react-redux";
 import Button from "../Button/Button";
+import {withRouter} from "react-router";
 
 
 const Payment = ({openedAccordion, openAccordion}) => {
+
     return (
-        <div className={`payment-container ${openedAccordion == "payment" ? "open-accordion" : null}`}>
+        <div className={`payment-container ${openedAccordion == "payment" ? "open-accordion" : null}`} id="payment">
             <div className="title">
                 <h1 className="rtl">2. طریقه پرداخت </h1>
                 <BackIcon/>
             </div>
             <div
-                className={`text-right  form-container ${openedAccordion == "payment" ? "mt-4" : null}`}>
+                className={`text-right  form-container ${openedAccordion == "payment" || window.location == "payment" ? "mt-4" : null}`}>
                 <p className="mr-3">طریقه پرداخت خود را انتخاب کنید </p>
                 <ul className="d-flex flex-row-reverse ">
                     <li>پرداخت آنلاین</li>
@@ -22,14 +24,19 @@ const Payment = ({openedAccordion, openAccordion}) => {
                 </ul>
                 <div className="d-flex flex-row justify-content-end mt-5">
                     <Button clickHandler={() => openAccordion("faktor")} type="secondary" text="انتخاب و پرداخت"/>
-                    <button onClick={() => openAccordion("delivery")} className="light-btn ml-4">
-                       <div>
-                           ویرایش اطلاعات و آدرس
-                       </div>
+                    <button
+                        onClick={() => {
+                            openAccordion("delivery")
+                            window.location=""
+                        }
+                        } className="light-btn ml-4">
+                        <div>
+                            ویرایش اطلاعات و آدرس
+                        </div>
                         <div style={{
-                            transform : "rotate(180deg)",
-                            marginLeft:"5px",
-                            marginTop:"5px"
+                            transform: "rotate(180deg)",
+                            marginLeft: "5px",
+                            marginTop: "5px"
                         }}>
                             <BackIcon/>
                         </div>
@@ -47,4 +54,4 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = dispatch => ({
     openAccordion: (data) => dispatch(openAccordion(data))
 })
-export default connect(mapStateToProps, mapDispatchToProps)(Payment)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Payment))

@@ -1,7 +1,0 @@
-export const cartActionTypes = {
-    OPEN_CART:"OPEN_CART",
-    CLOSE_CART:"CLOSE_CART",
-    FETCH_CART:"FETCH_CART",
-    ADD_CART_SUCCESS : "ADD_CART_SUCCESS" ,
-    ADD_CART_FAIL : "ADD_CART_FAIL"
-}

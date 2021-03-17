@@ -20,11 +20,12 @@ const Delivery = ({openAccordion,openedAccordion}) => {
         }
         if(fname && lname && phone && city && address){
             openAccordion("payment")
+            window.location = "#payment"
             setError(false)
         }
     }
     return (
-        <div className={`delivery-container ${openedAccordion == "delivery" ? "open-accordion":null}`}>
+        <div className={`delivery-container ${ openedAccordion == "delivery" ? "open-accordion" : null }`}>
             <div className="title ">
                 <h1 className="rtl">1. اطلاعات دریافت کننده </h1>
                 <BackIcon/>

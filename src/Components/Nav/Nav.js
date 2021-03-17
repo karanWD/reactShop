@@ -26,7 +26,7 @@ const Nav = ({openCart,cartItems}) => {
                 <div className="col-2 col-lg-1 px-0">
                     <h1 className="mb-0">LOGO</h1>
                 </div>
-                <ul className="d-lg-flex flex-row-reverse col-lg-4 mb-0 d-none ">
+                <ul className="d-lg-flex flex-row-reverse col-lg-3 mb-0 d-none ">
                     <Link to="/">
                         <li className="px-3">خانه</li>
                     </Link>
@@ -34,7 +34,7 @@ const Nav = ({openCart,cartItems}) => {
                         <li className="px-3">محصولات</li>
                     </Link>
                 </ul>
-                <div className="col-lg-3">
+                <div className="col-lg-4 search-container">
                     <Search/>
                 </div>
                 <div className="d-flex flex-row-reverse ">
