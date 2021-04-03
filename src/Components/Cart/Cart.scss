@@ -19,7 +19,7 @@
     height: 100vh;
     background-color: #fff;
     width: 400px;
-    z-index: 99;
+    z-index: 999  ;
     transition:left 0.4s;
     &:before{
       position: absolute;
@@ -79,7 +79,7 @@
     bottom: 15px !important;
   }
   .cart-container .cart-article{
-    height: 75%;
+    height: 82%;
   }
   .cart-container .cart-footer{
     position: unset;

@@ -1,5 +1,7 @@
 .product-slider{
-
+  .swiper-wrapper{
+    flex-direction: row-reverse;
+  }
   h1{
     font-size: 20px;
     font-weight: bold;

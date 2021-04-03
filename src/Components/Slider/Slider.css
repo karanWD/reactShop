@@ -1,6 +1,9 @@
 .slider {
   background-color: rgba(255, 177, 201, 0.25);
 }
+.slider .swiper-wrapper {
+  flex-direction: row-reverse;
+}
 .slider .swiper-pagination {
   transform: translateX(50%);
   right: 50%;
