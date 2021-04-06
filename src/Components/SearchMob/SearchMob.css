@@ -1,0 +1,23 @@
+.search-mobile {
+  position: fixed;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 99;
+  transition: top 0.4s;
+}
+
+.open-search {
+  top: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .search-mobile .search-container .search {
+    padding: 20px 15px !important;
+    border-radius: 15px;
+  }
+}
+
+/*# sourceMappingURL=SearchMob.css.map */

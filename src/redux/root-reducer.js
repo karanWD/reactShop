@@ -13,6 +13,7 @@ import cartReducer from "./cart/cart-reducer";
 import loadingReducer from "./Loading/Loading-reducer";
 import checkoutReducer from "./Checkout/Checkout-reducer";
 import loginReducer from "./Login/Login-reducer";
+import searchReducer from "./search/search-reducer";
 
 export default combineReducers({
    carousel:carouselReducer,
@@ -28,6 +29,7 @@ export default combineReducers({
    cart:cartReducer,
    loading:loadingReducer,
    checkout:checkoutReducer,
-   login:loginReducer
+   login:loginReducer,
+   search:searchReducer
 });
 

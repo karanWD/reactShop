@@ -3,8 +3,9 @@ import "./MobileMenu.scss"
 import {connect} from "react-redux";
 import {openCart} from "../../redux/cart/cart-actions";
 import {Link} from "react-router-dom";
+import {searchMobileToggle} from "../../redux/search/search-actions";
 
-const MobileMenu = ({openCart}) => {
+const MobileMenu = ({openCart,openSearch}) => {
     return (
         <section className="menu d-lg-none">
             <ul className="d-flex flex-row-reverse px-2 py-2  mb-0">
@@ -29,7 +30,7 @@ const MobileMenu = ({openCart}) => {
                         <p className="text-center mt-2 col-12">خانه</p>
                     </li>
                 </Link>
-                <li className="col d-flex justify-content-center flex-wrap align-items-center">
+                <li className="col d-flex justify-content-center flex-wrap align-items-center" onClick={openSearch}>
                     <div>
                         <svg version="1.1"
                              x="0px" y="0px" width="20px" height="20px" viewBox="0 0 512 512"
@@ -108,7 +109,8 @@ const MobileMenu = ({openCart}) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    openCart: () => dispatch(openCart())
+    openCart: () => dispatch(openCart()),
+    openSearch:()=>dispatch(searchMobileToggle())
 })
 
 export default connect(null, mapDispatchToProps)(MobileMenu)

@@ -13,11 +13,12 @@ import {
 } from "../../redux/cart/cart-selector";
 import {addCartFail, closeCart, fetchCart} from "../../redux/cart/cart-actions";
 import axios from "axios";
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import EmptyBasket from "./empty.png"
 import {openLogin} from "../../redux/Login/Login-actions";
+import {withRouter} from "react-router";
 
-const Cart = ({cartOpen, cartClose, cartItems, fetchCart, addCartSuccess, addCartFail, cartSuccessText, openLogin}) => {
+const Cart = ({cartOpen, cartClose, cartItems, fetchCart, addCartSuccess, addCartFail, cartSuccessText, openLogin,history}) => {
     let totalCart = []
     totalCart =
         cartItems
@@ -91,7 +92,12 @@ const Cart = ({cartOpen, cartClose, cartItems, fetchCart, addCartSuccess, addCar
                                         clickHandler={
                                             async () => {
                                                 await cartClose()
-                                                await openLogin("login")
+                                                if (localStorage.getItem("user-token")){
+                                                    return history.push("/checkout")
+                                                }
+                                                else{
+                                                    await openLogin("login")
+                                                }
                                         }
                                     }
                                 />
@@ -160,4 +166,4 @@ const mapDispatchToProps = dispatch => ({
     fetchCart: (data) => dispatch(fetchCart(data)),
     openLogin: (data) => dispatch(openLogin(data))
 })
-export default connect(mapStateToProps, mapDispatchToProps)(Cart)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Cart))

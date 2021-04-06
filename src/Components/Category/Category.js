@@ -1,14 +1,13 @@
 import React from "react"
 import "./Category.scss"
 import {Link} from "react-router-dom";
-import Loading from "../Loading/Loading";
 
 const Category = ({category}) => {
-    console.log(category)
+    // console.log(category)
     return (
         category
             ?
-            <section className="category d-flex flex-row flex-wrap px-1 px-lg-5 mt-5">
+            <section className="category d-flex flex-row flex-wrap px-1 px-lg-5 mt-3 mt-lg-5">
                 <div className="col-lg-5 px-0">
                     <div className="col-12 px-0 py-1">
                         <div className="px-1">

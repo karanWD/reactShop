@@ -26,19 +26,21 @@ const Nav = ({openCart,cartItems}) => {
                 <div className="col-2 col-lg-1 px-0">
                     <h1 className="mb-0">LOGO</h1>
                 </div>
-                <ul className="d-lg-flex flex-row-reverse col-lg-3 mb-0 d-none ">
+                <ul className="d-lg-flex flex-row-reverse col-lg-2 mb-0 d-none ">
                     <Link to="/">
                         <li className="px-3">خانه</li>
                     </Link>
-                    <Link to="/products">
-                        <li className="px-3">محصولات</li>
-                    </Link>
+                    {/*<Link to="/products">*/}
+                    {/*    <li className="px-3">محصولات</li>*/}
+                    {/*</Link>*/}
                 </ul>
                 <div className="col-lg-4 search-container">
                     <Search/>
                 </div>
-                <div className="d-flex flex-row-reverse ">
-                    <div className="profile-btn pt-2"><img className="w-100 px-2" src={user} alt="پروفایل"/></div>
+                <div className="d-flex flex-row-reverse col-1">
+                    {/*<div className="profile-btn pt-2 col-2">*/}
+                        {/*<img className="w-100 px-2" src={user} alt="پروفایل"/>*/}
+                    {/*</div>*/}
                     <div className="cart-btn pt-2 position-relative" onClick={openCart}>
                         <img className="w-100 px-2" src={cartImg} alt="سبد خرید"/>
                         <span className="cartItems-count">

@@ -11,8 +11,9 @@ import {connect} from "react-redux";
 import {fetchCart} from "../redux/cart/cart-actions";
 import {cartItemsSelector} from "../redux/cart/cart-selector";
 import Empty from "./empty.png"
+import {openLogin} from "../redux/Login/Login-actions";
 
-const Checkout = ({fetchCart, cartItems,history}) => {
+const Checkout = ({fetchCart, cartItems,history,openLogin}) => {
     let total = []
     total =
         cartItems
@@ -48,6 +49,7 @@ const Checkout = ({fetchCart, cartItems,history}) => {
             : null
 
     useEffect(() => {
+        openLogin("")
         if (!cartItems) {
             axios.get(`https://api.mandegar-shop.ir/api/cart/fetch/${localStorage.getItem("cart-cookie")}`)
                 .then(res => {
@@ -129,11 +131,13 @@ const Checkout = ({fetchCart, cartItems,history}) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    fetchCart: (data) => dispatch(fetchCart(data))
+    fetchCart: (data) => dispatch(fetchCart(data)),
+    openLogin: (data) => dispatch(openLogin(data))
 })
 
 const mapStateToProps = state => ({
     cartItems: cartItemsSelector(state),
+
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Checkout)

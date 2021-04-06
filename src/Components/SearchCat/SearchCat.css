@@ -1,0 +1,53 @@
+.search-cat h1 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #444;
+  text-align: right;
+  padding-right: 10px;
+}
+.search-cat .procat-item-container {
+  width: calc(50% - 10px);
+  margin: 5px;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.search-cat .procat-item-container:nth-child(1) {
+  background-color: #D5E7FF;
+}
+.search-cat .procat-item-container:nth-child(1) .cat-name {
+  color: #3E4DDB;
+}
+.search-cat .procat-item-container:nth-child(2) {
+  background-color: #D5FFDD;
+}
+.search-cat .procat-item-container:nth-child(2) .cat-name {
+  color: #3B914B;
+}
+.search-cat .procat-item-container:nth-child(3) {
+  background-color: #FFD5D5;
+}
+.search-cat .procat-item-container:nth-child(3) .cat-name {
+  color: #DB3E3E;
+}
+.search-cat .procat-item-container:nth-child(4) {
+  background-color: #FFD5F8;
+}
+.search-cat .procat-item-container:nth-child(4) .cat-name {
+  color: #DB3ED1;
+}
+.search-cat .procat-item-container:nth-child(5) {
+  background-color: #FFE7D5;
+}
+.search-cat .procat-item-container:nth-child(5) .cat-name {
+  color: #A37220;
+}
+.search-cat .procat-item-container:nth-child(6) {
+  background-color: #FFFFD5;
+}
+.search-cat .procat-item-container:nth-child(6) .cat-name {
+  color: #8D8D1C;
+}
+
+/*# sourceMappingURL=SearchCat.css.map */

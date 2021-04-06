@@ -14,6 +14,7 @@ import {cartSelector} from "./redux/cart/cart-selector";
 import Loading from "./Components/Loading/Loading";
 import Checkout from "./Checkout/Checkout";
 import Login from "./Components/Login/Login";
+import SearchMob from "./Components/SearchMob/SearchMob";
 
 const Home = lazy(() => {
     return Promise.all([
@@ -49,7 +50,7 @@ class App extends Component {
                         <Suspense fallback={<Loading/>}>
                             <Switch>
                                 <Route exact path="/" component={Home}/>
-                                <Route path="/products/:catname" component={Products}/>
+                                <Route exact path="/products/:catname" component={Products}/>
                                 <Route exact path="/detail/:proname" component={Detail}/>
                                 <Route exact path="/checkout" component={Checkout} />
                                 <Route path="/*" component={Home}/>
@@ -57,7 +58,8 @@ class App extends Component {
                         </Suspense>
                         <MobileMenu/>
                         {this.props.cartOpen.openCart ? <Cart/> : null}
-                        <Login/>
+                        {this.props.openedLogin ? <Login/> : null}
+                        {this.props.openedSearch ? <SearchMob/> : null}
                         <Footer/>
                     </Router>
                 </div>
@@ -69,5 +71,7 @@ class App extends Component {
 
 const mapStateToProps = state => ({
     cartOpen: cartSelector(state),
+    openedLogin: state.login.openedLogin,
+    openedSearch:state.search.searchMobileToggle
 })
 export default connect(mapStateToProps)(App)

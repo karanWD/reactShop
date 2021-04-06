@@ -285,6 +285,7 @@ const Detail = ({
     )
 }
 
+
 const mapStateToProps = state => ({
     detailData: detailDataSelector(state),
     proSize: selectSizeSelected(state),
@@ -292,7 +293,6 @@ const mapStateToProps = state => ({
     proCount: selectCountSelector(state),
     loading: state.loading.loading
 })
-
 const mapDispatchToProps = dispatch => ({
     fetchDetail: (data) => dispatch(fetchDetail(data)),
     openCartFunc: () => dispatch(openCart()),

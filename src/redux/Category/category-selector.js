@@ -72,5 +72,6 @@ export const selectOneBanner = createSelector(
     }
 )
 
+export const selectCatList = state => (state.category.catList)
 
 

@@ -1,7 +1,8 @@
 import {categoryType} from "./categoryType";
 
 const INITIAL_STATE = {
-    catItem:null
+    catItem:null,
+    catList:null
 }
 
 const categoryReducer = (state=INITIAL_STATE , action ) => {
@@ -10,6 +11,11 @@ const categoryReducer = (state=INITIAL_STATE , action ) => {
             return {
                 ...state,
                 catItem:action.payload
+            }
+        case categoryType.FETCH_CATEGORY_LIST :
+            return {
+                ...state,
+                catList : action.payload
             }
         default:
             return state

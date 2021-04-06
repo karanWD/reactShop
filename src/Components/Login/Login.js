@@ -1,19 +1,23 @@
 import React, {useState} from "react"
 import "./Login.scss"
 import {connect} from "react-redux";
+import axios from "axios"
 //Components
 import BackIcon from "../ChevronLeft/ChevronLeft";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 import {openCode, openLogin} from "../../redux/Login/Login-actions";
 import Alert from "../Alert/Alert";
+import {Redirect,withRouter} from "react-router";
 
-const Login = ({openedLogin, openLogin}) => {
+const Login = ({openedLogin , openLogin  , history}) => {
+    // console.log(history)
     const [countAlert, setCountAlert] = useState(false)
     const [codeCountAlert, setCodeCountAlert] = useState(false)
     const [formatAlert, setFormatAlert] = useState(false)
     const [phone, setPhone] = useState()
     const [code, setCode] = useState("")
+    const [activeCode,setActiveCode] = useState("")
 
     function checkPhone() {
         var regex = new RegExp('^(\\+98|0)?9\\d{9}$');
@@ -23,7 +27,9 @@ const Login = ({openedLogin, openLogin}) => {
             setCountAlert(false)
             if (result) {
                 setFormatAlert(false)
-                openLogin("code")
+                axios.post("https://api.mandegar-shop.ir/api/auth/send/code")
+                    .then(res => setActiveCode(res.data))
+                    .then(openLogin("code"))
             } else {
                 setFormatAlert(true)
             }
@@ -32,9 +38,12 @@ const Login = ({openedLogin, openLogin}) => {
         }
     }
     function checkCode() {
-        if (code.length == 4 && code.length) {
+        if (code.length == 5 && code.length && code == activeCode ) {
             setCodeCountAlert(false)
-           console.log("Done")
+            axios.post(`https://api.mandegar-shop.ir/api/auth/login?mobile=${phone}`)
+                .then(res => localStorage.setItem("user-token", res.data.access_token))
+                .then(history.replace("/checkout"))
+
         }
         else {
             setCodeCountAlert(true)
@@ -70,7 +79,7 @@ const Login = ({openedLogin, openLogin}) => {
                                     {
                                         codeCountAlert
                                             ?
-                                            <Alert type="error" text="تعداد ارقام کد باید 4 رقم باشد"/>
+                                            <Alert type="error" text="کد وارد شده صحیح نمی باشد"/>
                                             : null
                                     }
                                     <br/>
@@ -120,4 +129,4 @@ const mapDispatchTopProps = dispatch => ({
     // openCode : (data) => dispatch(openCode(data))
 })
 
-export default connect(mapStateToProps, mapDispatchTopProps)(Login)
+export default withRouter(connect(mapStateToProps, mapDispatchTopProps)(Login))

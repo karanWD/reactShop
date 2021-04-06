@@ -3,6 +3,7 @@ import "./CartItem.scss"
 import CloseIcon from "../CloseIcon/CloseIcon";
 import axios from "axios";
 import {connect} from "react-redux";
+import {Link} from "react-router-dom";
 import {addCartSuccess, fetchCart} from "../../redux/cart/cart-actions";
 
 const CartItem = ({data,fetchCart,addCartSuccess})=>{
@@ -30,7 +31,9 @@ const CartItem = ({data,fetchCart,addCartSuccess})=>{
                 </div>
                 <div className="cart-desc col-8 pl-0 pr-2">
                     <div className="product-name text-right">
-                        <div className="name"> {data.product.name}</div>
+                        <Link to={`/detail/${data.product.slug}`}>
+                            <div className="name"> {data.product.name}</div>
+                        </Link>
                     </div>
                     <div className="product-price mt-2 text-right">
                         <div className="d-flex flex-row-reverse flex-wrap">

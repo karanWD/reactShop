@@ -28,16 +28,47 @@
     width: 95%;
     border-radius: 7px;
     border: 1px solid #eee;
+    a{
+      border-bottom:1px solid #eee;
+      text-align: right;
+      display: block;
+      &:last-child{
+        border-bottom: none;
+      }
+      &:hover{
+        background-color: #f5f5f5;
+      }
+    }
     li{
       border-bottom:1px solid #eee;
       padding:10px ;
       text-align: right;
+
       &:last-child{
         border-bottom: none;
       }
     }
+    .search-temp-title{
+      font-size: 12px;
+      color: #999;
+      width: 15%;
+      text-align: center;
+    }
+  }
+  .close-icon{
+    filter: grayscale(100%);
+    opacity: 0.7;
+    &:hover{
+      opacity: 1;
+    }
   }
 }
 .search-active{
-  background-color: #eee;
+  background-color: #f5f5f5;
+}
+
+@media only screen and (max-width:768px)  {
+  .search-result-container{
+    padding-top: 60px;
+  }
 }
