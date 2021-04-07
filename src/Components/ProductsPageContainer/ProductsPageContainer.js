@@ -20,9 +20,11 @@ const ProductsPageContainer = ({products,match,fetchProducts,setLoading, loading
             .then(res => fetchProducts(res))
             .then(setPageIndex(current))
     }
+
     const setLoadingFunc = () => {
         setLoading("false")
     }
+
     return(
         products
         ?

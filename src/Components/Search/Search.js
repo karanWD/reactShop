@@ -5,6 +5,8 @@ import CloseIcon from "../CloseIcon/CloseIcon";
 import axios from "axios"
 import {Link} from "react-router-dom";
 import {withRouter} from "react-router";
+import Cat from "./categories.svg"
+import Pro from "./icons8-product-48.png"
 
 const Search = ({history, location}) => {
     const inputValue = useRef(null);
@@ -45,10 +47,9 @@ const Search = ({history, location}) => {
                         var target = document.querySelector(".search-active .search-temp-title")
                         var temp = document.querySelector(".search-active div")
                         if (target.innerText == "دسته") {
-
                             inputValue.current.value = ""
                             setSearchRes(null)
-                            history.push(`/products/${temp.innerText}`)
+                            history.push(`/products/${temp.innerText.replace(/\s+/g, '-')}`)
                         }
                         else if (target.innerText == "محصول") {
                             inputValue.current.value = ""
@@ -99,13 +100,19 @@ const Search = ({history, location}) => {
                                     ?
                                     searchRes.data.product.map(
                                         item =>
-                                            <Link to={`/detail/${item.slug}`}>
                                                 <li className="d-flex flex-row-reverse text-right"
-
                                                     key={item.id}
+                                                    onClick={
+                                                        ()=>{
+                                                            setSearchRes(null)
+                                                            inputValue.current.value=""
+                                                            history.push(`/detail/${item.slug}`)
+                                                        }
+                                                    }
                                                 >
-                                                <span className="search-temp-title">
+                                                <span className="search-temp-title d-flex justify-content-around">
                                                     محصول
+                                                    <img src={Pro} alt="" className=""/>
                                                 </span>
                                                     <div className="mr-1">
                                                         <div>
@@ -113,7 +120,6 @@ const Search = ({history, location}) => {
                                                         </div>
                                                     </div>
                                                 </li>
-                                            </Link>
                                     )
                                     :
                                     null
@@ -123,13 +129,21 @@ const Search = ({history, location}) => {
                                     ?
                                     searchRes.data.category.map(
                                         item =>
-                                            <Link to={`/products/${item.name}`}>
+
                                                 <li key={item.id}
                                                     className="d-flex flex-row-reverse text-right"
-                                                    onClick={()=>inputValue.current.value=""}
+                                                    onClick={
+                                                        ()=>{
+                                                            setSearchRes(null)
+                                                            inputValue.current.value=""
+                                                            history.push(`/products/${item.name.replace(/\s+/g, '-')}`)
+                                                        }
+                                                    }
                                                 >
-                                                <span className=" px-0 search-temp-title">
+                                                <span className=" px-0 search-temp-title d-flex justify-content-around">
+
                                                     دسته
+                                                     <img src={Cat} alt="" className=""/>
                                                 </span>
                                                     <div className=" mr-1">
                                                         <div>
@@ -137,7 +151,7 @@ const Search = ({history, location}) => {
                                                         </div>
                                                     </div>
                                                 </li>
-                                            </Link>
+
                                     )
                                     :
                                     null
@@ -147,12 +161,17 @@ const Search = ({history, location}) => {
                                     ?
                                     searchRes.data.brand.map(
                                         item =>
-                                            <Link to={`/products/${item.name}`}>
                                                 <li className="d-flex flex-row-reverse text-right"
-
                                                     key={item.id}
+                                                    onClick={
+                                                        ()=>{
+                                                            setSearchRes(null)
+                                                            inputValue.current.value=""
+                                                            history.push(`/products/${item.name.replace(/\s+/g, '-')}`)
+                                                        }
+                                                    }
                                                 >
-                                                <span className="search-temp-title">
+                                                <span className="search-temp-title d-flex justify-content-around">
                                                     برند
                                                 </span>
                                                     <div className="mr-1">
@@ -161,7 +180,6 @@ const Search = ({history, location}) => {
                                                         </div>
                                                     </div>
                                                 </li>
-                                            </Link>
                                     )
                                     :
                                     null

@@ -10,67 +10,68 @@
   text-align: right;
   padding-right: 10px;
 }
-.sidecat ul li {
+.sidecat ul a {
+  display: block;
   border-radius: 7px;
   margin: 10px;
 }
-.sidecat ul li .cat-img {
+.sidecat ul a li .cat-img {
   padding: 10px;
   border-radius: 7px;
   height: 45px;
 }
-.sidecat ul li:nth-child(1) {
+.sidecat ul a:nth-child(6n+1) {
   background-color: #D5E7FF;
 }
-.sidecat ul li:nth-child(1) .cat-name {
+.sidecat ul a:nth-child(6n+1) .cat-name {
   color: #3E4DDB;
 }
-.sidecat ul li:nth-child(1) .cat-img {
+.sidecat ul a:nth-child(6n+1) .cat-img {
   background-color: #C8E0FF;
 }
-.sidecat ul li:nth-child(2) {
+.sidecat ul a:nth-child(6n+2) {
   background-color: #D5FFDD;
 }
-.sidecat ul li:nth-child(2) .cat-name {
+.sidecat ul a:nth-child(6n+2) .cat-name {
   color: #3B914B;
 }
-.sidecat ul li:nth-child(2) .cat-img {
+.sidecat ul a:nth-child(6n+2) .cat-img {
   background-color: #BAFCC7;
 }
-.sidecat ul li:nth-child(3) {
+.sidecat ul a:nth-child(6n+3) {
   background-color: #FFD5D5;
 }
-.sidecat ul li:nth-child(3) .cat-name {
+.sidecat ul a:nth-child(6n+3) .cat-name {
   color: #DB3E3E;
 }
-.sidecat ul li:nth-child(3) .cat-img {
+.sidecat ul a:nth-child(6n+3) .cat-img {
   background-color: #FFC1C1;
 }
-.sidecat ul li:nth-child(4) {
+.sidecat ul a:nth-child(6n+4) {
   background-color: #FFD5F8;
 }
-.sidecat ul li:nth-child(4) .cat-name {
+.sidecat ul a:nth-child(6n+4) .cat-name {
   color: #DB3ED1;
 }
-.sidecat ul li:nth-child(4) .cat-img {
+.sidecat ul a:nth-child(6n+4) .cat-img {
   background-color: #FBC5F2;
 }
-.sidecat ul li:nth-child(5) {
+.sidecat ul a:nth-child(6n+5) {
   background-color: #FFE7D5;
 }
-.sidecat ul li:nth-child(5) .cat-name {
+.sidecat ul a:nth-child(6n+5) .cat-name {
   color: #A37220;
 }
-.sidecat ul li:nth-child(5) .cat-img {
+.sidecat ul a:nth-child(6n+5) .cat-img {
   background-color: #FCDBC1;
 }
-.sidecat ul li:nth-child(6) {
+.sidecat ul a:nth-child(6n+6) {
   background-color: #FFFFD5;
 }
-.sidecat ul li:nth-child(6) .cat-name {
+.sidecat ul a:nth-child(6n+6) .cat-name {
   color: #8D8D1C;
 }
-.sidecat ul li:nth-child(6) .cat-img {
+.sidecat ul a:nth-child(6n+6) .cat-img {
   background-color: #FBFBA0;
 }
 

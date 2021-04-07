@@ -21,7 +21,7 @@ const Products = ({match, fetchProducts, products, setLoading, loading}) => {
     useEffect(() => {
         axios.get(`https://api.mandegar-shop.ir/api/products/fetch/${match.params.catname}`)
             .then(res => fetchProducts(res))
-    }, [])
+    }, [match.params.catname])
 
     const changePage = (current) => {
         setLoading("true")

@@ -28,10 +28,12 @@
     width: 95%;
     border-radius: 7px;
     border: 1px solid #eee;
-    a{
+    li{
       border-bottom:1px solid #eee;
       text-align: right;
       display: block;
+      padding:10px ;
+      cursor: pointer;
       &:last-child{
         border-bottom: none;
       }
@@ -39,20 +41,15 @@
         background-color: #f5f5f5;
       }
     }
-    li{
-      border-bottom:1px solid #eee;
-      padding:10px ;
-      text-align: right;
-
-      &:last-child{
-        border-bottom: none;
-      }
-    }
     .search-temp-title{
       font-size: 12px;
       color: #999;
-      width: 15%;
+      width: 20%;
       text-align: center;
+      img{
+        width: 20px;
+        height: 20px;
+      }
     }
   }
   .close-icon{

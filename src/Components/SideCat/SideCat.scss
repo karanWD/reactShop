@@ -12,17 +12,18 @@
     padding-right: 10px;
   }
   ul {
-    li{
+    a{
+      display: block;
       border-radius: 7px;
       margin: 10px;
-
+    li{
       .cat-img{
         padding: 10px;
         border-radius:7px ;
         height: 45px;
       }
-
-      &:nth-child(1){
+      }
+      &:nth-child(6n+1){
         background-color: #D5E7FF;
         .cat-name{
           color:#3E4DDB;
@@ -31,7 +32,7 @@
           background-color:#C8E0FF ;
         }
       }
-      &:nth-child(2){
+      &:nth-child(6n+2){
         background-color: #D5FFDD;
         .cat-name{
           color:#3B914B;
@@ -40,7 +41,7 @@
           background-color:#BAFCC7 ;
         }
       }
-      &:nth-child(3){
+      &:nth-child(6n+3){
         background-color: #FFD5D5;
         .cat-name{
           color:#DB3E3E;
@@ -49,25 +50,25 @@
           background-color:#FFC1C1 ;
         }
       }
-      &:nth-child(4){
+      &:nth-child(6n+4){
+        background-color: #FFD5F8;
         .cat-name{
           color: #DB3ED1;
         }
-        background-color: #FFD5F8;
         .cat-img{
           background-color:#FBC5F2 ;
         }
       }
-      &:nth-child(5){
-          background-color: #FFE7D5;
+      &:nth-child(6n+5){
+        background-color: #FFE7D5;
         .cat-name{
           color: #A37220;
         }
         .cat-img{
           background-color:#FCDBC1 ;
         }
-        }
-      &:nth-child(6){
+      }
+      &:nth-child(6n+6){
         background-color: #FFFFD5;
         .cat-name{
           color: #8D8D1C;
@@ -77,7 +78,6 @@
           background-color:#FBFBA0 ;
         }
       }
-
     }
   }
 }
