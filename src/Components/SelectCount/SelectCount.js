@@ -39,7 +39,7 @@ const SelectCount = ({sizeExist,colorExist,match,proSize,proColor,fetchCount})=>
     })
 
     return(
-        <div className="select-count mt-4 rtl">
+        <div className="select-count mt-5 mt-lg-4 rtl">
             <h1>
                 تعداد
                 <div className="mr-3"></div>

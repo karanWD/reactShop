@@ -36,7 +36,7 @@ const SelectColor = ({detailColor, sizeExist, match, fetchColorExist, proColorSe
     }
 
     return (
-        <div className="detail-color mt-4">
+        <div className="detail-color mt-5 mt-lg-4">
             {/*{console.log(colorExist)}*/}
             <h1>
                 <div className="mr-3"></div>

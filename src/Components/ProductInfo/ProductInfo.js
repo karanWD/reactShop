@@ -16,7 +16,7 @@ const ProductInfo = ({detailInfo}) => {
                 <p className="desc" id="desc" ref={shortDesc}>
                 </p>
             </div>
-            <div className="product-price  mt-lg-4 text-right">
+            <div className="product-price   mt-4 text-right">
                 <div className="d-flex flex-row-reverse flex-wrap">
                     <div className={`last-price rtl`}>
                         {detailInfo.price}

@@ -14,11 +14,18 @@ import Pagination from 'rc-pagination'
 import BackIcon from "../Components/ChevronLeft/ChevronLeft";
 import {fetchLoading} from "../redux/Loading/Loading-actions";
 import Loading from "../Components/Loading/Loading";
+import {searchMobileToggle, searchToggle} from "../redux/search/search-actions";
 
-const Products = ({match, fetchProducts, products, setLoading, loading}) => {
+const Products = ({match, fetchProducts, products, setLoading, loading,openSearchRes,closeSearch,searchMobileToggle}) => {
     const [pageIndex, setPageIndex] = useState(0)
 
     useEffect(() => {
+        openSearchRes(false)
+        window.scrollTo(0,0)
+        if(searchMobileToggle) {
+            closeSearch()
+        }
+
         axios.get(`https://api.mandegar-shop.ir/api/products/fetch/${match.params.catname}`)
             .then(res => fetchProducts(res))
     }, [match.params.catname])
@@ -74,12 +81,15 @@ const Products = ({match, fetchProducts, products, setLoading, loading}) => {
 
 const mapDispatchToProps = (dispatch) => ({
     fetchProducts: (data) => dispatch(fetchProducts(data)),
-    setLoading: (data) => dispatch(fetchLoading(data))
+    setLoading: (data) => dispatch(fetchLoading(data)),
+    openSearchRes:(data)=>dispatch(searchToggle(data)),
+    closeSearch : ()=>dispatch(searchMobileToggle())
 })
 
 const mapStateToProps = state => ({
     products: productsSelectorData(state),
-    loading: state.loading.loading
+    loading: state.loading.loading,
+    searchMobileToggle : state.search.searchMobileToggle
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Products))

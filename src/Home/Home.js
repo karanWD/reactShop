@@ -11,6 +11,7 @@ import {connect} from "react-redux";
 // import Features from "../Components/Features/Features";
 import {fetchCat} from "../redux/Category/category-actions";
 import {selectCategory, selectThreeBanner} from "../redux/Category/category-selector";
+import {searchMobileToggle} from "../redux/search/search-actions";
 // import Loading from "../Components/Loading/Loading";
 
 const Category = lazy(() => {
@@ -70,9 +71,11 @@ const Loading = lazy(() => {
         .then(([moduleExports]) => moduleExports);
 })
 
-const Home = ({catFetch,categoryItems,threeBanners})=>{
+const Home = ({catFetch,categoryItems,threeBanners,closeSearch,searchMobileToggle})=>{
 
     useEffect(()=>{
+        if(window.innerWidth < 768 && searchMobileToggle) { closeSearch()}
+        window.scrollTo(0,0)
         axios.get("https://api.mandegar-shop.ir/api/banner/fetch/all")
             .then(
                 // res => console.log(res)
@@ -101,12 +104,14 @@ const Home = ({catFetch,categoryItems,threeBanners})=>{
 }
 
 const mapDispatchToProps = dispatch => ({
-    catFetch:(catApi) => dispatch(fetchCat(catApi))
+    catFetch:(catApi) => dispatch(fetchCat(catApi)),
+    closeSearch : ()=>dispatch(searchMobileToggle())
 })
 
 const mapStateToProps = (state) => ({
     categoryItems:selectCategory(state),
     threeBanners:selectThreeBanner(state),
+    searchMobileToggle : state.search.searchMobileToggle
 })
 
 export default connect(mapStateToProps,mapDispatchToProps)(Home)

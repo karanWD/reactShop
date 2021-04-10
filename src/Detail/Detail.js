@@ -11,10 +11,12 @@ import {detailDataSelector} from "../redux/detail/detail-selector";
 import {selectSizeSelected} from "../redux/selectSize/selectSize-selector";
 import {selectColorSelected} from "../redux/selectColor/selectColor-selector";
 import {selectCountSelector} from "../redux/selectCount/selectCount-selector";
-import {addCartFail, addCartSuccess, openCart} from "../redux/cart/cart-actions";
+import {addCartFail, addCartSuccess, closeCart, openCart} from "../redux/cart/cart-actions";
 import {proSizeSelected} from "../redux/selectSize/selectSize-actions";
 import {fetchColorExist, proColorSelected} from "../redux/selectColor/selectColor-actions";
 import {fetchLoading} from "../redux/Loading/Loading-actions";
+import {openLogin} from "../redux/Login/Login-actions";
+import {searchMobileToggle} from "../redux/search/search-actions";
 //components
 const ProductGallery = lazy(() => {
     return Promise.all([
@@ -101,23 +103,10 @@ const Loading = lazy(() => {
         .then(([moduleExports]) => moduleExports);
 })
 
-// import ProductGallery from "../Components/ProductGallery/ProductGallery";
-// import Breadcrumb from "../Components/Breadcrumb/Breadcrumb";
-// import ProductInfo from "../Components/ProductInfo/ProductInfo";
-// import SelectSize from "../Components/SelectSize/SelectSize";
-// import SelectColor from "../Components/SelectColor/SelectColor";
-// import SelectCount from "../Components/SelectCount/SelectCount";
-// import Button from "../Components/Button/Button";
-// import Features from "../Components/Features/Features";
-// import ProductDesc from "../Components/ProductDesc/ProductDesc";
-// import ProductSlider from "../Components/ProductSlider/ProductSlider";
-// import Alert from "../Components/Alert/Alert";
-// import Loading from "../Components/Loading/Loading";
-
-
 const Detail = ({
                     detailData, fetchDetail, proCount, proColor, proSize, match, openCartFunc, proSizeSelected,
-                    fetchColorExist, proColorSelected, addCartSuccess, addCartFail, setLoading, loading
+                    fetchColorExist, proColorSelected, addCartSuccess, addCartFail, setLoading, loading,cartClose,closeSearch
+    ,searchMobileToggle
                 }) => {
 
     let {proname} = useParams()
@@ -125,6 +114,9 @@ const Detail = ({
     const [colorAlert, setColorAlert] = useState(false)
     const [countAlert, setCountAlert] = useState(false)
     useEffect(() => {
+        cartClose()
+        if(searchMobileToggle) closeSearch()
+        window.scrollTo(0,0)
         axios.get(`https://api.mandegar-shop.ir/api/detail/product/${proname}`)
             .then(
                 res => fetchDetail(res)
@@ -291,7 +283,8 @@ const mapStateToProps = state => ({
     proSize: selectSizeSelected(state),
     proColor: selectColorSelected(state),
     proCount: selectCountSelector(state),
-    loading: state.loading.loading
+    loading: state.loading.loading,
+    searchMobileToggle:state.search.searchMobileToggle
 })
 const mapDispatchToProps = dispatch => ({
     fetchDetail: (data) => dispatch(fetchDetail(data)),
@@ -301,7 +294,9 @@ const mapDispatchToProps = dispatch => ({
     proColorSelected: (data) => dispatch(proColorSelected(data)),
     addCartSuccess: (data) => dispatch(addCartSuccess(data)),
     addCartFail: () => dispatch(addCartFail()),
-    setLoading: (data) => dispatch(fetchLoading(data))
+    setLoading: (data) => dispatch(fetchLoading(data)),
+    cartClose: () => dispatch(closeCart()),
+    closeSearch : ()=>dispatch(searchMobileToggle())
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Detail))

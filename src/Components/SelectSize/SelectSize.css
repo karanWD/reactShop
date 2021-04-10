@@ -19,4 +19,12 @@
   color: white !important;
 }
 
+@media only screen and (max-width: 768px) {
+  .sizes li {
+    width: 50px !important;
+    height: 50px !important;
+    padding-top: 15px !important;
+  }
+}
+
 /*# sourceMappingURL=SelectSize.css.map */

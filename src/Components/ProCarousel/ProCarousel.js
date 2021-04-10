@@ -12,7 +12,7 @@ const ProCarousel = ({galleryData})=>{
     return(
         galleryData
             ?
-            <header className="mt-lg-4 bg-white header-carousel">
+            <header className="mt-lg-4 bg-white header-carousel" id="mobileGallery">
                 <Swiper
                     slidesPerView={1}
                     navigation

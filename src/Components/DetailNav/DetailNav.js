@@ -31,7 +31,7 @@ const DetailNav = ({location}) => {
         <div className="detail-nav mt-5 mt-lg-4" id="scroll-to">
             <ul className="d-flex flex-row-reverse px-2 ">
                 <li className="px-4  gallery-link ">
-                    <a href="#gallery">
+                    <a href={window.innerWidth>768 ? "#gallery" : "#mobileGallery"}>
                         گالری
                     </a>
                 </li>

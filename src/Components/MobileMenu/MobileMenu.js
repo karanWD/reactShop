@@ -1,16 +1,17 @@
-import React from "react"
+import React,{useEffect} from "react"
 import "./MobileMenu.scss"
 import {connect} from "react-redux";
 import {openCart} from "../../redux/cart/cart-actions";
 import {Link} from "react-router-dom";
 import {searchMobileToggle} from "../../redux/search/search-actions";
 
-const MobileMenu = ({openCart,openSearch}) => {
+const MobileMenu = ({openCart,openSearch,openedSearch,closeSearch}) => {
+
     return (
         <section className="menu d-lg-none">
             <ul className="d-flex flex-row-reverse px-2 py-2  mb-0">
-                <Link to="/">
-                    <li className="col home-btn active-page d-flex justify-content-center flex-wrap align-items-center">
+                <Link to="/" onClick={()=>{ if(openedSearch) closeSearch()}}>
+                    <li className={`col home-btn ${openedSearch ? null : "active-page" } d-flex justify-content-center flex-wrap align-items-center`}>
                         <div className="d-block">
                             <svg version="1.1"
                                  x="0px" y="0px" width="20px" height="20px" viewBox="0 0 510.9 511"
@@ -30,7 +31,7 @@ const MobileMenu = ({openCart,openSearch}) => {
                         <p className="text-center mt-2 col-12">خانه</p>
                     </li>
                 </Link>
-                <li className="col d-flex justify-content-center flex-wrap align-items-center" onClick={openSearch}>
+                <li className={`col d-flex ${openedSearch ?"active-page" :null  } justify-content-center flex-wrap align-items-center search-btn`} onClick={openSearch}>
                     <div>
                         <svg version="1.1"
                              x="0px" y="0px" width="20px" height="20px" viewBox="0 0 512 512"
@@ -110,7 +111,12 @@ const MobileMenu = ({openCart,openSearch}) => {
 
 const mapDispatchToProps = dispatch => ({
     openCart: () => dispatch(openCart()),
-    openSearch:()=>dispatch(searchMobileToggle())
+    openSearch:()=>dispatch(searchMobileToggle()),
+    closeSearch : ()=>dispatch(searchMobileToggle())
 })
 
-export default connect(null, mapDispatchToProps)(MobileMenu)
+const mapStateToProps = state => ({
+    openedSearch:state.search.searchMobileToggle
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(MobileMenu)

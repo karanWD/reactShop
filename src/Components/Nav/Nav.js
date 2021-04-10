@@ -30,9 +30,6 @@ const Nav = ({openCart,cartItems}) => {
                     <Link to="/">
                         <li className="px-3">خانه</li>
                     </Link>
-                    {/*<Link to="/products">*/}
-                    {/*    <li className="px-3">محصولات</li>*/}
-                    {/*</Link>*/}
                 </ul>
                 <div className="col-lg-4 search-container">
                     <Search/>

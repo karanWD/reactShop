@@ -7,14 +7,19 @@ import {Link} from "react-router-dom";
 import {withRouter} from "react-router";
 import Cat from "./categories.svg"
 import Pro from "./icons8-product-48.png"
+import {connect} from "react-redux";
+import {searchToggle} from "../../redux/search/search-actions";
 
-const Search = ({history, location}) => {
+
+const Search = ({history, location,searchResToggle,openSearchRes}) => {
+
     const inputValue = useRef(null);
     const [searchRes, setSearchRes] = useState(null)
     const [emptySearchRes, setEmptySearchRes] = useState(false)
+
     useEffect(() => {
         var target = document.querySelectorAll(".search-result-container ul ")
-        if (searchRes) {
+        if (searchRes && searchResToggle) {
             if (searchRes.data.product.length > 0 || searchRes.data.category.length > 0 || searchRes.data.brand.length > 0) {
                 var active = document.querySelectorAll(".search-active")
                 if (active) {
@@ -62,10 +67,14 @@ const Search = ({history, location}) => {
 
             document.onkeydown = checkKey
         }
+        else {
+            setSearchRes(null)
+        }
     })
 
     const searchFunc = (e) => {
         if (e.target.value.length > 1) {
+            openSearchRes(true)
             axios.get(`https://api.mandegar-shop.ir/api/autocomplete/search?searchquery=${e.target.value}`)
                 .then(res => {
                     // console.log(res.data.product)
@@ -86,8 +95,8 @@ const Search = ({history, location}) => {
     return (
         <>
             {
-                searchRes && searchRes.data ?
-                    <div className="search-result-container">
+                searchRes && searchRes.data && searchResToggle ?
+                      <div className="search-result-container">
                         <ul className="col-12 px-0 mb-0">
                             {
                                 emptySearchRes ?
@@ -100,26 +109,26 @@ const Search = ({history, location}) => {
                                     ?
                                     searchRes.data.product.map(
                                         item =>
-                                                <li className="d-flex flex-row-reverse text-right"
-                                                    key={item.id}
-                                                    onClick={
-                                                        ()=>{
-                                                            setSearchRes(null)
-                                                            inputValue.current.value=""
-                                                            history.push(`/detail/${item.slug}`)
-                                                        }
+                                            <li className="d-flex flex-row-reverse text-right"
+                                                key={item.id}
+                                                onClick={
+                                                    ()=>{
+                                                        setSearchRes(null)
+                                                        inputValue.current.value=""
+                                                        history.push(`/detail/${item.slug}`)
                                                     }
-                                                >
+                                                }
+                                            >
                                                 <span className="search-temp-title d-flex justify-content-around">
                                                     محصول
                                                     <img src={Pro} alt="" className=""/>
                                                 </span>
-                                                    <div className="mr-1">
-                                                        <div>
-                                                            {item.name}
-                                                        </div>
+                                                <div className="mr-1">
+                                                    <div>
+                                                        {item.name}
                                                     </div>
-                                                </li>
+                                                </div>
+                                            </li>
                                     )
                                     :
                                     null
@@ -130,27 +139,27 @@ const Search = ({history, location}) => {
                                     searchRes.data.category.map(
                                         item =>
 
-                                                <li key={item.id}
-                                                    className="d-flex flex-row-reverse text-right"
-                                                    onClick={
-                                                        ()=>{
-                                                            setSearchRes(null)
-                                                            inputValue.current.value=""
-                                                            history.push(`/products/${item.name.replace(/\s+/g, '-')}`)
-                                                        }
+                                            <li key={item.id}
+                                                className="d-flex flex-row-reverse text-right"
+                                                onClick={
+                                                    ()=>{
+                                                        setSearchRes(null)
+                                                        inputValue.current.value=""
+                                                        history.push(`/products/${item.name.replace(/\s+/g, '-')}`)
                                                     }
-                                                >
+                                                }
+                                            >
                                                 <span className=" px-0 search-temp-title d-flex justify-content-around">
 
                                                     دسته
                                                      <img src={Cat} alt="" className=""/>
                                                 </span>
-                                                    <div className=" mr-1">
-                                                        <div>
-                                                            {item.name}
-                                                        </div>
+                                                <div className=" mr-1">
+                                                    <div>
+                                                        {item.name}
                                                     </div>
-                                                </li>
+                                                </div>
+                                            </li>
 
                                     )
                                     :
@@ -161,25 +170,25 @@ const Search = ({history, location}) => {
                                     ?
                                     searchRes.data.brand.map(
                                         item =>
-                                                <li className="d-flex flex-row-reverse text-right"
-                                                    key={item.id}
-                                                    onClick={
-                                                        ()=>{
-                                                            setSearchRes(null)
-                                                            inputValue.current.value=""
-                                                            history.push(`/products/${item.name.replace(/\s+/g, '-')}`)
-                                                        }
+                                            <li className="d-flex flex-row-reverse text-right"
+                                                key={item.id}
+                                                onClick={
+                                                    ()=>{
+                                                        setSearchRes(null)
+                                                        inputValue.current.value=""
+                                                        history.push(`/products/${item.name.replace(/\s+/g, '-')}`)
                                                     }
-                                                >
+                                                }
+                                            >
                                                 <span className="search-temp-title d-flex justify-content-around">
                                                     برند
                                                 </span>
-                                                    <div className="mr-1">
-                                                        <div>
-                                                            {item.name}
-                                                        </div>
+                                                <div className="mr-1">
+                                                    <div>
+                                                        {item.name}
                                                     </div>
-                                                </li>
+                                                </div>
+                                            </li>
                                     )
                                     :
                                     null
@@ -187,11 +196,11 @@ const Search = ({history, location}) => {
                         </ul>
                     </div>
                     :
-                    null
+                    console.log("aaaaaa")
             }
             <div
-                  className="search py-3 pl-4 d-flex flex-row-reverse justify-content-between align-items-center"
-                  style={searchRes ? {backgroundColor: "white"} : null}
+                className="search py-3 pl-4 d-flex flex-row-reverse justify-content-between align-items-center"
+                style={searchRes ? {backgroundColor: "white"} : null}
             >
                 <input ref={inputValue} className="rtl col-11" type="text" placeholder="جستجوی محصول "
                        onChange={searchFunc}
@@ -217,4 +226,11 @@ const Search = ({history, location}) => {
     )
 }
 
-export default withRouter(Search)
+const mapDispatchToProps = dispatch => ({
+    openSearchRes:(data)=>dispatch(searchToggle(data))
+})
+const mapStateToProps = state => ({
+    searchResToggle : state.search.searchToggle
+})
+
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Search))

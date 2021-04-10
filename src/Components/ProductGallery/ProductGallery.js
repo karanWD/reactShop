@@ -20,7 +20,7 @@ const ProductGallery = ()=>{
         images
             ?
         <>
-            <div className="d-none d-lg-flex flex-wrap flex-row-reverse " id="gallery">
+            <div className="d-none d-lg-flex flex-wrap flex-row-reverse" id="gallery">
                 {/*{console.log(images)}*/}
                 {images.map(item =>
                     (
@@ -28,7 +28,7 @@ const ProductGallery = ()=>{
                     )
                 )}
             </div>
-            <div className="d-lg-none">
+            <div className="d-lg-none" >
                 <ProCarousel galleryData={images}/>
             </div>
         </>

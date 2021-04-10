@@ -1,7 +1,8 @@
 import {searchActionType} from "./searchActionType";
 
 const INITIAL_STATE = {
-    searchMobileToggle : false
+    searchMobileToggle : false,
+    searchToggle:false
 }
 const searchReducer = (state=INITIAL_STATE,action)=>{
     switch (action.type) {
@@ -9,6 +10,11 @@ const searchReducer = (state=INITIAL_STATE,action)=>{
             return {
                 ...state,
                 searchMobileToggle: !state.searchMobileToggle
+            }
+        case searchActionType.SEARCH_TOGGLE :
+            return {
+                ...state,
+                searchToggle:action.payload
             }
         default :
             return state
