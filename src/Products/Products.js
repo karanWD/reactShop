@@ -15,6 +15,7 @@ import BackIcon from "../Components/ChevronLeft/ChevronLeft";
 import {fetchLoading} from "../redux/Loading/Loading-actions";
 import Loading from "../Components/Loading/Loading";
 import {searchMobileToggle, searchToggle} from "../redux/search/search-actions";
+import SideCat from "../Components/SideCat/SideCat";
 
 const Products = ({match, fetchProducts, products, setLoading, loading,openSearchRes,closeSearch,searchMobileToggle}) => {
     const [pageIndex, setPageIndex] = useState(0)

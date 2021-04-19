@@ -25,6 +25,21 @@
 .search-cat ul a:nth-child(6n+1) .cat-img {
   background-color: #C8E0FF;
 }
+.search-cat ul a:nth-child(6n+1) svg {
+  transform: scale(0.6);
+}
+.search-cat ul a:nth-child(6n+1) svg g:nth-child(1) {
+  fill: #7cb5ff;
+}
+.search-cat ul a:nth-child(6n+1) svg g:nth-child(4) {
+  fill: #7cb5ff;
+}
+.search-cat ul a:nth-child(6n+1) svg g:nth-child(3) {
+  fill: #2f8aff;
+}
+.search-cat ul a:nth-child(6n+1) svg g:nth-child(2) {
+  fill: #2f8aff;
+}
 .search-cat ul a:nth-child(6n+2) {
   background-color: #D5FFDD;
 }
@@ -33,6 +48,21 @@
 }
 .search-cat ul a:nth-child(6n+2) .cat-img {
   background-color: #BAFCC7;
+}
+.search-cat ul a:nth-child(6n+2) svg {
+  transform: scale(0.6);
+}
+.search-cat ul a:nth-child(6n+2) svg g:nth-child(1) {
+  fill: #71f98c;
+}
+.search-cat ul a:nth-child(6n+2) svg g:nth-child(4) {
+  fill: #71f98c;
+}
+.search-cat ul a:nth-child(6n+2) svg g:nth-child(3) {
+  fill: #27f650;
+}
+.search-cat ul a:nth-child(6n+2) svg g:nth-child(2) {
+  fill: #27f650;
 }
 .search-cat ul a:nth-child(6n+3) {
   background-color: #FFD5D5;
@@ -43,6 +73,21 @@
 .search-cat ul a:nth-child(6n+3) .cat-img {
   background-color: #FFC1C1;
 }
+.search-cat ul a:nth-child(6n+3) svg {
+  transform: scale(0.6);
+}
+.search-cat ul a:nth-child(6n+3) svg g:nth-child(1) {
+  fill: #ff7575;
+}
+.search-cat ul a:nth-child(6n+3) svg g:nth-child(4) {
+  fill: #ff7575;
+}
+.search-cat ul a:nth-child(6n+3) svg g:nth-child(3) {
+  fill: #ff2828;
+}
+.search-cat ul a:nth-child(6n+3) svg g:nth-child(2) {
+  fill: #ff2828;
+}
 .search-cat ul a:nth-child(6n+4) {
   background-color: #FFD5F8;
 }
@@ -51,6 +96,21 @@
 }
 .search-cat ul a:nth-child(6n+4) .cat-img {
   background-color: #FBC5F2;
+}
+.search-cat ul a:nth-child(6n+4) svg {
+  transform: scale(0.6);
+}
+.search-cat ul a:nth-child(6n+4) svg g:nth-child(1) {
+  fill: #f67de2;
+}
+.search-cat ul a:nth-child(6n+4) svg g:nth-child(4) {
+  fill: #f67de2;
+}
+.search-cat ul a:nth-child(6n+4) svg g:nth-child(3) {
+  fill: #f136d2;
+}
+.search-cat ul a:nth-child(6n+4) svg g:nth-child(2) {
+  fill: #f136d2;
 }
 .search-cat ul a:nth-child(6n+5) {
   background-color: #FFE7D5;
@@ -61,6 +121,21 @@
 .search-cat ul a:nth-child(6n+5) .cat-img {
   background-color: #FCDBC1;
 }
+.search-cat ul a:nth-child(6n+5) svg {
+  transform: scale(0.6);
+}
+.search-cat ul a:nth-child(6n+5) svg g:nth-child(1) {
+  fill: #f8b178;
+}
+.search-cat ul a:nth-child(6n+5) svg g:nth-child(4) {
+  fill: #f8b178;
+}
+.search-cat ul a:nth-child(6n+5) svg g:nth-child(3) {
+  fill: #f5862f;
+}
+.search-cat ul a:nth-child(6n+5) svg g:nth-child(2) {
+  fill: #f5862f;
+}
 .search-cat ul a:nth-child(6n+6) {
   background-color: #FFFFD5;
 }
@@ -69,6 +144,21 @@
 }
 .search-cat ul a:nth-child(6n+6) .cat-img {
   background-color: #FBFBA0;
+}
+.search-cat ul a:nth-child(6n+6) svg {
+  transform: scale(0.6);
+}
+.search-cat ul a:nth-child(6n+6) svg g:nth-child(1) {
+  fill: #f8f857;
+}
+.search-cat ul a:nth-child(6n+6) svg g:nth-child(4) {
+  fill: #f8f857;
+}
+.search-cat ul a:nth-child(6n+6) svg g:nth-child(3) {
+  fill: #f5f50d;
+}
+.search-cat ul a:nth-child(6n+6) svg g:nth-child(2) {
+  fill: #f5f50d;
 }
 
 /*# sourceMappingURL=SearchCat.css.map */
