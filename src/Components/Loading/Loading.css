@@ -50,10 +50,10 @@
   animation: pathCircle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
 }
 .loader.triangle {
-  width: 48px;
+  width: 120px;
 }
 .loader.triangle:before {
-  left: 21px;
+  left: 55px;
   transform: translate(-10px, -18px);
   animation: dotTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
 }
@@ -68,9 +68,10 @@
   opacity: 0.9;
 }
 .loading-container p {
-  font-size: 10px;
+  font-size: 8px;
   color: #777;
   margin-top: 10px;
+  text-align: center;
 }
 
 @keyframes pathTriangle {

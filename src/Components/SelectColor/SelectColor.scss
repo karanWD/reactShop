@@ -1,5 +1,5 @@
 .detail-color{
-  li{
+  .swiper-slide{
     & > img {
       border-radius: 7px;
       cursor: pointer;
@@ -22,5 +22,32 @@
   }
   .selected-color-check{
     display: flex;
+  }
+  .swiper-button-next,.swiper-button-prev{
+    background-color: white;
+    color: #999;
+    border-radius: 5px;
+    padding: 5px ;
+    &:after{
+      font-size: 14px;
+      font-weight: bold;
+    }
+    &:hover{
+      color: #3e4ddb;
+    }
+  }
+  .swiper-size-pagination{
+    left:50%;
+    transform: translateX(-50%);
+    span{
+      margin:0 2.5px;
+    }
+  }
+  .swiper-pagination-bullet{
+    width:5px;
+    height: 5px;
+  }
+  .swiper-pagination-bullet-active{
+    background-color: #3E4DDB;
   }
 }

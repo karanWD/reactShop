@@ -7,6 +7,9 @@ import axios from "axios";
 import {withRouter} from "react-router";
 import {selectColorData} from "../../redux/selectColor/selectColor-selector";
 import {fetchLoading} from "../../redux/Loading/Loading-actions";
+import Swiper from 'swiper';
+import 'swiper/swiper-bundle.css';
+
 
 const SelectSize = ({selectSize,fetchSelectSize,fetchSizeExist,match,sizeExist,colorExist,proSizeSelected,proSize,setLoading})=>{
     const selecctSize =  (event)=>{
@@ -21,53 +24,140 @@ const SelectSize = ({selectSize,fetchSelectSize,fetchSizeExist,match,sizeExist,c
         axios
             .get(`https://api.mandegar-shop.ir/api/detail/sizes/fetch/${match.params.proname}`)
             .then(res => fetchSelectSize(res))
+            .then(
+                ()=>{
+                    const swiper = new Swiper('.swiper-slider-size', {
+                        slidesPerView: 7,
+                        // slidesPerGroup: 9,
+                        spaceBetween: 5,
+                        // breakpoints:{
+                        //     0:{
+                        //         slidesPerView: 4,
+                        //     },
+                        //     768:{
+                        //         slidesPerView: 7,
+                        //
+                        //     }  ,
+                        //     1200:{
+                        //         slidesPerView: 9,
+                        //
+                        //     }
+                        // },
+                        pagination: {
+                            el: '.swiper-size-pagination',
+                            clickable:true
+                        },
+                        navigation: {
+                            nextEl: '.swiper-size-button-next',
+                            prevEl: '.swiper-size-button-prev',
+                        },
+                    });
+                }
+            )
     },[match.params.proname])
 
     if(colorExist){
         // console.log(colorExist)
         return(
             <div className="detail-size mt-4">
-                <h1>
-                    <div className="mr-3"></div>
-                    سایز
-                </h1>
-                <ul className="sizes d-flex flex-row-reverse mt-3">
+                <div className="d-flex flex-row-reverse justify-content-between ">
+                    <h1 className="">
+                        <div className="mr-3"></div>
+                        سایز
+                        {/*<p className="mb-2">*/}
+                        {/*    دارای*/}
+                        {/*    <span>*/}
+                        {/*         {selectSize ? selectSize.length : null}*/}
+                        {/*    </span>*/}
+                        {/*    سایز متفاوت*/}
+                        {/*</p>*/}
+                    </h1>
+                    <div className="position-relative d-flex justify-content-between align-items-center col-3 px-0">
+                        {
+                            selectSize?.length > 7
+                                ?
+                                <>
+                                    <div className="swiper-button-next swiper-size-button-next"></div>
+                                    <div className="swiper-pagination swiper-size-pagination "></div>
+                                    <div className="swiper-button-prev swiper-size-button-prev"></div>
+                                </>
+                                :null
+                        }
+
+                    </div>
+                </div>
+
+
+                    <div className=" mr-0 sizes col-lg-8 swiper-container swiper-slider-size rtl">
+                        <div className="swiper-wrapper ">
                     {
                         selectSize
                             ?
                             selectSize.map(item =>
                                 (
-                                    <li key={item.id} id={item.id} onClick={selecctSize} className={colorExist.find(color=>color.effect_spec_id === item.id) ? proSize == item.id ? "active-detail-size color-exist " : "color-exist" : "color-non-exist"}>{item.name}</li>
+
+                                        <div key={item.id}
+                                             id={item.id}
+                                             onClick={selecctSize}
+                                             className={colorExist.find(color=>color.effect_spec_id === item.id) ? proSize == item.id ? "active-detail-size color-exist mt-2 swiper-slide" : "color-exist mt-2 swiper-slide" : "color-non-exist mt-2 swiper-slide"}
+                                        >
+                                            {item.name}
+                                        </div>
+
                                 )
                             )
                             :
                             null
                     }
-                </ul>
+                        </div>
+                    </div>
+
             </div>
         )
     }
     else{
         return(
             <div className="detail-size mt-4">
-                <h1>
-                    <div className="mr-3"></div>
-                    سایز
-                </h1>
-                <ul className="sizes d-flex flex-row-reverse mt-3">
+                <div className="d-flex flex-row-reverse justify-content-between">
+                    <h1>
+                        <div className="mr-3"></div>
+                        سایز
+                    </h1>
+                    <div className="position-relative d-flex justify-content-between align-items-center col-3 px-0">
+                        {
+                            selectSize?.length > 7
+                                ?
+                                <>
+                                    <div className="swiper-button-next swiper-size-button-next"></div>
+                                    <div className="swiper-pagination swiper-size-pagination "></div>
+                                    <div className="swiper-button-prev swiper-size-button-prev"></div>
+                                </>
+                                :null
+                        }
+
+                    </div>
+                </div>
+                <div className="mr-0 sizes col-lg-8 swiper-container swiper-slider-size rtl">
+                        <div className="swiper-wrapper ">
                     {
                         selectSize
                             ?
                             selectSize.map(item =>{
                                 // console.log(proSize==item.id)
                                 return(
-                                    <li className={proSize ?  proSize == item.id ? "active-detail-size" : null : null } key={item.id} id={item.id} onClick={selecctSize}>{item.name}</li>
+                                    <div className={proSize ?  proSize == item.id ? "active-detail-size mt-2 swiper-slide" : " mt-2 swiper-slide" : " mt-2 swiper-slide" }
+                                        key={item.id}
+                                        id={item.id}
+                                        onClick={selecctSize}>
+                                        {item.name}
+                                    </div>
                                 )
                             })
                             :
                             null
                     }
-                </ul>
+                        </div>
+                    </div>
             </div>
         )
     }

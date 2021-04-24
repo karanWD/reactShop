@@ -105,8 +105,8 @@ const Loading = lazy(() => {
 
 const Detail = ({
                     detailData, fetchDetail, proCount, proColor, proSize, match, openCartFunc, proSizeSelected,
-                    fetchColorExist, proColorSelected, addCartSuccess, addCartFail, setLoading, loading,cartClose,closeSearch
-    ,searchMobileToggle
+                    fetchColorExist, proColorSelected, addCartSuccess, addCartFail, setLoading, loading, cartClose, closeSearch
+                    , searchMobileToggle
                 }) => {
 
     let {proname} = useParams()
@@ -115,8 +115,8 @@ const Detail = ({
     const [countAlert, setCountAlert] = useState(false)
     useEffect(() => {
         cartClose()
-        if(searchMobileToggle) closeSearch()
-        window.scrollTo(0,0)
+        if (searchMobileToggle) closeSearch()
+        window.scrollTo(0, 0)
         axios.get(`https://api.mandegar-shop.ir/api/detail/product/${proname}`)
             .then(
                 res => fetchDetail(res)
@@ -173,18 +173,21 @@ const Detail = ({
         }
         if (!proSize) {
             setSizeAlert(true)
+            setTimeout(()=>setSizeAlert(false),2000)
         } else if (proSize) {
             setSizeAlert(false)
         }
         if (!proColor) {
             // console.log("select color")
             setColorAlert(true)
+            setTimeout(()=>setColorAlert(false),2000)
         } else if (proColor) {
             setColorAlert(false)
         }
         if (proCount == 0) {
             // console.log("select count")
             setCountAlert(true)
+            setTimeout(()=>setCountAlert(false),2000)
         } else if (proCount > 0) {
             setCountAlert(false)
         }
@@ -207,11 +210,13 @@ const Detail = ({
                                             <ProductInfo/>
                                             <SelectSize/>
                                             <SelectColor/>
+
                                             <SelectCount/>
                                             <div className="col-lg-7 mt-5 mr-0 ml-auto px-0">
                                                 <Button clickHandler={buyCheck} type="primary" icon="./buyCartIcon.png"
                                                         text="افزودن به سبد خرید "/>
                                             </div>
+
                                             <div className="col-lg-8 mr-0 ml-auto px-0">
                                                 <Features page="detail"/>
                                             </div>
@@ -235,6 +240,7 @@ const Detail = ({
                                             <div className={`alert-container my-1 ${sizeAlert ? "d-block" : "d-none"}`}>
                                                 <Alert type="error" text="لطفا سایز را انتخاب کنید"/>
                                             </div>
+
                                         </div>
                                         <div className="position-relative">
                                             <SelectColor/>
@@ -243,17 +249,22 @@ const Detail = ({
                                                 <Alert type="error" text="لطفا رنگ را انتخاب کنید"/>
                                             </div>
                                         </div>
-                                        <div className="position-relative">
+                                        <div className="position-relative d-flex flex-row-reverse flex-wrap justify-content-between align-items-center">
                                             <SelectCount/>
+
                                             <div
-                                                className={`alert-container my-1 ${countAlert ? "d-block" : "d-none"}`}>
+                                                className={`alert-container col-12 my-1 ${countAlert ? "d-block" : "d-none"}`}>
                                                 <Alert type="error" text="لطفا تعداد را انتخاب کنید"/>
                                             </div>
+
                                         </div>
-                                        <div className="col-lg-6 mt-5 mr-0 ml-auto px-0">
+                                        <div className="col-lg-6 mt-4 mr-0 ml-auto px-0">
                                             <Button clickHandler={buyCheck} type="primary" icon="./buyCartIcon.png"
                                                     text="افزودن به سبد خرید "/>
                                         </div>
+
+
+
                                         <div className="col-lg-8 mr-0 ml-auto px-0">
                                             <Features page="detail"/>
                                         </div>
@@ -266,7 +277,7 @@ const Detail = ({
                     <div className="py-5">
                         <Suspense fallback={<Loading/>}>
                             <ProductSlider name="similar"/>
-                            <ProductSlider/>
+                            <ProductSlider name="new"/>
                         </Suspense>
                     </div>
                 </section>
@@ -284,7 +295,7 @@ const mapStateToProps = state => ({
     proColor: selectColorSelected(state),
     proCount: selectCountSelector(state),
     loading: state.loading.loading,
-    searchMobileToggle:state.search.searchMobileToggle
+    searchMobileToggle: state.search.searchMobileToggle
 })
 const mapDispatchToProps = dispatch => ({
     fetchDetail: (data) => dispatch(fetchDetail(data)),
@@ -296,7 +307,7 @@ const mapDispatchToProps = dispatch => ({
     addCartFail: () => dispatch(addCartFail()),
     setLoading: (data) => dispatch(fetchLoading(data)),
     cartClose: () => dispatch(closeCart()),
-    closeSearch : ()=>dispatch(searchMobileToggle())
+    closeSearch: () => dispatch(searchMobileToggle())
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Detail))

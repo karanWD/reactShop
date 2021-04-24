@@ -6,12 +6,37 @@
 .item-container img {
   border-radius: 7px;
 }
+.item-container .brand {
+  color: #3e4ddb;
+  font-size: 10px;
+  font-weight: bold;
+}
 .item-container .size ul li {
   margin: 0 2px;
   font-size: 12px;
   color: #777;
   border-radius: 5px;
   text-align: right;
+}
+.item-container .discount-num {
+  position: absolute;
+  top: 15px;
+  right: 0px;
+  background-color: #3e4ddb;
+  color: white;
+  border-radius: 4px;
+  padding: 2.5px 7px;
+  font-size: 12px;
+}
+.item-container .discount-num span {
+  font-size: 10px;
+  margin-right: 5px;
+}
+.item-container .desc, .item-container .name {
+  direction: rtl;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /*# sourceMappingURL=Item.css.map */

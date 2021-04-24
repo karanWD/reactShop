@@ -1,6 +1,7 @@
 .product-slider{
   .swiper-wrapper{
     flex-direction: row-reverse;
+    direction:rtl;
   }
   h1{
     font-size: 20px;
@@ -12,15 +13,18 @@
   .swiper-button-next{
     background-color: white;
     color: #444;
-    border-radius: 5px 0 0 5px;
+    border-radius: 5px;
+    padding: 0 20px;
     &:after{
       font-size: 14px;
     }
   }
   .swiper-button-prev{
+    padding: 0 20px;
     background-color: white;
     color: #444;
-    border-radius: 0 5px 5px 0;
+    border-radius: 5px ;
+
     &:after{
       font-size: 14px;
     }

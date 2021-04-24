@@ -7,7 +7,11 @@ $lightText:#777;
   img{
     border-radius: 7px;
   }
-
+  .brand{
+    color: #3e4ddb;
+    font-size: 10px;
+    font-weight: bold;
+  }
   .size{
     ul{
       li{
@@ -21,6 +25,26 @@ $lightText:#777;
 
       }
     }
+  }
+  .discount-num{
+    position: absolute;
+    top:15px;
+    right: 0px;
+    background-color: #3e4ddb;
+    color: white;
+    border-radius: 4px;
+    padding: 2.5px 7px ;
+    font-size: 12px;
+    span{
+      font-size: 10px;
+      margin-right: 5px;
+    }
+  }
+  .desc,.name{
+    direction: rtl;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
   }
 }
 

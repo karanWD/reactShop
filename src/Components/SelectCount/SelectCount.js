@@ -39,12 +39,12 @@ const SelectCount = ({sizeExist,colorExist,match,proSize,proColor,fetchCount})=>
     })
 
     return(
-        <div className="select-count mt-5 mt-lg-4 rtl">
+        <div className="col-lg-6 select-count mt-5 mt-lg-4 rtl">
             <h1>
                 تعداد
                 <div className="mr-3"></div>
             </h1>
-            <form action="" className="d-flex flex-row-reverse col-5 col-lg-3 px-2 mt-4">
+            <form action="" className="d-flex flex-row-reverse col-5 col-lg-7 px-2 mt-4">
                 <span className="col-3 px-0 py-2   text-center" style={{cursor: "pointer"}}
                       onClick={decreaseCount}> - </span>
                 <input type="text" className="col-6  text-center" value={count} onChange={changeCount} />

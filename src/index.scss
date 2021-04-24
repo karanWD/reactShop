@@ -1,6 +1,6 @@
 $primary-color: rgba(62, 77, 219, 0.95);
 $secondary-color:#D5E7FF;
-$lightText:#777;
+$lightText: #777777;
 @font-face {
   src: url("fonts/IRANSansWeb(FaNum).ttf");
   font-weight: normal;
@@ -53,11 +53,13 @@ a{
 
 .name{
   font-weight: bold;
+
 }
 
 .desc{
-  font-size: 12px;
+  font-size: 13px;
   color: $lightText;
+  width: 100%;
 }
 
 .last-price{
@@ -90,6 +92,7 @@ a{
     text-align: center;
   }
 }
+
 
 .exist-size{
   opacity: 1;
@@ -130,15 +133,17 @@ a{
   font-weight: bold;
   color: #333 !important;
 }
-.swiper-button-next{
-  &:after{
-    font-size: 16px !important;
-    color:white;
+.header-carousel{
+  .swiper-button-next{
+    &:after{
+      font-size: 16px !important;
+      color:white;
+    }
   }
-}
-.swiper-button-prev{
-  &:after{
-    font-size: 16px !important;
-    color:white;
+  .swiper-button-prev{
+    &:after{
+      font-size: 16px !important;
+      color:white;
+    }
   }
 }

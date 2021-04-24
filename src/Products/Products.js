@@ -43,7 +43,7 @@ const Products = ({match, fetchProducts, products, setLoading, loading,openSearc
     return (
         products
             ?
-            <section>
+            <section className="product-page">
                 {
                     products.current_page == pageIndex ? setLoadingFunc() : null
                 }
@@ -67,7 +67,7 @@ const Products = ({match, fetchProducts, products, setLoading, loading,openSearc
                         prevIcon={BackIcon}
                         nextIcon={
                             () =>
-                                <div style={{transform: "rotate(180deg)", paddingBottom: "6px"}}>
+                                <div style={{transform: "rotate(180deg)"}}>
                                     <BackIcon/>
                                 </div>
                             }

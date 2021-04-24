@@ -10,16 +10,10 @@
 }
 .product-info h1 div {
   width: 70px;
-  height: 2px;
-  background-color: #777;
+  height: 1px;
+  background-color: #999;
   border-radius: 50px;
   display: inline-block;
-}
-
-.alert-container {
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 @media only screen and (max-width: 992px) {

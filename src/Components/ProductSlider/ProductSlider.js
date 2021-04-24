@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from "react"
+    import React,{useEffect,useState} from "react"
 import {withRouter} from "react-router";
 import "./ProductSlider.scss"
 import axios from "axios";
@@ -14,7 +14,7 @@ import Loading from "../Loading/Loading";
 const ProductSlider =({fetchProductSlider,productSliderItem,name,match}) =>{
     const [title,setTitle] = useState()
     useEffect( () => {
-        name==="similar"
+        name == "similar"
             ?
             axios.get(`https://api.mandegar-shop.ir/api/detail/products/similar/${match.params.proname}`)
                 .then(
@@ -49,7 +49,7 @@ const ProductSlider =({fetchProductSlider,productSliderItem,name,match}) =>{
                     }
                 )
             :
-            axios.get("https://api.mandegar-shop.ir/api/index/product/new/fetch")
+                axios.get("https://api.mandegar-shop.ir/api/index/product/new/fetch")
                 .then(
                     res => fetchProductSlider(res)
                 )
@@ -66,14 +66,6 @@ const ProductSlider =({fetchProductSlider,productSliderItem,name,match}) =>{
                                     slidesPerView: 5,
                                 }
                             },
-                            autoplay:{
-                                delay:3000,
-                                disableOnInteraction:false,
-                            },
-                            pagination: {
-                                el: '.swiper-pagination',
-                                clickable:true
-                            },
                             navigation: {
                                 nextEl: '.swiper-button-next',
                                 prevEl: '.swiper-button-prev',
@@ -86,7 +78,7 @@ const ProductSlider =({fetchProductSlider,productSliderItem,name,match}) =>{
                     setTitle("محصولات مشابه ")
                 }
                 else{
-                    setTitle("پرفروش ترین ها ")
+                    setTitle("جدیدترین ها ")
                 }
 
     },[])
@@ -102,22 +94,23 @@ const ProductSlider =({fetchProductSlider,productSliderItem,name,match}) =>{
                                 title
                             }
                         </h1>
-                        <div className="see-all">
-                            مشاهده همه
-                        </div>
+                        {/*<div className="see-all">*/}
+                        {/*    مشاهده همه*/}
+                        {/*</div>*/}
                     </div>
                     <div className="swiper-container swiper-product-slider">
                         <div className="swiper-wrapper">
                             {
-                                productSliderItem.map(item =>
+                                    productSliderItem.data.map(item =>
                                     (
                                         item
                                             ?
                                             <div className="swiper-slide" key={item.id}>
-                                                    <Item data={item.product}/>
+                                                {/*{console.log("aaa",item)}*/}
+                                                    <Item data={item}/>
                                             </div>
                                             :
-                                            <h1>Loading</h1>
+                                           null
                                     )
                                 )
                             }
@@ -139,7 +132,7 @@ const ProductSlider =({fetchProductSlider,productSliderItem,name,match}) =>{
 
 
 const mapStateToProps = state => ({
-    productSliderItem:selectSliderItems(state)
+    productSliderItem:state.productSlider.productSliderItem
 })
 
 const mapDispatchToProps = (dispatch) => ({

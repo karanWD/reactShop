@@ -13,17 +13,19 @@ import Loading from "../Loading/Loading";
 
 const Slider = ({sliderItem, fetchSlider}) => {
 
-
     useEffect(() => {
         axios.get("https://api.mandegar-shop.ir/api/suggest/fetch/all")
             .then(res => fetchSlider(res))
             .then(
                 () => {
                     const swiper = new Swiper('.swiper-slider', {
-                        slidesPerView: 1,
+
                         spaceBetween: 5,
                         loop: false,
                         breakpoints: {
+                            0:{
+                                slidesPerView: 1
+                            },
                             768: {
                                 slidesPerView: 2,
                             },
@@ -35,10 +37,7 @@ const Slider = ({sliderItem, fetchSlider}) => {
                             delay: 3000,
                             disableOnInteraction: false,
                         },
-                        pagination: {
-                            el: '.swiper-pagination',
-                            clickable: true
-                        },
+
                         navigation: {
                             nextEl: '.swiper-button-next',
                             prevEl: '.swiper-button-prev',
@@ -55,7 +54,7 @@ const Slider = ({sliderItem, fetchSlider}) => {
                 {/*{console.log(sliderItem)}*/}
                 <div className="col-6 col-lg-3">
                     <img className="col-12 px-0" src={SliderTitle} alt=""/>
-                    <div className="swiper-pagination"></div>
+                    {/*<div className="swiper-pagination"></div>*/}
                     <div className="swiper-button-next"></div>
                     <div className="swiper-button-prev"></div>
                 </div>
@@ -66,12 +65,12 @@ const Slider = ({sliderItem, fetchSlider}) => {
                                 sliderItem.map(item =>
                                     (
                                         <div className="swiper-slide" key={item.id}>
+                                            {console.log("bbb",item)}
                                             <Item data={item.product}/>
                                         </div>
                                     )
                                 )
                             }
-
                         </div>
                     </div>
                 </div>

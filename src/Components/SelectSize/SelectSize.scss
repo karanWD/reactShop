@@ -1,9 +1,20 @@
 .detail-size{
-
+  h1{
+    p{
+      margin-top: 10px;
+      font-size: 12px;
+      span{
+        color:#3e4ddb;
+        margin: 0 5px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+  }
   .sizes{
-    li{
+    .swiper-slide{
       cursor: pointer;
-      margin: 0 5px;
+      //margin: 0 2.5px;
       border-radius: 7px;
       border:1px solid #ddd;
       color:#777;
@@ -12,8 +23,9 @@
       text-align: center;
       padding-top: 10px;
       &:hover{
-        border:1px solid #bbb;
-        color:#333
+        border:1px solid #999;
+        color:#333;
+        font-weight: bold;
       }
     }
     .active-detail-size{
@@ -21,6 +33,39 @@
       border: 1px solid #3E4DDB;
       color: white !important;
     }
+    .swiper-slider-size{
+      direction: rtl;
+    }
+  }
+  .swiper-button-next,.swiper-button-prev{
+    background-color: white;
+    color: #999;
+    border-radius: 5px;
+    padding: 5px ;
+    &:after{
+      font-size: 14px;
+      font-weight: bold;
+    }
+    &:hover{
+    color: #3e4ddb;
+    }
+  }
+  .swiper-size-pagination{
+    left:50%;
+    transform: translateX(-50%);
+    span{
+      margin:0 2.5px;
+    }
+  }
+  .swiper-pagination-bullet{
+    width:5px;
+    height: 5px;
+  }
+  .swiper-pagination-bullet-active{
+    background-color: #3E4DDB;
+  }
+  :root{
+    --swiper-theme-color:#3E4DDB
   }
 }
 

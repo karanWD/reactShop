@@ -3,6 +3,7 @@
 }
 .slider .swiper-wrapper {
   flex-direction: row-reverse;
+  direction: rtl;
 }
 .slider .swiper-pagination {
   transform: translateX(50%);

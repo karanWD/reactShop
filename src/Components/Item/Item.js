@@ -12,33 +12,34 @@ const Item = ({data})=>{
                 <div className="item-container p-2" >
                     <figure>
                         <img className="col-12 px-0" src={`https://api.mandegar-shop.ir/images/product/${data.image}`} alt=""/>
+                        {/*<div className={data.discount == 0 ? `d-none`:`discount-num mr-3`}>*/}
+                        {/*    {data.discount}%*/}
+                        {/*    <span>*/}
+                        {/*            تخفیف*/}
+                        {/*            </span>*/}
+                        {/*</div>*/}
                     </figure>
-                    <figcaption>
-                        <div className="name">
-                            {data.name}
+                    <figcaption className="px-1">
+                        {/*<div className="brand">*/}
+                        {/*    {data.brand}*/}
+                        {/*</div>*/}
+                       <div className="name">
+                                {data.name}
+                       </div>
+                        <div className="desc mt-1">
+                            {data.short_desc}
                         </div>
-                        <div className="desc ">
-                            {data.brand}
-                        </div>
-                        <div className="size mt-3 ">
-                            {/*<ul className="col-12 px-0 d-flex flex-row-reverse flex-wrap">*/}
-                            {/*    <li className="">XS</li>*/}
-                            {/*    <li className="">-</li>*/}
-                            {/*    <li className="">S</li>*/}
-                            {/*    <li className="">-</li>*/}
-                            {/*    <li className="">M</li>*/}
-                            {/*    <li className="">-</li>*/}
-                            {/*    <li className="">L</li>*/}
-                            {/*    <li className="">-</li>*/}
-                            {/*    <li className="">XL</li>*/}
-                            {/*    <li className="">-</li>*/}
-                            {/*    <li className="">XXL</li>*/}
-                            {/*</ul>*/}
-                        </div>
-                        <div className="price-container d-flex flex-row-reverse justify-content-between mt-3">
-
-                            <div className={`last-price rtl ${data.discount === 0?"d-none":""}`}>{data.price} <span className="toman">تومان</span></div>
-                            <div className="new-price rtl"> {data.price - (data.price * data.discount / 100)} <span className="toman">تومان</span> </div>
+                        <div className="price-container d-flex  flex-wrap justify-content-between align-items-end mt-2">
+                            <div className={`last-price rtl pb-1 ${data.discount === 0?"d-none":""}`}>{data.price} <span className="toman">تومان</span></div>
+                            <div>
+                                <div className={data.discount == 0 ? `d-none`:`discount-num `}>
+                                    {data.discount}%
+                                    <span>
+                                    تخفیف
+                                    </span>
+                                </div>
+                                <div className=" new-price rtl d-block col-12 px-0 mt-2"> {data.price - (data.price * data.discount / 100)} <span className="toman">تومان</span> </div>
+                            </div>
                         </div>
 
                         <button className="secondary-btn mt-4">خرید</button>

@@ -8,9 +8,9 @@ import {selectOneBanner} from "../../redux/Category/category-selector";
 const ProductContainer = ({oneBanners})=>{
     return(
         <section className="product-container col-lg-9 px-1 px-lg-auto pb-5">
-            <ProductSlider/>
+            <ProductSlider name="news"/>
             <Banner count="one" data={oneBanners}/>
-            <ProductSlider/>
+            <ProductSlider name="news"/>
             <Banner count="one" data={oneBanners}/>
         </section>
     )

@@ -57,7 +57,7 @@ const ProductsPageContainer = ({products,match,fetchProducts,setLoading, loading
                         defaultCurrent={1}
                         className={"products-pagination"}
                         prevIcon={BackIcon}
-                        nextIcon={()=><div style={{transform:"rotate(180deg)",paddingBottom:"6px"}}>
+                        nextIcon={()=><div style={{transform:"rotate(180deg)"}}>
                             <BackIcon/>
                         </div>}
                     />
@@ -69,7 +69,7 @@ const ProductsPageContainer = ({products,match,fetchProducts,setLoading, loading
                 {
                     products.data.map(
                         productItems =>
-                            <div className="col-6 col-lg-3">
+                            <div className="col-6 col-lg-3 px-0">
                                 <Item data={productItems}/>
                             </div>
                     )

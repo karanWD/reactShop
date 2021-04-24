@@ -30,8 +30,8 @@ const Carousel = ({carouselItem, carouselFetch}) => {
                 <Swiper
                     slidesPerView={1}
                     navigation
-                    onSwiper={(swiper) => console.log(swiper)}
-                    onSlideChange={() => console.log('slide change')}
+                    // onSwiper={(swiper) => console.log(swiper)}
+                    // onSlideChange={() => console.log('slide change')}
                 >
                     {
                         carouselItem.data.map(item => {

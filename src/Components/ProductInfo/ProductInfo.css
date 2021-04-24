@@ -7,8 +7,13 @@
   color: #999;
 }
 .product-info .discount-num {
-  color: #3E4DDB;
-  font-weight: bold;
+  color: white;
+  background-color: #3E4DDB;
+  border-radius: 7px;
+  padding: 2.5px 7.5px;
+}
+.product-info .last-price {
+  font-size: 16px;
 }
 .product-info .new-price {
   font-weight: bold;

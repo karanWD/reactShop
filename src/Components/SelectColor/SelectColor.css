@@ -1,9 +1,9 @@
-.detail-color li > img {
+.detail-color .swiper-slide > img {
   border-radius: 7px;
   cursor: pointer;
   border: 1px solid #ddd;
 }
-.detail-color li > img:hover {
+.detail-color .swiper-slide > img:hover {
   border: 1px solid #bbb;
 }
 .detail-color .selected-color {
@@ -19,6 +19,33 @@
 }
 .detail-color .selected-color-check {
   display: flex;
+}
+.detail-color .swiper-button-next, .detail-color .swiper-button-prev {
+  background-color: white;
+  color: #999;
+  border-radius: 5px;
+  padding: 5px;
+}
+.detail-color .swiper-button-next:after, .detail-color .swiper-button-prev:after {
+  font-size: 14px;
+  font-weight: bold;
+}
+.detail-color .swiper-button-next:hover, .detail-color .swiper-button-prev:hover {
+  color: #3e4ddb;
+}
+.detail-color .swiper-size-pagination {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.detail-color .swiper-size-pagination span {
+  margin: 0 2.5px;
+}
+.detail-color .swiper-pagination-bullet {
+  width: 5px;
+  height: 5px;
+}
+.detail-color .swiper-pagination-bullet-active {
+  background-color: #3E4DDB;
 }
 
 /*# sourceMappingURL=SelectColor.css.map */

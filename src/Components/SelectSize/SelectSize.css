@@ -1,6 +1,15 @@
-.detail-size .sizes li {
-  cursor: pointer;
+.detail-size h1 p {
+  margin-top: 10px;
+  font-size: 12px;
+}
+.detail-size h1 p span {
+  color: #3e4ddb;
   margin: 0 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.detail-size .sizes .swiper-slide {
+  cursor: pointer;
   border-radius: 7px;
   border: 1px solid #ddd;
   color: #777;
@@ -9,14 +18,48 @@
   text-align: center;
   padding-top: 10px;
 }
-.detail-size .sizes li:hover {
-  border: 1px solid #bbb;
+.detail-size .sizes .swiper-slide:hover {
+  border: 1px solid #999;
   color: #333;
+  font-weight: bold;
 }
 .detail-size .sizes .active-detail-size {
   background-color: #3E4DDB;
   border: 1px solid #3E4DDB;
   color: white !important;
+}
+.detail-size .sizes .swiper-slider-size {
+  direction: rtl;
+}
+.detail-size .swiper-button-next, .detail-size .swiper-button-prev {
+  background-color: white;
+  color: #999;
+  border-radius: 5px;
+  padding: 5px;
+}
+.detail-size .swiper-button-next:after, .detail-size .swiper-button-prev:after {
+  font-size: 14px;
+  font-weight: bold;
+}
+.detail-size .swiper-button-next:hover, .detail-size .swiper-button-prev:hover {
+  color: #3e4ddb;
+}
+.detail-size .swiper-size-pagination {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.detail-size .swiper-size-pagination span {
+  margin: 0 2.5px;
+}
+.detail-size .swiper-pagination-bullet {
+  width: 5px;
+  height: 5px;
+}
+.detail-size .swiper-pagination-bullet-active {
+  background-color: #3E4DDB;
+}
+.detail-size :root {
+  --swiper-theme-color:#3E4DDB ;
 }
 
 @media only screen and (max-width: 768px) {
