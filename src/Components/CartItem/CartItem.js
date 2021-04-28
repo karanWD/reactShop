@@ -26,10 +26,10 @@ const CartItem = ({data,fetchCart,addCartSuccess})=>{
     }
     return(
         <div className="cart-item-container pl-0 d-flex flex-row-reverse mt-2">
-                <div className="cart-item-image col-3 px-0">
+                <div className="cart-item-image col-2 px-0">
                     <img className="col-12 px-0" src={`https://api.mandegar-shop.ir/images/product/${data.product.image}`} alt=""/>
                 </div>
-                <div className="cart-desc col-8 pl-0 pr-2">
+                <div className="cart-desc col-9 pl-0 pr-2">
                     <div className="product-name text-right">
                         <Link to={`/detail/${data.product.slug}`}>
                             <div className="name"> {data.product.name}</div>
@@ -37,14 +37,14 @@ const CartItem = ({data,fetchCart,addCartSuccess})=>{
                     </div>
                     <div className="product-price mt-2 text-right">
                         <div className="d-flex flex-row-reverse flex-wrap">
-                            <div className="last-price rtl">
-                               { data.product.price}
+                            <div className={data.product.discount === 0 ? `d-none` : `last-price rtl`}>
+                                {data.product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                                 <span className="toman">تومان</span>
                             </div>
-                            <div className="discount-num mr-3">{data.product.discount}%</div>
+                            <div className={`discount-num mr-3 ${data.product.discount==0?"d-none":null}`}>{data.product.discount}%</div>
                         </div>
                         <div className="new-price rtl d-block">
-                           {  data.product.price - (data.product.price * data.product.discount / 100)}
+                           {  (data.product.price - (data.product.price * data.product.discount / 100)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                             <span className="toman pr-2">تومان</span>
                         </div>
                     </div>
@@ -57,7 +57,7 @@ const CartItem = ({data,fetchCart,addCartSuccess})=>{
 
                         <div className="product-size d-flex flex-row rtl col px-0 align-items-center">
                             <div className="title pr-0">سایز: </div>
-                            <div className="value pr-2">{data.cart_values[0].effect_value.key}</div>
+                            <div className="value pr-2">{data?.cart_values[0]?.effect_value?.key}</div>
                         </div>
 
                         <div className="product-color d-flex flex-row justify-content-around rtl col px-0 align-items-center">
@@ -65,8 +65,6 @@ const CartItem = ({data,fetchCart,addCartSuccess})=>{
                             <div className="value mr-2" style={{ backgroundColor:data.color.code }}> </div>
                         </div>
                     </div>
-
-
                 </div>
                 <div id={data.id} className="close-container col-1 px-0">
                     <CloseIcon clickHandler={deleteCartItem}/>

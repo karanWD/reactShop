@@ -1,0 +1,59 @@
+.horizontal-slider{
+  margin-top: 50px;
+  width: 100%;
+}
+.example-thumb{
+  background-color: #3e4ddb;
+  color: white;
+  border-radius: 50px;
+  padding:2.5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  outline: none;
+  margin-top: 10px;
+}
+.example-thumb-1{
+  &:after{
+    position:absolute;
+    top:-23px;
+    right:0;
+    background-color: darken(#3e4ddb,20%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    content: "";
+  }
+}
+.example-thumb-0{
+  &:after{
+    position:absolute;
+    top:-23px;
+    left:0;
+    background-color: darken(#3e4ddb,20%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    content: "";
+  }
+}
+.example-track{
+  height: 4px;
+  transform: translateY(-10px);
+  background-color:#ddd
+}
+.example-track-0{
+  background-color: #ddd;
+  border-radius: 10px;
+}
+.example-track-1{
+  background-color: #3e4ddb;
+  border-radius: 10px;
+  z-index: 1;
+  opacity: 0.7;
+}
+.priceVal-container{
+  text-align: center;
+  padding:7px 20px;
+  border:1px solid #ddd;
+  border-radius: 7px;
+}

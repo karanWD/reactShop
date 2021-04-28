@@ -6,13 +6,7 @@ import {fetchCatList} from "../../redux/Category/category-actions";
 import {selectCatList} from "../../redux/Category/category-selector";
 import {Link} from "react-router-dom";
 import Cat from "./categories.svg"
-//images
-import Tshirt from "./tshirt.png"
-import Suit from "./suit.png"
-import Shoe from "./shoe.png"
-import Watch from "./watch.png"
-import Hoodie from "./hoodie.png"
-import Sleeveless from "./sleeveless.png"
+
 
 
 const SideCat = ({fetchCatList, catList}) => {
@@ -34,7 +28,7 @@ const SideCat = ({fetchCatList, catList}) => {
                                     <li className="d-flex flex-row-reverse">
                                         <div className="cat-img col-3 d-flex align-items-center justify-content-center">
 
-                                            {
+                                           {
                                                 item.image ?
                                                     <img  className="col-7  px-0" src={`https://api.mandegar-shop.ir/images/category/${item.image}`} alt={item.name}/>
                                                     :

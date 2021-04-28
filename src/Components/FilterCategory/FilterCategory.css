@@ -1,3 +1,31 @@
-
+.filter-category > ul {
+  direction: rtl;
+  max-height: 260px;
+  overflow-y: auto;
+}
+.filter-category > ul > li {
+  color: #777;
+  padding: 5px;
+}
+.filter-category > ul > li:hover {
+  color: #3e4ddb;
+}
+.filter-category > ul ul li {
+  margin: 5px 0;
+}
+.filter-category > ul ul li:hover {
+  color: #3e4ddb;
+}
+.filter-category ::-webkit-scrollbar {
+  width: 6px;
+}
+.filter-category ::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #eee;
+}
+.filter-category ::-webkit-scrollbar-thumb {
+  background: #3e4ddb;
+  border-radius: 10px;
+}
 
 /*# sourceMappingURL=FilterCategory.css.map */

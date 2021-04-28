@@ -1,3 +1,14 @@
-
+.filter-sort ul li {
+  border: 1px solid #eee;
+  margin: 2.5px;
+  padding: 5px 15px;
+  border-radius: 7px;
+  font-size: 13px;
+  color: #777;
+}
+.filter-sort ul li:hover {
+  border: 1px solid #ccc;
+  color: #444;
+}
 
 /*# sourceMappingURL=Sort.css.map */

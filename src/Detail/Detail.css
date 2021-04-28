@@ -16,6 +16,10 @@
   display: inline-block;
 }
 
+.detail-page .swiper-wrapper {
+  flex-direction: row !important;
+}
+
 @media only screen and (max-width: 992px) {
   .product-info {
     position: relative !important;

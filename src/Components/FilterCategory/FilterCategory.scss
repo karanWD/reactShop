@@ -1,0 +1,37 @@
+.filter-category{
+  & > ul{
+    direction: rtl;
+    max-height: 260px;
+    overflow-y: auto;
+    &>li{
+
+       color: #777;
+      //margin: 5px 0;
+      //border-bottom: 1px solid #eee;
+      padding: 5px;
+
+      &:hover{
+        color:#3e4ddb;
+      }
+    }
+    ul{
+      li{
+        margin: 5px 0;
+        &:hover{
+          color:#3e4ddb;
+        }
+      }
+    }
+  }
+  ::-webkit-scrollbar {
+    width:6px;
+  }
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #eee;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #3e4ddb;
+    border-radius: 10px;
+  }
+}

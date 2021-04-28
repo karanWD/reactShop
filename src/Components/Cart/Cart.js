@@ -123,7 +123,7 @@ const Cart = ({cartOpen, cartClose, cartItems, fetchCart, addCartSuccess, addCar
                                             // )
                                         }
                                         {
-                                            totalCart.reduce((total, price) => total + price)
+                                          (  totalCart.reduce((total, price) => total + price)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                                         }
                                         <span className="toman pr-2">تومان</span>
                                     </div>

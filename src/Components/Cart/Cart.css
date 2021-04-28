@@ -32,7 +32,7 @@
   content: "";
 }
 .cart-container .cart-article {
-  height: 70%;
+  height: 95%;
   overflow: auto;
 }
 .cart-container .open-cart {

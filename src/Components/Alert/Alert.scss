@@ -1,7 +1,15 @@
+@keyframes progress {
+  0% {
+    width: 0;
+  }
+  100%{
+    width: 100%;
+  }
+}
 .my-alert{
   .success{
     text-align: center;
-    padding: 7px 20px;
+    //padding: 7px 20px;
     border-radius: 10px;
     background-color: #DCF5E5;
     color:#227240;
@@ -9,17 +17,76 @@
     font-weight: bold;
   }
   .error{
+    width: 20vw;
     text-align: center;
-    padding: 7px 20px;
-    border-radius: 5px;
-    background-color: #ffeceb;
-    color: #ec2d3a;
-    font-size: 12px;
-    font-weight: bold;
+    border-radius: 7px;
+    background-color: rgba(236, 45, 58, 0.95);
+    color: #fffcfc;
+    font-size: 13px;
+    border-right: 5px solid #881119;
+    transition: 1s;
+    position: relative;
+    overflow: hidden;
+    span{
+      transition: 0.5s;
+      position: absolute;
+      top:0;
+      right: 0;
+      width: 0;
+      height: 100%;
+      background-color: #881119;
+      content: "";
+      opacity: 0.2;
+
+    }
   }
   img{
-    width: 15px;
-    height: 15px;
-    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
   }
 }
+.alert-container{
+  position: fixed;
+  right:10px;
+  bottom:10px;
+  z-index: 999;
+  & > div{
+    visibility:hidden;
+    opacity: 0 ;
+    transform: translateX(100%);
+    transition-property: all;
+    transition-delay: 0.2s;
+    transition-duration: 0.5s;
+    &:nth-child(1){
+      transition-delay: 0s;
+    }
+    &:nth-child(2){
+      transition-delay: .2s;
+    }
+    &:nth-child(3){
+      transition-delay: .4s;
+    }
+  }
+
+}
+.open-alert{
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+
+  span{
+    animation-name: progress;
+    animation-duration: 7s;
+    animation-play-state: running;
+
+    animation-timing-function: ease-in ;
+  }
+}
+.close-alert{
+  border-right: 1px solid #c11621;
+  padding: 15px;
+  color: #b10b13;
+  font-weight: bold;
+}
+

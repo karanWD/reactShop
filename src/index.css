@@ -126,7 +126,7 @@ a:hover {
 .seperator {
   width: 100px;
   height: 1px;
-  background-color: #555;
+  background-color: #ccc;
 }
 
 .active-filter {

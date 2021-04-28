@@ -42,7 +42,7 @@ const Features = ({page}) => {
             :
             <section className="features pt-4 pt-lg-5 px-1">
                 <ul className="d-flex px-1 px-lg-5 flex-row-reverse justify-content-around justify-content-lg-between flex-wrap">
-                    <li className="col mx-3 mx-lg-0 col-lg-2 px-0">
+                    <li className="col-2 mx-3 mx-lg-0  px-0">
                         <div className="d-lg-flex flex-row-reverse ">
                             <div className="col-lg-5 img-container d-flex justify-content-center align-items-center p-3"><img className="col-10 px-0" src={Delivery} alt=""/></div>
                             <div className="col-lg-7 pt-2 px-0  pr-lg-3 pl-lg-0 ">

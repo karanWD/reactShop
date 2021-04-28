@@ -6,12 +6,13 @@
   padding-right: 10px;
 }
 .filter h4 {
-  font-size: 16px;
-  color: #555;
+  font-size: 14px;
+  color: #444;
 }
 .filter ul li {
   color: #777;
   cursor: pointer;
+  font-size: 14px;
 }
 
 /*# sourceMappingURL=Filter.css.map */

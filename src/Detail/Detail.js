@@ -110,9 +110,11 @@ const Detail = ({
                 }) => {
 
     let {proname} = useParams()
+
     const [sizeAlert, setSizeAlert] = useState(false)
     const [colorAlert, setColorAlert] = useState(false)
     const [countAlert, setCountAlert] = useState(false)
+
     useEffect(() => {
         cartClose()
         if (searchMobileToggle) closeSearch()
@@ -132,12 +134,10 @@ const Detail = ({
                 }
             )
     }, [proname])
+
     const buyCheck = () => {
-        // console.log(cartCookie)
-        // console.log(proSize,proColor,proCount)
 
         if (proSize && proCount && proColor) {
-            // console.log(proSize,proCount,proColor,detailData.name,)
             let formData = new FormData
             var discountPrice = detailData.price - (detailData.price * detailData.discount / 100)
 
@@ -173,21 +173,21 @@ const Detail = ({
         }
         if (!proSize) {
             setSizeAlert(true)
-            setTimeout(()=>setSizeAlert(false),2000)
+            setTimeout(() => setSizeAlert(false), 7000)
         } else if (proSize) {
             setSizeAlert(false)
         }
         if (!proColor) {
             // console.log("select color")
             setColorAlert(true)
-            setTimeout(()=>setColorAlert(false),2000)
+            setTimeout(() => setColorAlert(false), 7000)
         } else if (proColor) {
             setColorAlert(false)
         }
         if (proCount == 0) {
             // console.log("select count")
             setCountAlert(true)
-            setTimeout(()=>setCountAlert(false),2000)
+            setTimeout(() => setCountAlert(false), 7000)
         } else if (proCount > 0) {
             setCountAlert(false)
         }
@@ -197,7 +197,7 @@ const Detail = ({
         detailData
             ?
             <>
-                <section className="mt-lg-3 pt-lg-5 px-lg-5">
+                <section className="mt-lg-3 pt-lg-5 px-lg-5 detail-page">
                     <div className="d-flex flex-row-reverse flex-wrap  position-relative">
                         <div className="product-gallery col-lg-7 px-0 px-lg-auto">
                             <Suspense fallback={<Loading/>}>
@@ -237,34 +237,18 @@ const Detail = ({
                                         <ProductInfo/>
                                         <div className="position-relative">
                                             <SelectSize/>
-                                            <div className={`alert-container my-1 ${sizeAlert ? "d-block" : "d-none"}`}>
-                                                <Alert type="error" text="لطفا سایز را انتخاب کنید"/>
-                                            </div>
-
                                         </div>
                                         <div className="position-relative">
                                             <SelectColor/>
-                                            <div
-                                                className={`alert-container my-1 ${colorAlert ? "d-block" : "d-none"}`}>
-                                                <Alert type="error" text="لطفا رنگ را انتخاب کنید"/>
-                                            </div>
                                         </div>
-                                        <div className="position-relative d-flex flex-row-reverse flex-wrap justify-content-between align-items-center">
+                                        <div
+                                            className="position-relative d-flex flex-row-reverse flex-wrap justify-content-between align-items-center">
                                             <SelectCount/>
-
-                                            <div
-                                                className={`alert-container col-12 my-1 ${countAlert ? "d-block" : "d-none"}`}>
-                                                <Alert type="error" text="لطفا تعداد را انتخاب کنید"/>
-                                            </div>
-
                                         </div>
                                         <div className="col-lg-6 mt-4 mr-0 ml-auto px-0">
                                             <Button clickHandler={buyCheck} type="primary" icon="./buyCartIcon.png"
                                                     text="افزودن به سبد خرید "/>
                                         </div>
-
-
-
                                         <div className="col-lg-8 mr-0 ml-auto px-0">
                                             <Features page="detail"/>
                                         </div>
@@ -274,14 +258,26 @@ const Detail = ({
                                 null
                         }
                     </div>
-                    <div className="py-5">
+                    <div className="py-5 ">
                         <Suspense fallback={<Loading/>}>
                             <ProductSlider name="similar"/>
-                            <ProductSlider name="new"/>
+                            <ProductSlider name="set"/>
                         </Suspense>
+                    </div>
+                    <div className="alert-container">
+                        <div className={`my-2 ${sizeAlert ? " open-alert" : null}`}>
+                            <Alert type="error" text="لطفا سایز را انتخاب کنید"/>
+                        </div>
+                        <div className={`my-2 ${colorAlert ? " open-alert" : null}`}>
+                            <Alert type="error" text="لطفا رنگ را انتخاب کنید"/>
+                        </div>
+                        <div className={` my-2 ${countAlert ? " open-alert" : null}`}>
+                            <Alert type="error" text="لطفا تعداد را انتخاب کنید"/>
+                        </div>
                     </div>
                 </section>
                 {loading == "true" ? <Loading/> : null}
+
             </>
             :
             null

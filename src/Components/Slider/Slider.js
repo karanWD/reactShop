@@ -65,7 +65,7 @@ const Slider = ({sliderItem, fetchSlider}) => {
                                 sliderItem.map(item =>
                                     (
                                         <div className="swiper-slide" key={item.id}>
-                                            {console.log("bbb",item)}
+                                            {/*{console.log("bbb",item)}*/}
                                             <Item data={item.product}/>
                                         </div>
                                     )

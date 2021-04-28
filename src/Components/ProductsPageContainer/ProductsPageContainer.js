@@ -34,7 +34,7 @@ const ProductsPageContainer = ({products,match,fetchProducts,setLoading, loading
             }
             <div className="d-flex flex-row-reverse justify-content-between align-items-center px-3 products-title">
                 <h1>
-                    محصولات
+                    {match.params.catname}
                     <span className="pr-3 products-title-count">
                         (
                         <span className="px-1">
@@ -69,7 +69,7 @@ const ProductsPageContainer = ({products,match,fetchProducts,setLoading, loading
                 {
                     products.data.map(
                         productItems =>
-                            <div className="col-6 col-lg-3 px-0">
+                            <div className="col-6 col-lg-3 px-0 rtl">
                                 <Item data={productItems}/>
                             </div>
                     )

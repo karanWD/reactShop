@@ -15,11 +15,11 @@ import BackIcon from "../Components/ChevronLeft/ChevronLeft";
 import {fetchLoading} from "../redux/Loading/Loading-actions";
 import Loading from "../Components/Loading/Loading";
 import {searchMobileToggle, searchToggle} from "../redux/search/search-actions";
-import SideCat from "../Components/SideCat/SideCat";
+
 
 const Products = ({match, fetchProducts, products, setLoading, loading,openSearchRes,closeSearch,searchMobileToggle}) => {
-    const [pageIndex, setPageIndex] = useState(0)
 
+    const [pageIndex, setPageIndex] = useState(0)
     useEffect(() => {
         openSearchRes(false)
         window.scrollTo(0,0)
@@ -32,6 +32,7 @@ const Products = ({match, fetchProducts, products, setLoading, loading,openSearc
     }, [match.params.catname])
 
     const changePage = (current) => {
+        window.scrollTo(0,0)
         setLoading("true")
         axios.get(`https://api.mandegar-shop.ir/api/products/fetch/${match.params.catname}?page=${current}`)
             .then(res => fetchProducts(res))
@@ -93,4 +94,4 @@ const mapStateToProps = state => ({
     searchMobileToggle : state.search.searchMobileToggle
 })
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Products))
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Products))

@@ -18,7 +18,7 @@ const SelectSize = ({selectSize,fetchSelectSize,fetchSizeExist,match,sizeExist,c
             .get(`https://api.mandegar-shop.ir/api/detail/product/exist/${match.params.proname}/${event.target.getAttribute("id")}/0`)
             .then(res =>fetchSizeExist(res))
             .then(proSizeSelected(event.target.getAttribute("id")))
-            // .then(setLoading("false"))
+
     }
     useEffect(()=>{
         axios
@@ -88,7 +88,7 @@ const SelectSize = ({selectSize,fetchSelectSize,fetchSizeExist,match,sizeExist,c
                 </div>
 
 
-                    <div className=" mr-0 sizes col-lg-8 swiper-container swiper-slider-size rtl">
+                    <div className=" mr-0 sizes col-lg-9 swiper-container swiper-slider-size rtl">
                         <div className="swiper-wrapper ">
                     {
                         selectSize
@@ -137,7 +137,7 @@ const SelectSize = ({selectSize,fetchSelectSize,fetchSizeExist,match,sizeExist,c
 
                     </div>
                 </div>
-                <div className="mr-0 sizes col-lg-8 swiper-container swiper-slider-size rtl">
+                <div className="mr-0 sizes col-lg-9 swiper-container swiper-slider-size rtl">
                         <div className="swiper-wrapper ">
                     {
                         selectSize
