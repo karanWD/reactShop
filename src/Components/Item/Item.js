@@ -1,6 +1,7 @@
 import React from "react"
 import "./Item.scss"
 import {Link} from "react-router-dom";
+import {basicUrl} from "../../basicUrl";
 
 const Item = ({data}) => {
     return (
@@ -9,7 +10,7 @@ const Item = ({data}) => {
             <Link to={`/detail/${data.slug}`}>
                 <div className="item-container p-2">
                     <figure>
-                        <img className="col-12 px-0" src={`https://api.mandegar-shop.ir/images/product/${data.image}`}
+                        <img className="col-12 px-0" src={`${basicUrl}/images/product/${data.image}`}
                              alt=""/>
                         <div>
                             <div className={data.discount == 0 ? `d-none` : `discount-num `}>

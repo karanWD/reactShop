@@ -5,15 +5,16 @@ import axios from "axios";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 import {addCartSuccess, fetchCart} from "../../redux/cart/cart-actions";
+import {basicUrl} from "../../basicUrl";
 
 const CartItem = ({data,fetchCart,addCartSuccess})=>{
     // console.log(data)
     const deleteCartItem = (e)=>{
-        axios.get(`https://api.mandegar-shop.ir/api/cart/delete/${e.target.parentElement.parentElement.getAttribute("id")}`)
+        axios.get(basicUrl+`/api/cart/delete/${e.target.parentElement.parentElement.getAttribute("id")}`)
             .then(res => console.log(res))
             .then(
                 ()=>{
-                    axios.get(`https://api.mandegar-shop.ir/api/cart/fetch/${localStorage.getItem("cart-cookie")}`)
+                    axios.get(basicUrl+`/api/cart/fetch/${localStorage.getItem("cart-cookie")}`)
                         .then(res => {
                             fetchCart(res)
                             if (res.status = 200){
@@ -27,7 +28,7 @@ const CartItem = ({data,fetchCart,addCartSuccess})=>{
     return(
         <div className="cart-item-container pl-0 d-flex flex-row-reverse mt-2">
                 <div className="cart-item-image col-2 px-0">
-                    <img className="col-12 px-0" src={`https://api.mandegar-shop.ir/images/product/${data.product.image}`} alt=""/>
+                    <img className="col-12 px-0" src={`${basicUrl}/images/product/${data.product.image}`} alt=""/>
                 </div>
                 <div className="cart-desc col-9 pl-0 pr-2">
                     <div className="product-name text-right">

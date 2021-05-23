@@ -1,0 +1,1 @@
+export const basicUrl = "http://api.brandvareh.ir/"

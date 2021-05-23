@@ -12,6 +12,7 @@ import {fetchCart} from "../redux/cart/cart-actions";
 import {cartItemsSelector} from "../redux/cart/cart-selector";
 import Empty from "./empty.png"
 import {openLogin} from "../redux/Login/Login-actions";
+import {basicUrl} from "../basicUrl"
 
 const Checkout = ({fetchCart, cartItems,history,openLogin}) => {
     let total = []
@@ -51,7 +52,7 @@ const Checkout = ({fetchCart, cartItems,history,openLogin}) => {
     useEffect(() => {
         openLogin("")
         if (!cartItems) {
-            axios.get(`https://api.mandegar-shop.ir/api/cart/fetch/${localStorage.getItem("cart-cookie")}`)
+            axios.get(basicUrl+`/api/cart/fetch/${localStorage.getItem("cart-cookie")}`)
                 .then(res => {
                     fetchCart(res)
                 })

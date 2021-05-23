@@ -15,7 +15,7 @@ import BackIcon from "../Components/ChevronLeft/ChevronLeft";
 import {fetchLoading} from "../redux/Loading/Loading-actions";
 import Loading from "../Components/Loading/Loading";
 import {searchMobileToggle, searchToggle} from "../redux/search/search-actions";
-
+import {basicUrl} from "../basicUrl";
 
 const Products = ({match, fetchProducts, products, setLoading, loading,openSearchRes,closeSearch,searchMobileToggle}) => {
 
@@ -27,14 +27,14 @@ const Products = ({match, fetchProducts, products, setLoading, loading,openSearc
             closeSearch()
         }
 
-        axios.get(`https://api.mandegar-shop.ir/api/products/fetch/${match.params.catname}`)
+        axios.get(basicUrl+`/api/products/fetch/${match.params.catname}`)
             .then(res => fetchProducts(res))
     }, [match.params.catname])
 
     const changePage = (current) => {
         window.scrollTo(0,0)
         setLoading("true")
-        axios.get(`https://api.mandegar-shop.ir/api/products/fetch/${match.params.catname}?page=${current}`)
+        axios.get(basicUrl+`/api/products/fetch/${match.params.catname}?page=${current}`)
             .then(res => fetchProducts(res))
             .then(setPageIndex(current))
     }

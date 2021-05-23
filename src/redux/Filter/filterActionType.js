@@ -1,0 +1,4 @@
+export const filterActionType={
+    FETCH_FILTER_BRAND : "FETCH_FILTER_BRAND",
+    FETCH_FILTER_PRICE:"FETCH_FILTER_PRICE"
+}

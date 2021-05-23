@@ -11,6 +11,7 @@ import {selectColorSelected} from "../../redux/selectColor/selectColor-selector"
 import {fetchLoading} from "../../redux/Loading/Loading-actions";
 import Swiper from 'swiper';
 import 'swiper/swiper-bundle.css';
+import {basicUrl} from "../../basicUrl";
 
 const SelectColor = ({detailColor, sizeExist, match, fetchColorExist, proColorSelected , proColor,proSize,setLoading}) => {
 
@@ -31,7 +32,7 @@ const SelectColor = ({detailColor, sizeExist, match, fetchColorExist, proColorSe
                         item.classList.add("color-non-exist")
                 })
         axios
-            .get(`https://api.mandegar-shop.ir/api/detail/product/exist/${match.params.proname}/0/${e.target.parentElement.getAttribute("id")}`)
+            .get(basicUrl+`/api/detail/product/exist/${match.params.proname}/0/${e.target.parentElement.getAttribute("id")}`)
             .then(res => fetchColorExist(res))
             .then(proColorSelected(e.target.parentElement.getAttribute("id")))
             .then(
@@ -105,7 +106,7 @@ const SelectColor = ({detailColor, sizeExist, match, fetchColorExist, proColorSe
                                         className={`col-3 col-lg-2 px-1 swiper-slide ${sizeExist.find(size => size.color_id === item.id) ? "exist-size " : "non-exist"}`}
                                         onClick={selectColor}>
                                         <img className="col-12 px-0"
-                                             src={`https://api.mandegar-shop.ir/images/gallery/${item.image.image}`}
+                                             src={`${basicUrl}/images/gallery/${item.image.image}`}
                                              alt={item.name}
                                              title={item.name}
                                         />
@@ -121,7 +122,7 @@ const SelectColor = ({detailColor, sizeExist, match, fetchColorExist, proColorSe
                                         className={`col-3 col-lg-2 px-1 swiper-slide`}
                                         onClick={selectColor}>
                                         <img className="col-12 px-0"
-                                             src={item?.image?.image ? `https://api.mandegar-shop.ir/images/gallery/${item.image.image}`:null}
+                                             src={item?.image?.image ? `${basicUrl}/images/gallery/${item.image.image}`:null}
                                              alt={item.name}
                                              title={item.name}
                                         />

@@ -6,6 +6,7 @@ import {withRouter} from "react-router";
 import { selectSizeSelected} from "../../redux/selectSize/selectSize-selector";
 import { selectColorSelected} from "../../redux/selectColor/selectColor-selector";
 import {fetchSelectCount} from "../../redux/selectCount/selectCount-actions";
+import {basicUrl} from "../../basicUrl";
 
 const SelectCount = ({sizeExist,colorExist,match,proSize,proColor,fetchCount})=>{
     const [count,setCount]=useState(0)
@@ -32,7 +33,7 @@ const SelectCount = ({sizeExist,colorExist,match,proSize,proColor,fetchCount})=>
     }
     useEffect(()=>{
         if(proColor&&proSize){
-            axios.get(`https://api.mandegar-shop.ir/api/detail/product/exist/${match.params.proname}/${proSize}/${proColor}`)
+            axios.get(basicUrl+`/api/detail/product/exist/${match.params.proname}/${proSize}/${proColor}`)
                 .then(res =>setMaxCount(res.data.num))
                 .then(count > maxCount ? setCount(maxCount) : null)
         }

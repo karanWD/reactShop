@@ -6,9 +6,10 @@ import axios from "axios"
 import BackIcon from "../ChevronLeft/ChevronLeft";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
-import {openCode, openLogin} from "../../redux/Login/Login-actions";
+import { openLogin} from "../../redux/Login/Login-actions";
 import Alert from "../Alert/Alert";
-import {Redirect,withRouter} from "react-router";
+import {withRouter} from "react-router";
+import {basicUrl} from "../../basicUrl";
 
 const Login = ({openedLogin , openLogin  , history}) => {
     // console.log(history)
@@ -27,7 +28,7 @@ const Login = ({openedLogin , openLogin  , history}) => {
             setCountAlert(false)
             if (result) {
                 setFormatAlert(false)
-                axios.post("https://api.mandegar-shop.ir/api/auth/send/code")
+                axios.post(basicUrl+"/api/auth/send/code")
                     .then(res => setActiveCode(res.data))
                     .then(openLogin("code"))
             } else {
@@ -40,7 +41,7 @@ const Login = ({openedLogin , openLogin  , history}) => {
     function checkCode() {
         if (code.length == 5 && code.length && code == activeCode ) {
             setCodeCountAlert(false)
-            axios.post(`https://api.mandegar-shop.ir/api/auth/login?mobile=${phone}`)
+            axios.post(basicUrl+`/api/auth/login?mobile=${phone}`)
                 .then(res => localStorage.setItem("user-token", res.data.access_token))
                 .then(history.replace("/checkout"))
 

@@ -9,3 +9,9 @@ export const fetchCatList = data =>({
     type:categoryType.FETCH_CATEGORY_LIST,
     payload:data
 })
+
+export const fetchCatFilter = data => ({
+    type:categoryType.FETCH_CATEGORY_FILTER,
+    payload:data
+})
+

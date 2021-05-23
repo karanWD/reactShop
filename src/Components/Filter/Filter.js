@@ -13,8 +13,8 @@ const Filter = ()=>{
             </div>
             <hr/>
             <Sort/>
-            <FilterCategory/>
-            <FilterBrand/>
+            <FilterCategory />
+            <FilterBrand />
             <FilterPrice/>
         </section>
     )

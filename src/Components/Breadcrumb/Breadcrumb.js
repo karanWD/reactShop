@@ -6,10 +6,11 @@ import axios from "axios";
 import {withRouter} from "react-router";
 import {fetchBreadcrumb} from "../../redux/breadcrumb/breadcrumb-actions";
 import {breadcrumbSelectItem} from "../../redux/breadcrumb/breadcrumb-selector";
+import {basicUrl} from "../../basicUrl";
 
 const Breadcrumb = ({match,fetchBread,breadCrumb})=>{
     useEffect(()=>{
-        axios.get(`https://api.mandegar-shop.ir/api/detail/cats/fetch/${match.params.proname}`).then(
+        axios.get(basicUrl+`/api/detail/cats/fetch/${match.params.proname}`).then(
             res => fetchBread(res)
         )
     },[match.params.proname])

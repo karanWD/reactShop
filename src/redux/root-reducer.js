@@ -14,6 +14,8 @@ import loadingReducer from "./Loading/Loading-reducer";
 import checkoutReducer from "./Checkout/Checkout-reducer";
 import loginReducer from "./Login/Login-reducer";
 import searchReducer from "./search/search-reducer";
+import brandReducer from "./Brand/Brand-reducer";
+import filterReducer from "./Filter/filter-reducer";
 
 export default combineReducers({
    carousel:carouselReducer,
@@ -30,6 +32,8 @@ export default combineReducers({
    loading:loadingReducer,
    checkout:checkoutReducer,
    login:loginReducer,
-   search:searchReducer
+   search:searchReducer,
+   brand:brandReducer,
+   filter:filterReducer
 });
 

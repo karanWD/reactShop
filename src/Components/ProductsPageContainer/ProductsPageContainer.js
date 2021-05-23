@@ -10,13 +10,13 @@ import {fetchProducts} from "../../redux/Products/products-actions";
 import {withRouter} from "react-router";
 import Loading from "../Loading/Loading";
 import {fetchLoading} from "../../redux/Loading/Loading-actions";
-
+import {basicUrl} from "../../basicUrl";
 
 const ProductsPageContainer = ({products,match,fetchProducts,setLoading, loading}) =>{
     const [pageIndex, setPageIndex] = useState(0)
     const changePage = (current) => {
         setLoading("true")
-        axios.get(`https://api.mandegar-shop.ir/api/products/fetch/${match.params.catname}?page=${current}`)
+        axios.get(basicUrl+`/api/products/fetch/${match.params.catname}?page=${current}`)
             .then(res => fetchProducts(res))
             .then(setPageIndex(current))
     }

@@ -4,7 +4,10 @@ import 'swiper/swiper.scss';
 import { Swiper , SwiperSlide} from "swiper/react"
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
+import {basicUrl} from "../../basicUrl";
+
 import SwiperCore, { Navigation, Pagination} from 'swiper';
+
 SwiperCore.use([Navigation, Pagination]);
 
 const ProCarousel = ({galleryData})=>{
@@ -24,7 +27,7 @@ const ProCarousel = ({galleryData})=>{
                                 return(
                                     <SwiperSlide key={item.id}>
                                         <figure>
-                                            <img className="col-12 px-0 " src={`https://api.mandegar-shop.ir/images/gallery/${item.image}`} alt="CarouselImg"/>
+                                            <img className="col-12 px-0 " src={`${basicUrl}/images/gallery/${item.image}`} alt="CarouselImg"/>
                                         </figure>
                                     </SwiperSlide>
                                 )

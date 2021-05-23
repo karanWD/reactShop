@@ -5,6 +5,7 @@ import axios from "axios";
 import {useParams} from "react-router-dom";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
+import {basicUrl} from "../basicUrl";
 //redux
 import {fetchDetail} from "../redux/detail/detail-actions";
 import {detailDataSelector} from "../redux/detail/detail-selector";
@@ -119,7 +120,7 @@ const Detail = ({
         cartClose()
         if (searchMobileToggle) closeSearch()
         window.scrollTo(0, 0)
-        axios.get(`https://api.mandegar-shop.ir/api/detail/product/${proname}`)
+        axios.get(basicUrl+`/api/detail/product/${proname}`)
             .then(
                 res => fetchDetail(res)
             )
@@ -152,7 +153,7 @@ const Detail = ({
             if (localStorage.getItem("cart-cookie")) {
                 // console.log("hasCookie")
                 formData.append("cart", localStorage.getItem("cart-cookie"))
-                axios.post(`https://api.mandegar-shop.ir/api/cart/store`, formData)
+                axios.post(basicUrl+`/api/cart/store`, formData)
                     .then(
                         // res => console.log(res)
                         res => res.status = "200" ? addCartSuccess("محصول موردنظر با موفقیت به سبد شما اضافه شد") : addCartFail()
@@ -160,7 +161,7 @@ const Detail = ({
                     .then(openCartFunc)
 
             } else {
-                axios.post(`https://api.mandegar-shop.ir/api/cart/store`, formData)
+                axios.post(basicUrl+`/api/cart/store`, formData)
                     .then(res => localStorage.setItem("cart-cookie", res.data.cookie))
                     .then(
                         // res => console.log(res)

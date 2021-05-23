@@ -1,18 +1,10 @@
 import React,{useEffect,Suspense,lazy} from "react"
 import axios from "axios"
 import {connect} from "react-redux";
-
-// import Category from "../Components/Category/Category";
-// import Slider from "../Components/Slider/Slider";
-// import Banner from "../Components/Banner/Banner";
-// import SideCat from "../Components/SideCat/SideCat";
-// import ProductContainer from "../Components/ProductContainer/ProductContainer";
-// import Carousel from "../Components/Carousel/Carousel";
-// import Features from "../Components/Features/Features";
 import {fetchCat} from "../redux/Category/category-actions";
 import {selectCategory, selectThreeBanner} from "../redux/Category/category-selector";
 import {searchMobileToggle} from "../redux/search/search-actions";
-// import Loading from "../Components/Loading/Loading";
+import {basicUrl} from "../basicUrl";
 
 const Category = lazy(() => {
     return Promise.all([
@@ -76,7 +68,7 @@ const Home = ({catFetch,categoryItems,threeBanners,closeSearch,searchMobileToggl
     useEffect(()=>{
         if(window.innerWidth < 768 && searchMobileToggle) { closeSearch()}
         window.scrollTo(0,0)
-        axios.get("https://api.mandegar-shop.ir/api/banner/fetch/all")
+        axios.get(basicUrl + '/api/banner/fetch/all')
             .then(
                 // res => console.log(res)
                 res => catFetch(res)

@@ -4,10 +4,16 @@ import {withRouter} from "react-router";
 import {Link} from "react-router-dom";
 import axios from "axios";
 import {connect} from "react-redux";
-import {fetchCatList} from "../../redux/Category/category-actions";
+import {fetchCatFilter} from "../../redux/Category/category-actions";
 import {selectCatList} from "../../redux/Category/category-selector";
+import {basicUrl} from "../../basicUrl";
+import BackIcon from "../ChevronLeft/ChevronLeft";
 
-const FilterCategory = ({match,catList,fetchCatList})=>{
+const FilterCategory = ({match,catFilterItems,fetchCatFilter})=>{
+    useEffect(()=>{
+        axios.get(`${basicUrl}/api/fetch/cats/${match.params.catname}`)
+            .then(res => fetchCatFilter(res.data))
+    },[match.params.catname])
     return(
         <section className="filter-category mt-5">
             <div className="d-flex flex-row-reverse align-items-center mt-4">
@@ -17,12 +23,17 @@ const FilterCategory = ({match,catList,fetchCatList})=>{
                 <div className="seperator mr-3"></div>
             </div>
             <ul className="mt-3 pr-0">
-                <li>{match.params.catname}</li>
+
+                <li>
+                    <BackIcon />
+                    {match.params.catname}
+                 </li>
                 {
-                    catList &&
-                    catList.filter(item => item.name == match.params.catname)[0].children_recursive.map(item =>
-                    <li id={item.id} className="mr-2" >
+                    catFilterItems &&
+                    catFilterItems.map(item =>
+                    <li key={item.id} id={item.id} className="mr-2" >
                         <Link to={`/products/${item.name}`}>
+                             <BackIcon />
                             {item.name}
                         </Link>
                         <ul className="mr-2 pr-0">
@@ -45,10 +56,10 @@ const FilterCategory = ({match,catList,fetchCatList})=>{
 }
 
 const mapStateToProps = state => ({
-    catList: selectCatList(state)
+    catFilterItems: state.category.catFilterItems
 })
 const mapDispatchToProps = dispatch =>({
-    fetchCatList: (data) => dispatch(fetchCatList(data))
+    fetchCatFilter: (data) => dispatch(fetchCatFilter(data))
 })
 
 export default withRouter(connect(mapStateToProps,mapDispatchToProps)(FilterCategory))

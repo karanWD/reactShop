@@ -9,14 +9,14 @@ import SwiperCore, {Navigation, Pagination} from 'swiper';
 import {connect} from "react-redux"
 import {carouselFetch} from "../../redux/carousel/carousel.actions"
 import {selectCarousel} from "../../redux/carousel/carousel.selector";
-import Loading from "../Loading/Loading";
+import {basicUrl} from "../../basicUrl";
 
 SwiperCore.use([Navigation, Pagination]);
 
 const Carousel = ({carouselItem, carouselFetch}) => {
 
     useEffect(() => {
-        axios.get("https://api.mandegar-shop.ir/api/slider/fetch/all")
+        axios.get(basicUrl+"/api/slider/fetch/all")
             .then(
                 res => carouselFetch(res)
                 // res =>  console.log(res)
@@ -39,7 +39,7 @@ const Carousel = ({carouselItem, carouselFetch}) => {
                                     <SwiperSlide key={item.id}>
                                         <figure>
                                             <img className="col-12 px-0 "
-                                                 src={`https://api.mandegar-shop.ir/images/slider/${item.image}`}
+                                                 src={`${basicUrl}/images/slider/${item.image}`}
                                                  alt="CarouselImg"/>
                                         </figure>
                                     </SwiperSlide>

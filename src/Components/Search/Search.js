@@ -9,7 +9,7 @@ import Cat from "./categories.svg"
 import Pro from "./icons8-product-48.png"
 import {connect} from "react-redux";
 import {searchToggle} from "../../redux/search/search-actions";
-
+import {basicUrl} from "../../basicUrl";
 
 const Search = ({history, location,searchResToggle,openSearchRes}) => {
 
@@ -75,7 +75,7 @@ const Search = ({history, location,searchResToggle,openSearchRes}) => {
     const searchFunc = (e) => {
         if (e.target.value.length > 1) {
             openSearchRes(true)
-            axios.get(`https://api.mandegar-shop.ir/api/autocomplete/search?searchquery=${e.target.value}`)
+            axios.get(basicUrl+`/api/autocomplete/search?searchquery=${e.target.value}`)
                 .then(res => {
                     // console.log(res.data.product)
                     setSearchRes(res)

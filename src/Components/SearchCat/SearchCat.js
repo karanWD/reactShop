@@ -1,5 +1,6 @@
 import React, {useEffect} from "react"
 import "./SearchCat.scss"
+import {basicUrl} from "../../basicUrl";
 //images
 
 import axios from "axios";
@@ -10,7 +11,7 @@ import {Link} from "react-router-dom";
 
 const SearchCat = ({catList, fetchCatList}) => {
     useEffect(() => {
-        axios.get("http://api.mandegar-shop.ir/api/fetch/cats")
+        axios.get(basicUrl+"/api/fetch/cats")
             .then(
                 res => fetchCatList(res.data)
             )

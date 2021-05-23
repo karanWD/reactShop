@@ -8,13 +8,13 @@ import Item from "../Item/Item";
 import SliderTitle from "./slider-title.png"
 import {fetchSlider} from "../../redux/slider/slider-actions";
 import {selectSlider, selectSliderItems} from "../../redux/slider/slider-selector";
-import Loading from "../Loading/Loading";
+import {basicUrl} from "../../basicUrl";
 
 
 const Slider = ({sliderItem, fetchSlider}) => {
 
     useEffect(() => {
-        axios.get("https://api.mandegar-shop.ir/api/suggest/fetch/all")
+        axios.get(basicUrl+"/api/suggest/fetch/all")
             .then(res => fetchSlider(res))
             .then(
                 () => {

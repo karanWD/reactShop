@@ -17,6 +17,8 @@ import {Link, Redirect} from "react-router-dom";
 import EmptyBasket from "./empty.png"
 import {openLogin} from "../../redux/Login/Login-actions";
 import {withRouter} from "react-router";
+import {basicUrl} from "../../basicUrl";
+
 
 const Cart = ({cartOpen, cartClose, cartItems, fetchCart, addCartSuccess, addCartFail, cartSuccessText, openLogin,history}) => {
     let totalCart = []
@@ -40,7 +42,7 @@ const Cart = ({cartOpen, cartClose, cartItems, fetchCart, addCartSuccess, addCar
             )
             : null
     useEffect(() => {
-        axios.get(`https://api.mandegar-shop.ir/api/cart/fetch/${localStorage.getItem("cart-cookie")}`)
+        axios.get(basicUrl+`/api/cart/fetch/${localStorage.getItem("cart-cookie")}`)
             .then(res => {
                 fetchCart(res)
             })

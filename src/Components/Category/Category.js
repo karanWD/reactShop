@@ -1,6 +1,7 @@
 import React from "react"
 import "./Category.scss"
 import {Link} from "react-router-dom";
+import {basicUrl} from "../../basicUrl";
 
 const Category = ({category}) => {
     // console.log(category)
@@ -13,7 +14,7 @@ const Category = ({category}) => {
                         <div className="px-1">
                             <Link to={category.i5.url}>
                                 <img className="w-100"
-                                     src={`https://api.mandegar-shop.ir/images/index/${category.i5.image}`} alt=""/>
+                                     src={`${basicUrl}/images/index/${category.i5.image}`} alt=""/>
                             </Link>
                         </div>
                     </div>
@@ -21,7 +22,7 @@ const Category = ({category}) => {
                         <div className="col-6 px-1">
                             <Link to={category.i6.url}>
                                 <img className="w-100"
-                                     src={`https://api.mandegar-shop.ir/images/index/${category.i6.image}`}
+                                     src={`${basicUrl}/images/index/${category.i6.image}`}
                                      alt=""/>
                             </Link>
                         </div>
@@ -29,7 +30,7 @@ const Category = ({category}) => {
                         <div className="col-6 px-1">
                             <Link to={category.i7.url}>
                                 <img className="w-100"
-                                     src={`https://api.mandegar-shop.ir/images/index/${category.i7.image}`}
+                                     src={`${basicUrl}/images/index/${category.i7.image}`}
                                      alt=""/>
                             </Link>
                         </div>
@@ -41,7 +42,7 @@ const Category = ({category}) => {
                             <Link to={category.i1.url}>
                                 <img style={{height: "100%", objectFit: "cover"}}
                                      className="w-100"
-                                     src={`https://api.mandegar-shop.ir/images/index/${category.i1.image}`}
+                                     src={`${basicUrl}/images/index/${category.i1.image}`}
                                      alt=""/>
                             </Link>
                         </div>
@@ -49,7 +50,7 @@ const Category = ({category}) => {
                         <div className="col-8 px-1">
                             <Link to={category.i2.url}>
                                 <img className="w-100"
-                                     src={`https://api.mandegar-shop.ir/images/index/${category.i2.image}`}
+                                     src={`${basicUrl}/images/index/${category.i2.image}`}
                                      alt=""/>
                             </Link>
                         </div>
@@ -60,7 +61,7 @@ const Category = ({category}) => {
                             <Link to={category.i3.url}>
                                 <img style={{height: "100%", objectFit: "cover"}}
                                      className="w-100"
-                                     src={`https://api.mandegar-shop.ir/images/index/${category.i3.image}`}
+                                     src={`${basicUrl}/images/index/${category.i3.image}`}
                                      alt=""/>
                             </Link>
                         </div>
@@ -69,7 +70,7 @@ const Category = ({category}) => {
                             <Link to={category.i4.url}>
                                 <img style={{height: "100%", objectFit: "cover"}}
                                      className="w-100"
-                                     src={`https://api.mandegar-shop.ir/images/index/${category.i4.image}`}
+                                     src={`${basicUrl}/images/index/${category.i4.image}`}
                                      alt=""/>
                             </Link>
                         </div>

@@ -5,13 +5,12 @@ import {connect} from "react-redux";
 import {fetchCatList} from "../../redux/Category/category-actions";
 import {selectCatList} from "../../redux/Category/category-selector";
 import {Link} from "react-router-dom";
-import Cat from "./categories.svg"
-
+import {basicUrl} from "../../basicUrl";
 
 
 const SideCat = ({fetchCatList, catList}) => {
     useEffect(() => {
-        axios.get("http://api.mandegar-shop.ir/api/fetch/cats")
+        axios.get(basicUrl+"/api/fetch/cats")
             .then(
                 res => fetchCatList(res.data)
             )
@@ -30,7 +29,7 @@ const SideCat = ({fetchCatList, catList}) => {
 
                                            {
                                                 item.image ?
-                                                    <img  className="col-7  px-0" src={`https://api.mandegar-shop.ir/images/category/${item.image}`} alt={item.name}/>
+                                                    <img  className="col-7  px-0" src={`${basicUrl}/images/category/${item.image}`} alt={item.name}/>
                                                     :
 
                                                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"

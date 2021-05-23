@@ -8,6 +8,7 @@ import 'swiper/swiper-bundle.css';
 import Item from "../Item/Item";
 import {fetchProductSlider, fetchProductSliderSet} from "../../redux/product-slider/productSlider-actions";
 import {detailDataSelector} from "../../redux/detail/detail-selector";
+import {basicUrl} from "../../basicUrl";
 
 const ProductSlider = ({fetchProductSlider,fetchProductSliderSet, productSliderItem, name, match, detailData, productSliderItemSet}) => {
     const [title, setTitle] = useState()
@@ -16,7 +17,7 @@ const ProductSlider = ({fetchProductSlider,fetchProductSliderSet, productSliderI
     useEffect(() => {
         name == "similar"
             ?
-            axios.get(`https://api.mandegar-shop.ir/api/detail/products/similar/${match.params.proname}`)
+            axios.get(`${basicUrl}/api/detail/products/similar/${match.params.proname}`)
                 .then(
                     res => fetchProductSlider(res)
                 )
@@ -52,7 +53,7 @@ const ProductSlider = ({fetchProductSlider,fetchProductSliderSet, productSliderI
             name == "set"
                 ?
 
-                axios.get(`https://api.mandegar-shop.ir/api/offer/${match.params.proname}`)
+                axios.get(`${basicUrl}/api/offer/${match.params.proname}`)
                     .then(
                         res =>{
                             fetchProductSliderSet(res)
@@ -87,7 +88,7 @@ const ProductSlider = ({fetchProductSlider,fetchProductSliderSet, productSliderI
                         }
                     )
                 :
-                axios.get("https://api.mandegar-shop.ir/api/index/product/new/fetch")
+                axios.get(basicUrl+"/api/index/product/new/fetch")
                     .then(
                         res => fetchProductSlider(res)
                     )

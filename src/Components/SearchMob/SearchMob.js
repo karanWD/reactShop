@@ -6,6 +6,7 @@ import BackIcon from "../ChevronLeft/ChevronLeft";
 import SearchCat from "../SearchCat/SearchCat";
 import {searchMobileToggle} from "../../redux/search/search-actions";
 
+
 const SearchMob = ({closeSearch,openedSearch}) => {
     return (
         <section className={` search-mobile px-3 d-lg-none ${openedSearch ? `open-search` :null}`}>
