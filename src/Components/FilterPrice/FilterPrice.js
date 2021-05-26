@@ -20,7 +20,7 @@ const FilterPrice = ({match,filterPrice,fetchFilterPrice,fetchProducts,setLoadin
     const filterHandler = async (price) => {
         await setLoading("true")
         let formData = new FormData()
-        filterBrand.length && await formData.append("brand_id",filterBrand)
+        filterBrand?.length > 0 && await formData.append("brand_id",filterBrand)
         await formData.append("cat_name",match.params.catname)
         await formData.append("order_by","desc")
         await formData.append("min_price",price[0]*1000000)

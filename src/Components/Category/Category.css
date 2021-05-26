@@ -1,7 +1,25 @@
+.category {
+  height: 600px;
+}
+.category > div {
+  height: 100%;
+}
+.category .long-cat {
+  height: 60%;
+}
+.category .short-cat {
+  height: 40%;
+}
 .category img {
   border-radius: 5px;
   height: 100%;
   object-fit: cover;
+}
+
+@media only screen and (max-width: 992px) {
+  .category {
+    height: unset;
+  }
 }
 
 /*# sourceMappingURL=Category.css.map */

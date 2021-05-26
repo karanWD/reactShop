@@ -14,8 +14,8 @@ const FilterBrand = ({brand,fetchBrand,match,fetchFilterBrand,fetchProducts,filt
     const filterHandler = async (event) => {
         await fetchFilterBrand(event.target.getAttribute("id"))
         let formData = new FormData()
-        filterPrice.length && await formData.append("min_price",filterPrice[0]*1000000)
-        filterPrice.length && await formData.append("max_price",filterPrice[1]*1000000)
+        filterPrice?.length > 0 && await formData.append("min_price",filterPrice[0]*1000000)
+        filterPrice?.length > 0 && await formData.append("max_price",filterPrice[1]*1000000)
         await formData.append("brand_id",event.target.getAttribute("id"))
         await formData.append("cat_name",match.params.catname)
         await formData.append("order_by","desc")

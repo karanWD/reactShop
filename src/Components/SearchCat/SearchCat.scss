@@ -6,162 +6,254 @@
     text-align: right;
     padding-right: 10px;
   }
-
+  .cat-img{
+    border-radius: 7px;
+    overflow: hidden;
+  }
+  .cat-name{
+    font-weight: bold;
+    font-size: 13px;
+    position: absolute;
+    left: 15px;
+  }
   ul {
     a{
       display: block;
       border-radius: 7px;
-      margin: 10px;
-      width: calc(50% - 20px);
+      margin:5px ;
+      width: calc(100% - 0px);
       li{
         .cat-img{
-          padding: 10px;
+          //padding: 10px;
           border-radius:7px ;
-          height: 45px;
+          //height: 45px;
         }
       }
-      &:nth-child(6n+1){
+      &:nth-child(6n+1) {
         background-color: #D5E7FF;
-        .cat-name{
-          color:#3E4DDB;
+
+        .cat-name {
+          color: #003765;
         }
-        .cat-img{
-          background-color:#C8E0FF ;
+
+        .cat-img {
+          background-color: #C8E0FF;
         }
-        svg{
+
+        svg {
           transform: scale(0.6);
-          g:nth-child(1){
-            fill: darken(#C8E0FF,15%);
+
+          g:nth-child(1) {
+            fill: darken(#C8E0FF, 15%);
           }
-          g:nth-child(4){
-            fill: darken(#C8E0FF,15%);
+
+          g:nth-child(4) {
+            fill: darken(#C8E0FF, 15%);
           }
-          g:nth-child(3){
-            fill: darken(#C8E0FF,30%);
+
+          g:nth-child(3) {
+            fill: darken(#C8E0FF, 30%);
           }
-          g:nth-child(2){
-            fill: darken(#C8E0FF,30%);
+
+          g:nth-child(2) {
+            fill: darken(#C8E0FF, 30%);
           }
         }
       }
-      &:nth-child(6n+2){
+
+      &:nth-child(6n+2) {
         background-color: #D5FFDD;
-        .cat-name{
-          color:#3B914B;
+
+        .cat-name {
+          color: #032109;
+
+          //font-weight: bold;
         }
-        .cat-img{
-          background-color:#BAFCC7 ;
+
+        .cat-img {
+          background-color: #BAFCC7;
         }
-        svg{
+
+        svg {
           transform: scale(0.6);
-          g:nth-child(1){
-            fill: darken(#BAFCC7,15%);
+
+          g:nth-child(1) {
+            fill: darken(#BAFCC7, 15%);
           }
-          g:nth-child(4){
-            fill: darken(#BAFCC7,15%);
+
+          g:nth-child(4) {
+            fill: darken(#BAFCC7, 15%);
           }
-          g:nth-child(3){
-            fill: darken(#BAFCC7,30%);
+
+          g:nth-child(3) {
+            fill: darken(#BAFCC7, 30%);
           }
-          g:nth-child(2){
-            fill: darken(#BAFCC7,30%);
+
+          g:nth-child(2) {
+            fill: darken(#BAFCC7, 30%);
           }
         }
       }
-      &:nth-child(6n+3){
+
+      &:nth-child(6n+3) {
         background-color: #FFD5D5;
-        .cat-name{
-          color:#DB3E3E;
+
+        .cat-name {
+          color: #110b69;
+          //font-weight: bold;
         }
-        .cat-img{
-          background-color:#FFC1C1 ;
+
+        .cat-img {
+          background-color: #FFC1C1;
         }
-        svg{
+
+        svg {
           transform: scale(0.6);
-          g:nth-child(1){
-            fill: darken(#FFC1C1,15%);
+
+          g:nth-child(1) {
+            fill: darken(#FFC1C1, 15%);
           }
-          g:nth-child(4){
-            fill: darken(#FFC1C1,15%);
+
+          g:nth-child(4) {
+            fill: darken(#FFC1C1, 15%);
           }
-          g:nth-child(3){
-            fill: darken(#FFC1C1,30%);
+
+          g:nth-child(3) {
+            fill: darken(#FFC1C1, 30%);
           }
-          g:nth-child(2){
-            fill: darken(#FFC1C1,30%);
+
+          g:nth-child(2) {
+            fill: darken(#FFC1C1, 30%);
           }
         }
       }
-      &:nth-child(6n+4){
+
+      &:nth-child(6n+4) {
         background-color: #FFD5F8;
-        .cat-name{
-          color: #DB3ED1;
+
+        .cat-name {
+          color: #7b2a00;
         }
-        .cat-img{
-          background-color:#FBC5F2 ;
+
+        .cat-img {
+          background-color: #FBC5F2;
         }
-        svg{
+
+        svg {
           transform: scale(0.6);
-          g:nth-child(1){
-            fill: darken(#FBC5F2,15%);
+
+          g:nth-child(1) {
+            fill: darken(#FBC5F2, 15%);
           }
-          g:nth-child(4){
-            fill: darken(#FBC5F2,15%);
+
+          g:nth-child(4) {
+            fill: darken(#FBC5F2, 15%);
           }
-          g:nth-child(3){
-            fill: darken(#FBC5F2,30%);
+
+          g:nth-child(3) {
+            fill: darken(#FBC5F2, 30%);
           }
-          g:nth-child(2){
-            fill: darken(#FBC5F2,30%);
+
+          g:nth-child(2) {
+            fill: darken(#FBC5F2, 30%);
           }
         }
       }
-      &:nth-child(6n+5){
+
+      &:nth-child(6n+5) {
         background-color: #FFE7D5;
-        .cat-name{
-          color: #A37220;
+
+        .cat-name {
+          color: #6f6208;
         }
-        .cat-img{
-          background-color:#FCDBC1 ;
+
+        .cat-img {
+          background-color: #FCDBC1;
         }
-        svg{
+
+        svg {
           transform: scale(0.6);
-          g:nth-child(1){
-            fill: darken(#FCDBC1,15%);
+
+          g:nth-child(1) {
+            fill: darken(#FCDBC1, 15%);
           }
-          g:nth-child(4){
-            fill: darken(#FCDBC1,15%);
+
+          g:nth-child(4) {
+            fill: darken(#FCDBC1, 15%);
           }
-          g:nth-child(3){
-            fill: darken(#FCDBC1,30%);
+
+          g:nth-child(3) {
+            fill: darken(#FCDBC1, 30%);
           }
-          g:nth-child(2){
-            fill: darken(#FCDBC1,30%);
+
+          g:nth-child(2) {
+            fill: darken(#FCDBC1, 30%);
           }
         }
       }
-      &:nth-child(6n+6){
+
+      &:nth-child(6n+6) {
         background-color: #FFFFD5;
-        .cat-name{
-          color: #8D8D1C;
+
+        .cat-name {
+          color: #004a39;
 
         }
-        .cat-img{
-          background-color:#FBFBA0 ;
+
+        .cat-img {
+          background-color: #FBFBA0;
         }
-        svg{
+
+        svg {
           transform: scale(0.6);
-          g:nth-child(1){
-            fill: darken(#FBFBA0,15%);
+
+          g:nth-child(1) {
+            fill: darken(#FBFBA0, 15%);
           }
-          g:nth-child(4){
-            fill: darken(#FBFBA0,15%);
+
+          g:nth-child(4) {
+            fill: darken(#FBFBA0, 15%);
           }
-          g:nth-child(3){
-            fill: darken(#FBFBA0,30%);
+
+          g:nth-child(3) {
+            fill: darken(#FBFBA0, 30%);
           }
-          g:nth-child(2){
-            fill: darken(#FBFBA0,30%);
+
+          g:nth-child(2) {
+            fill: darken(#FBFBA0, 30%);
+          }
+        }
+      }
+
+      &:nth-child(6n+7) {
+        background-color: #FFFFD5;
+
+        .cat-name {
+          color: #650061;
+
+        }
+
+        .cat-img {
+          background-color: #FBFBA0;
+        }
+
+        svg {
+          transform: scale(0.6);
+
+          g:nth-child(1) {
+            fill: darken(#FBFBA0, 15%);
+          }
+
+          g:nth-child(4) {
+            fill: darken(#FBFBA0, 15%);
+          }
+
+          g:nth-child(3) {
+            fill: darken(#FBFBA0, 30%);
+          }
+
+          g:nth-child(2) {
+            fill: darken(#FBFBA0, 30%);
           }
         }
       }

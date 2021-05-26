@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a216b4fa-d2c5-426d-a860-668bb48e7b56" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/shams.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/src.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Category/Category.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Category/Category.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Category/Category.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Category/Category.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Category/Category.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Category/Category.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Category/Category.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Category/Category.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/FilterBrand/FilterBrand.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FilterBrand/FilterBrand.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/FilterPrice/FilterPrice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FilterPrice/FilterPrice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ProCat/ProCat.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProCat/ProCat.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ProCat/ProCat.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProCat/ProCat.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ProCat/ProCat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProCat/ProCat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ProCat/ProCat.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProCat/ProCat.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SearchCat/SearchCat.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SearchCat/SearchCat.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SearchCat/SearchCat.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SearchCat/SearchCat.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SearchCat/SearchCat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SearchCat/SearchCat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SearchCat/SearchCat.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SearchCat/SearchCat.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SearchMob/SearchMob.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SearchMob/SearchMob.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SearchMob/SearchMob.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SearchMob/SearchMob.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SearchMob/SearchMob.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SearchMob/SearchMob.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SideCat/SideCat.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideCat/SideCat.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SideCat/SideCat.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideCat/SideCat.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SideCat/SideCat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideCat/SideCat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SideCat/SideCat.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideCat/SideCat.scss" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1t3kDho5uKI9Ujq1QPtWp6BphKz" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a216b4fa-d2c5-426d-a860-668bb48e7b56" name="Default Changelist" comment="" />
+      <created>1622005043058</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1622005043058</updated>
+      <workItem from="1622005053447" duration="9587000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="304" y="130" key="EditFileWatcherDialog" timestamp="1622006996030">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="304" y="130" key="EditFileWatcherDialog/0.0.1366.738@0.0.1366.738" timestamp="1622006996030" />
+    <state x="356" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1622005076150">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="356" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1622005076150" />
+    <state x="339" y="165" key="run.anything.popup" timestamp="1622007742435">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1622007742435" />
+  </component>
+</project>

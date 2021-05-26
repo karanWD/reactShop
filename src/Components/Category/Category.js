@@ -10,15 +10,15 @@ const Category = ({category}) => {
             ?
             <section className="category d-flex flex-row flex-wrap px-1 px-lg-5 mt-3 mt-lg-5">
                 <div className="col-lg-5 px-0">
-                    <div className="col-12 px-0 py-1">
-                        <div className="px-1">
+                    <div className="col-12 px-0 py-1 long-cat">
+                        <div className="px-1 h-100">
                             <Link to={category.i5.url}>
                                 <img className="w-100"
                                      src={`${basicUrl}/images/index/${category.i5.image}`} alt=""/>
                             </Link>
                         </div>
                     </div>
-                    <div className="col-12 px-0 d-flex flex-row-reverse py-1">
+                    <div className="col-12 px-0 d-flex flex-row-reverse py-1 short-cat">
                         <div className="col-6 px-1">
                             <Link to={category.i6.url}>
                                 <img className="w-100"
@@ -37,7 +37,7 @@ const Category = ({category}) => {
                     </div>
                 </div>
                 <div className="col-lg-7 px-0">
-                    <div className="col-12 px-0 d-flex flex-row-reverse py-1">
+                    <div className="col-12 px-0 d-flex flex-row-reverse py-1 short-cat">
                         <div className="col-4 px-1">
                             <Link to={category.i1.url}>
                                 <img style={{height: "100%", objectFit: "cover"}}
@@ -56,7 +56,7 @@ const Category = ({category}) => {
                         </div>
 
                     </div>
-                    <div className="col-12 px-0 d-flex flex-row-reverse py-1" style={{height: "60%"}}>
+                    <div className="col-12 px-0 d-flex flex-row-reverse py-1 long-cat" style={{height: "60%"}}>
                         <div className="col-8 px-1">
                             <Link to={category.i3.url}>
                                 <img style={{height: "100%", objectFit: "cover"}}

@@ -3,6 +3,10 @@
   top: 15px !important;
   height: fit-content;
 }
+.sidecat .cat-name {
+  font-weight: bold;
+  font-size: 13px;
+}
 .sidecat h1 {
   font-size: 20px;
   font-weight: bold;
@@ -16,15 +20,23 @@
   margin: 10px;
 }
 .sidecat ul a li .cat-img {
-  padding: 10px;
   border-radius: 7px;
-  height: 45px;
+}
+.sidecat ul a li .cat-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 7px;
+}
+.sidecat ul a li .cat-img .cat-name {
+  position: absolute;
+  left: 15px;
 }
 .sidecat ul a:nth-child(6n+1) {
   background-color: #D5E7FF;
 }
 .sidecat ul a:nth-child(6n+1) .cat-name {
-  color: #3E4DDB;
+  color: #003765;
 }
 .sidecat ul a:nth-child(6n+1) .cat-img {
   background-color: #C8E0FF;
@@ -48,7 +60,7 @@
   background-color: #D5FFDD;
 }
 .sidecat ul a:nth-child(6n+2) .cat-name {
-  color: #3B914B;
+  color: #032109;
 }
 .sidecat ul a:nth-child(6n+2) .cat-img {
   background-color: #BAFCC7;
@@ -72,7 +84,7 @@
   background-color: #FFD5D5;
 }
 .sidecat ul a:nth-child(6n+3) .cat-name {
-  color: #DB3E3E;
+  color: #110b69;
 }
 .sidecat ul a:nth-child(6n+3) .cat-img {
   background-color: #FFC1C1;
@@ -96,7 +108,7 @@
   background-color: #FFD5F8;
 }
 .sidecat ul a:nth-child(6n+4) .cat-name {
-  color: #DB3ED1;
+  color: #7b2a00;
 }
 .sidecat ul a:nth-child(6n+4) .cat-img {
   background-color: #FBC5F2;
@@ -120,7 +132,7 @@
   background-color: #FFE7D5;
 }
 .sidecat ul a:nth-child(6n+5) .cat-name {
-  color: #A37220;
+  color: #6f6208;
 }
 .sidecat ul a:nth-child(6n+5) .cat-img {
   background-color: #FCDBC1;
@@ -144,7 +156,7 @@
   background-color: #FFFFD5;
 }
 .sidecat ul a:nth-child(6n+6) .cat-name {
-  color: #8D8D1C;
+  color: #004a39;
 }
 .sidecat ul a:nth-child(6n+6) .cat-img {
   background-color: #FBFBA0;
@@ -162,6 +174,30 @@
   fill: #f5f50d;
 }
 .sidecat ul a:nth-child(6n+6) svg g:nth-child(2) {
+  fill: #f5f50d;
+}
+.sidecat ul a:nth-child(6n+7) {
+  background-color: #FFFFD5;
+}
+.sidecat ul a:nth-child(6n+7) .cat-name {
+  color: #650061;
+}
+.sidecat ul a:nth-child(6n+7) .cat-img {
+  background-color: #FBFBA0;
+}
+.sidecat ul a:nth-child(6n+7) svg {
+  transform: scale(0.6);
+}
+.sidecat ul a:nth-child(6n+7) svg g:nth-child(1) {
+  fill: #f8f857;
+}
+.sidecat ul a:nth-child(6n+7) svg g:nth-child(4) {
+  fill: #f8f857;
+}
+.sidecat ul a:nth-child(6n+7) svg g:nth-child(3) {
+  fill: #f5f50d;
+}
+.sidecat ul a:nth-child(6n+7) svg g:nth-child(2) {
   fill: #f5f50d;
 }
 
