@@ -1,0 +1,40 @@
+.filter-badge{
+  ul{
+    li{
+      border:1px solid #eee ;
+      border-radius: 7px;
+      margin: 5px 0 0 5px;
+      &:hover{
+        border:1px solid #ddd;
+      }
+      span{
+        padding: 5px 10px;
+        text-align: center;
+        font-size: 13px;
+      }
+    }
+    .close-filter{
+      font-size: 10px;
+      padding-top: 7px;
+      &:hover{
+        background-color: #f5f5f5;
+        color: #fd3f42;
+        font-weight: bold;
+        border-radius: 7px 0 0 7px;
+      }
+    }
+  }
+}
+.clear-all-filters{
+  font-size: 13px;
+  color: #999;
+  //color: #3E4DDB;
+  cursor: pointer;
+  height: fit-content ;
+
+  &:hover{
+    color:#fd3f42;
+    font-weight: bold;
+
+  }
+}

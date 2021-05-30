@@ -16,31 +16,77 @@ import {fetchLoading} from "../redux/Loading/Loading-actions";
 import Loading from "../Components/Loading/Loading";
 import {searchMobileToggle, searchToggle} from "../redux/search/search-actions";
 import {basicUrl} from "../basicUrl";
+import {fetchFilterBrand, fetchFilterPrice} from "../redux/Filter/filter-actions";
 
-const Products = ({match, fetchProducts, products, setLoading, loading,openSearchRes,closeSearch,searchMobileToggle}) => {
-
+const Products = ({match, fetchProducts, products, setLoading, loading,openSearchRes,closeSearch,searchMobileToggle,filterPrice,filterBrand,fetchFilterPrice,fetchFilterBrand}) => {
     const [pageIndex, setPageIndex] = useState(0)
-    useEffect(() => {
+    useEffect(async () =>
+    {
         openSearchRes(false)
-        window.scrollTo(0,0)
+        // window.scrollTo(0,0)
+
+
         if(searchMobileToggle) {
             closeSearch()
         }
+        let formData = new FormData()
+        filterPrice && await formData.append("min_price",filterPrice[0]*1000000)
+        filterPrice && await formData.append("max_price",filterPrice[1]*1000000)
+        filterBrand  && await formData.append("brand_id",filterBrand)
+        await formData.append("cat_name",match.params.catname)
+        await formData.append("order_by","desc")
+        await axios.post(`${basicUrl}/api/filter`,formData)
+            .then(res=>fetchProducts(res))
+    }, [filterPrice,filterBrand])
 
-        axios.get(basicUrl+`/api/products/fetch/${match.params.catname}`)
-            .then(res => fetchProducts(res))
+    useEffect(async () =>
+    {
+        openSearchRes(false)
+        window.scrollTo(0,0)
+
+        fetchFilterBrand(null)
+        fetchFilterPrice(null)
+        if(searchMobileToggle) {
+            closeSearch()
+        }
+        let formData = new FormData()
+        filterPrice && await formData.append("min_price",filterPrice[0]*1000000)
+        filterPrice && await formData.append("max_price",filterPrice[1]*1000000)
+        filterBrand  && await formData.append("brand_id",filterBrand)
+        await formData.append("cat_name",match.params.catname)
+        await formData.append("order_by","desc")
+        await axios.post(`${basicUrl}/api/filter`,formData)
+            .then(res=>fetchProducts(res))
     }, [match.params.catname])
 
-    const changePage = (current) => {
+    const changePage =async (current) => {
         window.scrollTo(0,0)
         setLoading("true")
-        axios.get(basicUrl+`/api/products/fetch/${match.params.catname}?page=${current}`)
-            .then(res => fetchProducts(res))
-            .then(setPageIndex(current))
+
+        let formData = new FormData()
+        filterPrice && await formData.append("min_price",filterPrice[0]*1000000)
+        filterPrice && await formData.append("max_price",filterPrice[1]*1000000)
+        filterBrand  && await formData.append("brand_id",filterBrand)
+        await formData.append("cat_name",match.params.catname)
+        await formData.append("order_by","desc")
+        await axios.post(`${basicUrl}/api/filter?page=${current}`,formData)
+            .then( async  res=>
+                {
+                    await fetchProducts(res)
+                    await setPageIndex(current)
+                }
+            )
+
+
+        // axios.get(basicUrl+`/api/products/fetch/${match.params.catname}?page=${current}`)
+        //     .then(res => fetchProducts(res))
+        //     .then()
     }
+
     const setLoadingFunc = () => {
         setLoading("false")
     }
+
     return (
         products
             ?
@@ -85,13 +131,18 @@ const mapDispatchToProps = (dispatch) => ({
     fetchProducts: (data) => dispatch(fetchProducts(data)),
     setLoading: (data) => dispatch(fetchLoading(data)),
     openSearchRes:(data)=>dispatch(searchToggle(data)),
-    closeSearch : ()=>dispatch(searchMobileToggle())
+    closeSearch : ()=>dispatch(searchMobileToggle()),
+    fetchFilterPrice:(data)=>dispatch(fetchFilterPrice(data)),
+    fetchFilterBrand: (data)=>dispatch(fetchFilterBrand(data))
 })
 
 const mapStateToProps = state => ({
     products: productsSelectorData(state),
     loading: state.loading.loading,
-    searchMobileToggle : state.search.searchMobileToggle
+    searchMobileToggle : state.search.searchMobileToggle,
+    filterPrice:state.filter.price,
+    filterBrand:state.filter.brand,
+
 })
 
 export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Products))

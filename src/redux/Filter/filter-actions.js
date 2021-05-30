@@ -9,3 +9,8 @@ export const fetchFilterPrice = (data)=>({
     type:filterActionType.FETCH_FILTER_PRICE,
     payload:data
 })
+
+export const fetchPriceMax = (data) => ({
+    type:filterActionType.FETCH_PRICE_MAX,
+    payload : data
+})

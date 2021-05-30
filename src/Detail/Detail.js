@@ -107,8 +107,7 @@ const Loading = lazy(() => {
 const Detail = ({
                     detailData, fetchDetail, proCount, proColor, proSize, match, openCartFunc, proSizeSelected,
                     fetchColorExist, proColorSelected, addCartSuccess, addCartFail, setLoading, loading, cartClose, closeSearch
-                    , searchMobileToggle
-                }) => {
+                    , searchMobileToggle,countReduxAlert}) => {
 
     let {proname} = useParams()
 
@@ -266,14 +265,19 @@ const Detail = ({
                         </Suspense>
                     </div>
                     <div className="alert-container">
-                        <div className={`my-2 ${sizeAlert ? " open-alert" : null}`}>
+                        <div className={`my-lg-2  size-alert  ${sizeAlert ? " open-alert" :`` }`}>
                             <Alert type="error" text="لطفا سایز را انتخاب کنید"/>
                         </div>
-                        <div className={`my-2 ${colorAlert ? " open-alert" : null}`}>
+                        <div className={`my-lg-2 color-alert ${colorAlert ? " open-alert" : ``}`}>
                             <Alert type="error" text="لطفا رنگ را انتخاب کنید"/>
                         </div>
-                        <div className={` my-2 ${countAlert ? " open-alert" : null}`}>
+                        <div className={` my-lg-2 count-alert ${countAlert || countReduxAlert ? " open-alert" : ``}`}>
+                           {
+                            !countReduxAlert ?
                             <Alert type="error" text="لطفا تعداد را انتخاب کنید"/>
+                            :
+                            <Alert type="error" text="لطفا سایز و رنگ را انتخاب کنید"/>
+                           }
                         </div>
                     </div>
                 </section>
@@ -292,7 +296,8 @@ const mapStateToProps = state => ({
     proColor: selectColorSelected(state),
     proCount: selectCountSelector(state),
     loading: state.loading.loading,
-    searchMobileToggle: state.search.searchMobileToggle
+    searchMobileToggle: state.search.searchMobileToggle,
+    countReduxAlert:state.alert.count
 })
 const mapDispatchToProps = dispatch => ({
     fetchDetail: (data) => dispatch(fetchDetail(data)),

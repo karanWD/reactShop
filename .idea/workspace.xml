@@ -2,36 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a216b4fa-d2c5-426d-a860-668bb48e7b56" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/shams.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/FilterBadge/FilterBadge.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/src.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Category/Category.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Category/Category.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Category/Category.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Category/Category.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Category/Category.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Category/Category.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Category/Category.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Category/Category.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Alert/Alert.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Alert/Alert.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Alert/Alert.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Alert/Alert.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Alert/Alert.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Alert/Alert.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Banner/Banner.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Banner/Banner.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Carousel/Carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Carousel/Carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Filter/Filter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Filter/Filter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/FilterBrand/FilterBrand.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FilterBrand/FilterBrand.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/FilterBrand/FilterBrand.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FilterBrand/FilterBrand.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/FilterBrand/FilterBrand.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FilterBrand/FilterBrand.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/FilterBrand/FilterBrand.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FilterBrand/FilterBrand.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/FilterPrice/FilterPrice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FilterPrice/FilterPrice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Nav/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Nav/Nav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ProCarousel/ProCarousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProCarousel/ProCarousel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/ProCat/ProCat.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProCat/ProCat.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/ProCat/ProCat.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProCat/ProCat.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/ProCat/ProCat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProCat/ProCat.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/ProCat/ProCat.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProCat/ProCat.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SearchCat/SearchCat.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SearchCat/SearchCat.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SearchCat/SearchCat.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SearchCat/SearchCat.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SearchCat/SearchCat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SearchCat/SearchCat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SearchCat/SearchCat.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SearchCat/SearchCat.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SearchMob/SearchMob.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SearchMob/SearchMob.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SearchMob/SearchMob.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SearchMob/SearchMob.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SearchMob/SearchMob.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SearchMob/SearchMob.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ProCat/hoodie.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ProCat/shoe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ProCat/sleeveless.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ProCat/suit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ProCat/tshirt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ProCat/watch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ProductContainer/ProductContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProductContainer/ProductContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ProductSlider/ProductSlider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProductSlider/ProductSlider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ProductsPageContainer/ProductsPageContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProductsPageContainer/ProductsPageContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SelectCount/SelectCount.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SelectCount/SelectCount.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/SideCat/SideCat.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideCat/SideCat.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/SideCat/SideCat.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideCat/SideCat.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SideCat/SideCat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideCat/SideCat.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/SideCat/SideCat.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideCat/SideCat.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Detail/Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Detail/Detail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Products/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Products/Products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/Filter/filter-actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/Filter/filter-actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/Filter/filter-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/Filter/filter-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/Filter/filterActionType.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/Filter/filterActionType.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/root-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/root-reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +51,14 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="SCSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -55,9 +72,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\shams\Desktop\Shop-Me\my-app\src\Components\FilterBadge" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -69,7 +92,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1622005043058</updated>
-      <workItem from="1622005053447" duration="9722000" />
+      <workItem from="1622005053447" duration="15016000" />
+      <workItem from="1622090272357" duration="14086000" />
+      <workItem from="1622279657728" duration="8018000" />
+      <workItem from="1622351665008" duration="18713000" />
     </task>
     <servers />
   </component>
@@ -81,10 +107,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="304" y="130" key="EditFileWatcherDialog/0.0.1366.738@0.0.1366.738" timestamp="1622006996030" />
-    <state x="356" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1622005076150">
+    <state x="356" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1622351664943">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="356" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1622005076150" />
+    <state x="356" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1622351664943" />
     <state x="339" y="165" key="run.anything.popup" timestamp="1622007742435">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

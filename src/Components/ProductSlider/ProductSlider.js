@@ -5,10 +5,12 @@ import axios from "axios";
 import {connect} from "react-redux"
 import Swiper from 'swiper';
 import 'swiper/swiper-bundle.css';
+import SwiperCore, { Navigation, Pagination , Autoplay} from 'swiper';
 import Item from "../Item/Item";
 import {fetchProductSlider, fetchProductSliderSet} from "../../redux/product-slider/productSlider-actions";
 import {detailDataSelector} from "../../redux/detail/detail-selector";
 import {basicUrl} from "../../basicUrl";
+SwiperCore.use([Autoplay])
 
 const ProductSlider = ({fetchProductSlider,fetchProductSliderSet, productSliderItem, name, match, detailData, productSliderItemSet}) => {
     const [title, setTitle] = useState()
@@ -36,7 +38,6 @@ const ProductSlider = ({fetchProductSlider,fetchProductSliderSet, productSliderI
                             },
                             autoplay: {
                                 delay: 3000,
-                                disableOnInteraction: false,
                             },
                             pagination: {
                                 el: '.swiper-pagination',

@@ -7,8 +7,9 @@ import { selectSizeSelected} from "../../redux/selectSize/selectSize-selector";
 import { selectColorSelected} from "../../redux/selectColor/selectColor-selector";
 import {fetchSelectCount} from "../../redux/selectCount/selectCount-actions";
 import {basicUrl} from "../../basicUrl";
+import {fetchAlert} from "../../redux/Alert/Alert-actions";
 
-const SelectCount = ({sizeExist,colorExist,match,proSize,proColor,fetchCount})=>{
+const SelectCount = ({sizeExist,colorExist,match,proSize,proColor,fetchCount,setAlert})=>{
     const [count,setCount]=useState(0)
     const [maxCount,setMaxCount] = useState(null)
     
@@ -17,12 +18,20 @@ const SelectCount = ({sizeExist,colorExist,match,proSize,proColor,fetchCount})=>
            await setCount(prevCount => prevCount + 1)
             fetchCount(e.target.previousElementSibling.value)
        }
+       if(!proSize || !proColor){
+           setAlert("count")
+           setTimeout(() => setAlert(), 7000)
+       }
     }
     const decreaseCount =  async (e)=>{
        if (count > 0){
             await setCount(prevCount => prevCount - 1)
            fetchCount(e.target.nextElementSibling.value)
        }
+        if(!(proSize || proColor)){
+            setAlert("count")
+            setTimeout(() => setAlert(), 7000)
+        }
     }
     const changeCount = async (event)=>{
        if(event.target.value>0 && event.target.value < maxCount){
@@ -58,10 +67,12 @@ const SelectCount = ({sizeExist,colorExist,match,proSize,proColor,fetchCount})=>
 
 const mapStateToProps = state =>({
     proSize:selectSizeSelected(state),
-    proColor:selectColorSelected(state)
+    proColor:selectColorSelected(state),
+
 })
 const mapDispatchToProps = dispatch => ({
-    fetchCount : (count) => dispatch(fetchSelectCount(count))
+    fetchCount : (count) => dispatch(fetchSelectCount(count)),
+    setAlert : (data) => dispatch(fetchAlert(data))
 })
 
 export default withRouter(connect(mapStateToProps,mapDispatchToProps)(SelectCount))

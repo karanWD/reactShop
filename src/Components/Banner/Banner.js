@@ -27,7 +27,7 @@ const Banner =({count,data})=>{
             return(
                 <section className="banner-container mt-5">
                     <div className="d-flex flex-row-reverse">
-                        <div className="col px-2"><img className="col-12 px-0" src={`${basicUrl}/images/index/${data.i11.image}`} alt=""/></div>
+                        <div className="col px-2"><img className="col-12 px-0" src={`${basicUrl}/images/index/${data.image}`} alt=""/></div>
                     </div>
                 </section>
             )

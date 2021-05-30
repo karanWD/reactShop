@@ -5,13 +5,13 @@ import {Swiper, SwiperSlide} from "swiper/react"
 import axios from "axios";
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
-import SwiperCore, {Navigation, Pagination} from 'swiper';
+import SwiperCore, {Navigation, Pagination,Autoplay} from 'swiper';
 import {connect} from "react-redux"
 import {carouselFetch} from "../../redux/carousel/carousel.actions"
 import {selectCarousel} from "../../redux/carousel/carousel.selector";
 import {basicUrl} from "../../basicUrl";
 
-SwiperCore.use([Navigation, Pagination]);
+SwiperCore.use([Navigation, Pagination,Autoplay]);
 
 const Carousel = ({carouselItem, carouselFetch}) => {
 
@@ -29,9 +29,8 @@ const Carousel = ({carouselItem, carouselFetch}) => {
             <header className="mt-lg-4 bg-white header-carousel">
                 <Swiper
                     slidesPerView={1}
-                    navigation
-                    // onSwiper={(swiper) => console.log(swiper)}
-                    // onSlideChange={() => console.log('slide change')}
+                    navigation={true}
+                    autoplay={{"delay": 2500}}
                 >
                     {
                         carouselItem.data.map(item => {

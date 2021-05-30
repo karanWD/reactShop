@@ -9,13 +9,8 @@ import {fetchCatList} from "../../redux/Category/category-actions";
 import {selectCatList} from "../../redux/Category/category-selector";
 import {Link} from "react-router-dom";
 import {basicUrl} from "../../basicUrl";
-//images
-import Tshirt from "./tshirt.png"
-import Suit from "./suit.png"
-import Shoe from "./shoe.png"
-import Watch  from "./watch.png"
-import Hoodie from "./hoodie.png"
-import Sleeveless from "./sleeveless.png"
+import SwiperCore, {Autoplay } from 'swiper';
+SwiperCore.use(Autoplay)
 
 
 
@@ -29,15 +24,15 @@ const ProCat = ({fetchCatList,catList}) => {
                 )
         }
         const swiper = new Swiper('.swiper-procat-slider', {
-            slidesPerView: 3,
+            slidesPerView: 1,
             spaceBetween: 10,
-            freeMode: true,
+            // freeMode: true,
             breakpoints: {
                 768: {
-                    slidesPerView: 3,
+                    slidesPerView: 2,
                 },
                 1200: {
-                    slidesPerView:5,
+                    slidesPerView:4,
                 }
             },
             pagination: {
@@ -47,6 +42,9 @@ const ProCat = ({fetchCatList,catList}) => {
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 4500,
             },
         });
     })

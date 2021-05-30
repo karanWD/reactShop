@@ -9,9 +9,9 @@ const ProductContainer = ({oneBanners})=>{
     return(
         <section className="product-container col-lg-9 px-1 px-lg-auto pb-5">
             <ProductSlider name="news"/>
-            <Banner count="one" data={oneBanners}/>
+            <Banner count="one" data={oneBanners?.i11}/>
             <ProductSlider name="news"/>
-            <Banner count="one" data={oneBanners}/>
+            <Banner count="one" data={oneBanners?.i12}/>
         </section>
     )
 };

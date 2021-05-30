@@ -6,9 +6,9 @@ import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import {basicUrl} from "../../basicUrl";
 
-import SwiperCore, { Navigation, Pagination} from 'swiper';
+import SwiperCore, { Navigation, Pagination , Autoplay} from 'swiper';
 
-SwiperCore.use([Navigation, Pagination]);
+SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 const ProCarousel = ({galleryData})=>{
     // console.log(galleryData)
@@ -18,9 +18,8 @@ const ProCarousel = ({galleryData})=>{
             <header className="mt-lg-4 bg-white header-carousel" id="mobileGallery">
                 <Swiper
                     slidesPerView={1}
-                    navigation
-                    onSwiper={(swiper) => console.log(swiper)}
-                    onSlideChange={() => console.log('slide change')}
+                    navigation={true}
+                    autoplay={{delay: 3000}}
                 >
                     {
                         galleryData.map(item =>{
@@ -37,7 +36,7 @@ const ProCarousel = ({galleryData})=>{
                 </Swiper>
             </header>
             :
-            <h1>Loading</h1>
+           null
     )
 
 }

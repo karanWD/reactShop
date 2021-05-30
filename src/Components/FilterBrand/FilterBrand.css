@@ -1,3 +1,9 @@
+.filter-brand .active-brand-filter label {
+  color: #3e4ddb;
+}
+.filter-brand .active-brand-filter label:after {
+  background-color: #3e4ddb;
+}
 .filter-brand ul li label {
   cursor: pointer;
   color: #777;
@@ -17,12 +23,6 @@
 .filter-brand ul li input {
   display: none;
   background-color: transparent;
-}
-.filter-brand ul li input:checked ~ label {
-  color: #3e4ddb;
-}
-.filter-brand ul li input:checked ~ label:after {
-  background-color: #3e4ddb;
 }
 
 /*# sourceMappingURL=FilterBrand.css.map */

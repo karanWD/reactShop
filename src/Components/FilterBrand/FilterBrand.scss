@@ -1,7 +1,15 @@
 .filter-brand{
+  .active-brand-filter{
+     label{
+      color: #3e4ddb;
+      &:after{
+        background-color: #3e4ddb;
+      }
+    }
+  }
+
   ul{
     li{
-
       label{
         cursor: pointer;
         color: #777;
@@ -21,12 +29,7 @@
       input{
         display: none;
         background-color: transparent;
-        &:checked ~ label{
-          color: #3e4ddb;
-          &:after{
-            background-color: #3e4ddb;
-          }
-        }
+
       }
 
     }

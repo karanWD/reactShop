@@ -8,11 +8,12 @@ import {basicUrl} from "../../basicUrl";
 import {withRouter} from "react-router-dom";
 import {fetchFilterBrand} from "../../redux/Filter/filter-actions";
 import {fetchProducts} from "../../redux/Products/products-actions";
+import {productsSelectorData} from "../../redux/Products/products-selector";
 
-const FilterBrand = ({brand,fetchBrand,match,fetchFilterBrand,fetchProducts,filterPrice})=>{
+const FilterBrand = ({brand,fetchBrand,match,fetchFilterBrand,fetchProducts,filterPrice,filterBrand})=>{
 
     const filterHandler = async (event) => {
-        await fetchFilterBrand(event.target.getAttribute("id"))
+         await fetchFilterBrand(event.target.getAttribute("id"))
         let formData = new FormData()
         filterPrice?.length > 0 && await formData.append("min_price",filterPrice[0]*1000000)
         filterPrice?.length > 0 && await formData.append("max_price",filterPrice[1]*1000000)
@@ -24,11 +25,13 @@ const FilterBrand = ({brand,fetchBrand,match,fetchFilterBrand,fetchProducts,filt
     }
 
     useEffect(()=>{
+        // console.log(filterBrand)
         axios.get(`${basicUrl}api/brand/fetch/${match.params.catname}` )
             .then( res => fetchBrand(res.data))
     },[match.params.catname])
 
     return(
+        brand && brand.length > 0 ?
         <section className="filter-brand mt-5">
             <div className="d-flex flex-row-reverse align-items-center mt-4">
                 <h4>
@@ -38,10 +41,11 @@ const FilterBrand = ({brand,fetchBrand,match,fetchFilterBrand,fetchProducts,filt
             </div>
             <ul className="mt-3 pr-0">
             {
-                brand &&
+
                 brand.map(
                     item =>
-                        <li key={item.id} onClick={filterHandler}>
+                        <li key={item.id} onClick={filterHandler} className={filterBrand && filterBrand == item.id ? "active-brand-filter" : null}>
+                            {/*{console.log(item.id,filterBrand)}*/}
                             <input type="radio" name="brand" id={item.id}  />
                             <label htmlFor={item.id}>{item.name}</label>
                         </li>
@@ -49,18 +53,24 @@ const FilterBrand = ({brand,fetchBrand,match,fetchFilterBrand,fetchProducts,filt
             }
             </ul>
         </section>
+            :
+         null
     )
 }
 
 const mapDispatchToProps = dispatch => ({
+
     fetchBrand : (data) => dispatch(fetchBrand(data)),
-    fetchFilterBrand:(data)=>dispatch(fetchFilterBrand(data)),
+    fetchFilterBrand:(data) => dispatch(fetchFilterBrand(data)),
     fetchProducts:(data) => dispatch(fetchProducts(data)),
+    fetchFilterPrice : (data) => dispatch(fetchFilterBrand(data))
+
 })
 
 const mapStateToProps = state => ({
     filterPrice:state.filter.price,
-    brand:state.brand.brand
+    filterBrand:state.filter.brand,
+    brand:state.brand.brand,
 })
 
 export default withRouter(connect(mapStateToProps,mapDispatchToProps)(FilterBrand))

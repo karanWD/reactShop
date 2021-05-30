@@ -11,14 +11,25 @@ import {withRouter} from "react-router";
 import Loading from "../Loading/Loading";
 import {fetchLoading} from "../../redux/Loading/Loading-actions";
 import {basicUrl} from "../../basicUrl";
+import {fetchFilterBrand, fetchFilterPrice} from "../../redux/Filter/filter-actions";
 
-const ProductsPageContainer = ({products,match,fetchProducts,setLoading, loading}) =>{
+const ProductsPageContainer = ({products,match,fetchProducts,setLoading, loading,filterPrice,filterBrand}) =>{
     const [pageIndex, setPageIndex] = useState(0)
-    const changePage = (current) => {
+    const changePage = async(current) => {
         setLoading("true")
-        axios.get(basicUrl+`/api/products/fetch/${match.params.catname}?page=${current}`)
-            .then(res => fetchProducts(res))
-            .then(setPageIndex(current))
+        let formData = new FormData()
+        filterPrice && await formData.append("min_price",filterPrice[0]*1000000)
+        filterPrice && await formData.append("max_price",filterPrice[1]*1000000)
+        filterBrand  && await formData.append("brand_id",filterBrand)
+        await formData.append("cat_name",match.params.catname)
+        await formData.append("order_by","desc")
+        await axios.post(`${basicUrl}/api/filter?page=${current}`,formData)
+            .then( async  res=>
+                {
+                    await fetchProducts(res)
+                    await setPageIndex(current)
+                }
+            )
     }
 
     const setLoadingFunc = () => {
@@ -84,11 +95,15 @@ const ProductsPageContainer = ({products,match,fetchProducts,setLoading, loading
 
 const mapStateToProps = state => ({
     products:productsSelectorData(state),
-    loading: state.loading.loading
+    loading: state.loading.loading,
+    filterPrice:state.filter.price,
+    filterBrand:state.filter.brand
 })
 const mapDispatchToProps = (dispatch)=>({
     fetchProducts:(data) => dispatch(fetchProducts(data)),
-    setLoading: (data) => dispatch(fetchLoading(data))
+    setLoading: (data) => dispatch(fetchLoading(data)),
+    fetchFilterPrice:(data)=>dispatch(fetchFilterPrice(data)),
+    fetchFilterBrand: (data)=>dispatch(fetchFilterBrand(data))
 })
 
 export default withRouter(connect(mapStateToProps,mapDispatchToProps)(ProductsPageContainer))

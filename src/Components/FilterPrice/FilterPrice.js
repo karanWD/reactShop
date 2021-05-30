@@ -10,12 +10,18 @@ import {basicUrl} from "../../basicUrl";
 import {fetchProducts} from "../../redux/Products/products-actions";
 import {fetchLoading} from "../../redux/Loading/Loading-actions";
 import Loading from "../Loading/Loading";
+import {productsSelectorData} from "../../redux/Products/products-selector";
 
-const FilterPrice = ({match,filterPrice,fetchFilterPrice,fetchProducts,setLoading,loading,filterBrand}) => {
+const FilterPrice = ({match,filterPrice,fetchFilterPrice,fetchProducts,setLoading,loading,filterBrand,products}) => {
+
     useEffect(()=>{
-        setValue([0,50])
-
+            setValue([0,50])
         },[match.params.catname])
+
+    useEffect(()=>{
+       if (!filterPrice) setValue([0,50])
+    },[filterPrice])
+
     const [value, setValue] = React.useState([0, 50]);
     const filterHandler = async (price) => {
         await setLoading("true")
@@ -90,7 +96,9 @@ const FilterPrice = ({match,filterPrice,fetchFilterPrice,fetchProducts,setLoadin
 const mapStateToProps = state => ({
     filterPrice:state.filter.price,
     loading: state.loading.loading,
-    filterBrand:state.filter.brand
+    filterBrand:state.filter.brand,
+    products:productsSelectorData(state),
+
 })
 
 const mapDispatchToProps = dispatch => ({

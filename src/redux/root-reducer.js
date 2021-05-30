@@ -16,6 +16,7 @@ import loginReducer from "./Login/Login-reducer";
 import searchReducer from "./search/search-reducer";
 import brandReducer from "./Brand/Brand-reducer";
 import filterReducer from "./Filter/filter-reducer";
+import alertReducer from "./Alert/Alert-reducer";
 
 export default combineReducers({
    carousel:carouselReducer,
@@ -34,6 +35,7 @@ export default combineReducers({
    login:loginReducer,
    search:searchReducer,
    brand:brandReducer,
-   filter:filterReducer
+   filter:filterReducer,
+   alert:alertReducer,
 });
 

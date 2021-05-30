@@ -2,7 +2,8 @@ import {filterActionType} from "./filterActionType";
 
 const INITIAL_STATE = {
     brand:null,
-    price:null
+    price:null,
+    maxPrice:null,
 }
 
 const filterReducer = (state = INITIAL_STATE , action)=>{
@@ -16,6 +17,11 @@ const filterReducer = (state = INITIAL_STATE , action)=>{
             return {
                 ...state,
                 price:action.payload
+            }
+        case filterActionType.FETCH_PRICE_MAX:
+            return {
+                ...state,
+                maxPrice: action.payload
             }
         default : return {
             ...state

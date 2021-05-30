@@ -10,6 +10,7 @@ import {cartItemsSelector} from "../../redux/cart/cart-selector";
 
 
 
+
 const Nav = ({openCart,cartItems}) => {
     let totalItemsCount = []
     totalItemsCount =
@@ -23,8 +24,8 @@ const Nav = ({openCart,cartItems}) => {
     return (
         <>
             <nav className="d-none d-lg-flex flex-row-reverse justify-content-between align-items-center mt-4 px-1 px-lg-5">
-                <div className="col-2 col-lg-1 px-0">
-                    <h1 className="mb-0">LOGO</h1>
+                <div className="col-2 col-lg-2 pl-5">
+                    <img src={process.env.PUBLIC_URL + "/logo.png"} className={"col-12 px-0"} alt=""/>
                 </div>
                 <ul className="d-lg-flex flex-row-reverse col-lg-2 mb-0 d-none ">
                     <Link to="/">
