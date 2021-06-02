@@ -17,6 +17,7 @@ import searchReducer from "./search/search-reducer";
 import brandReducer from "./Brand/Brand-reducer";
 import filterReducer from "./Filter/filter-reducer";
 import alertReducer from "./Alert/Alert-reducer";
+import productColorGalleryReducer from "./ProductColorGallery/ProductColorGallery-reducer";
 
 export default combineReducers({
    carousel:carouselReducer,
@@ -37,5 +38,6 @@ export default combineReducers({
    brand:brandReducer,
    filter:filterReducer,
    alert:alertReducer,
+   proGallery:productColorGalleryReducer
 });
 

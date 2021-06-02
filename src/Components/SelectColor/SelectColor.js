@@ -12,8 +12,9 @@ import {fetchLoading} from "../../redux/Loading/Loading-actions";
 import Swiper from 'swiper';
 import 'swiper/swiper-bundle.css';
 import {basicUrl} from "../../basicUrl";
+import {fetchProductColorGallery} from "../../redux/ProductColorGallery/ProductColorGallery-actions";
 
-const SelectColor = ({detailColor, sizeExist, match, fetchColorExist, proColorSelected , proColor,proSize,setLoading}) => {
+const SelectColor = ({detailColor, sizeExist, match, fetchColorExist, proColorSelected , proColor,proSize,setLoading,fetchProColorGallery}) => {
 
     useEffect(() => {
         // if (sizeExist.length === 0) {
@@ -31,6 +32,12 @@ const SelectColor = ({detailColor, sizeExist, match, fetchColorExist, proColorSe
         target.forEach(item => {
                         item.classList.add("color-non-exist")
                 })
+
+        axios.get(`${basicUrl}api/detail/color/images/fetch/${e.target.parentElement.getAttribute("id")}`)
+            .then(
+                res => fetchProColorGallery(res.data)
+            )
+
         axios
             .get(basicUrl+`/api/detail/product/exist/${match.params.proname}/0/${e.target.parentElement.getAttribute("id")}`)
             .then(res => fetchColorExist(res))
@@ -145,7 +152,8 @@ const SelectColor = ({detailColor, sizeExist, match, fetchColorExist, proColorSe
 const mapDispatchToProps = dispatch => ({
     fetchColorExist: (color) => dispatch(fetchColorExist(color)),
     proColorSelected: (colorSelected) => dispatch(proColorSelected(colorSelected)),
-    setLoading: data => dispatch(fetchLoading(data))
+    setLoading: data => dispatch(fetchLoading(data)),
+    fetchProColorGallery:data => dispatch(fetchProductColorGallery(data))
 })
 
 const mapStateToProps = state => ({

@@ -2,44 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a216b4fa-d2c5-426d-a860-668bb48e7b56" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/FilterBadge/FilterBadge.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Alert/Alert.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Alert/Alert.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Alert/Alert.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Alert/Alert.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Alert/Alert.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Alert/Alert.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Banner/Banner.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Banner/Banner.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Carousel/Carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Carousel/Carousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Filter/Filter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Filter/Filter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/FilterBrand/FilterBrand.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FilterBrand/FilterBrand.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/FilterBrand/FilterBrand.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FilterBrand/FilterBrand.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/FilterBrand/FilterBrand.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FilterBrand/FilterBrand.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/FilterBrand/FilterBrand.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FilterBrand/FilterBrand.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/FilterPrice/FilterPrice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FilterPrice/FilterPrice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Nav/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Nav/Nav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ProCarousel/ProCarousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProCarousel/ProCarousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ProCat/ProCat.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProCat/ProCat.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ProCat/ProCat.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProCat/ProCat.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ProCat/ProCat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProCat/ProCat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ProCat/ProCat.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProCat/ProCat.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ProCat/hoodie.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ProCat/shoe.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ProCat/sleeveless.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ProCat/suit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ProCat/tshirt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ProCat/watch.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ProductContainer/ProductContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProductContainer/ProductContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ProductSlider/ProductSlider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProductSlider/ProductSlider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ProductsPageContainer/ProductsPageContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProductsPageContainer/ProductsPageContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SelectCount/SelectCount.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SelectCount/SelectCount.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SideCat/SideCat.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideCat/SideCat.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SideCat/SideCat.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideCat/SideCat.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SideCat/SideCat.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideCat/SideCat.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Detail/Detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Detail/Detail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Products/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Products/Products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/Filter/filter-actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/Filter/filter-actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/Filter/filter-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/Filter/filter-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/Filter/filterActionType.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/Filter/filterActionType.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ProductGallery/ProductGallery.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProductGallery/ProductGallery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SelectColor/SelectColor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SelectColor/SelectColor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/root-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/root-reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +60,9 @@
       <workItem from="1622005053447" duration="15016000" />
       <workItem from="1622090272357" duration="14086000" />
       <workItem from="1622279657728" duration="8018000" />
-      <workItem from="1622351665008" duration="18713000" />
+      <workItem from="1622351665008" duration="19446000" />
+      <workItem from="1622462619868" duration="1323000" />
+      <workItem from="1622634784565" duration="4451000" />
     </task>
     <servers />
   </component>
@@ -107,10 +74,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="304" y="130" key="EditFileWatcherDialog/0.0.1366.738@0.0.1366.738" timestamp="1622006996030" />
-    <state x="356" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1622351664943">
+    <state x="356" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1622634788550">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="356" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1622351664943" />
+    <state x="356" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1622634788550" />
     <state x="339" y="165" key="run.anything.popup" timestamp="1622007742435">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
