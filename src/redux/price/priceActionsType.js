@@ -1,0 +1,4 @@
+export const priceActionType = {
+    FETCH_PRICE_VAR:"FETCH_PRICE_VAR",
+    FETCH_PRICE_SIZE_VAR:"FETCH_PRICE_SIZE_VAR"
+}

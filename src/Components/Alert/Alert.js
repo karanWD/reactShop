@@ -7,7 +7,7 @@ const Alert = ({type,text})=>{
     return(
         <div className="my-alert">
             <div className={` d-flex flex-row-reverse justify-content-between ${type==="success"?"success":"error"}`}>
-                <div className="d-flex justify-content-start p-3">
+                <div className="d-flex justify-content-start p-4">
                     <span></span>
                     <div>
                         {text}

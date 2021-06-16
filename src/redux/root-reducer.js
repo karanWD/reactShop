@@ -18,6 +18,8 @@ import brandReducer from "./Brand/Brand-reducer";
 import filterReducer from "./Filter/filter-reducer";
 import alertReducer from "./Alert/Alert-reducer";
 import productColorGalleryReducer from "./ProductColorGallery/ProductColorGallery-reducer";
+import priceReducer from "./price/price-reducer";
+import megaReducer from "./megaMenu/megaMenu-reducer";
 
 export default combineReducers({
    carousel:carouselReducer,
@@ -38,6 +40,8 @@ export default combineReducers({
    brand:brandReducer,
    filter:filterReducer,
    alert:alertReducer,
-   proGallery:productColorGalleryReducer
+   proGallery:productColorGalleryReducer,
+   price:priceReducer,
+   mega:megaReducer
 });
 

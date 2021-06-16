@@ -1,4 +1,4 @@
-import React from "react"
+import React,{useEffect} from "react"
 import {Link} from "react-router-dom";
 import "./Nav.scss"
 import Search from "../Search/Search";
@@ -7,11 +7,22 @@ import user from "./user.svg"
 import {connect} from "react-redux";
 import {openCart} from "../../redux/cart/cart-actions";
 import {cartItemsSelector} from "../../redux/cart/cart-selector";
+import axios from "axios";
+import {basicUrl} from "../../basicUrl";
+import {fetchMega} from "../../redux/megaMenu/megaMenu-actions";
 
 
 
 
-const Nav = ({openCart,cartItems}) => {
+const Nav = ({openCart,cartItems,fetchMega,megaCat}) => {
+    useEffect(
+        ()=>{
+            axios.get(`${basicUrl}api/mega/fetch`)
+                .then(
+                    res => fetchMega(res.data)
+                )
+        }
+    ,[])
     let totalItemsCount = []
     totalItemsCount =
         cartItems ?
@@ -27,11 +38,6 @@ const Nav = ({openCart,cartItems}) => {
                 <div className="col-2 col-lg-2 pl-5">
                     <img src={process.env.PUBLIC_URL + "/logo.png"} className={"col-12 px-0"} alt=""/>
                 </div>
-                <ul className="d-lg-flex flex-row-reverse col-lg-2 mb-0 d-none ">
-                    <Link to="/">
-                        <li className="px-3">خانه</li>
-                    </Link>
-                </ul>
                 <div className="col-lg-4 search-container">
                     <Search/>
                 </div>
@@ -49,16 +55,47 @@ const Nav = ({openCart,cartItems}) => {
                     </div>
                 </div>
             </nav>
+            <section className="mega-menu mt-3 px-1 px-lg-0 d-none d-lg-block ">
+                <ul className="d-none d-lg-flex flex-row-reverse justify-content-start position-relative" >
+                    <Link to="/" >
+                        <li className="py-2 px-3 mr-5">خانه</li>
+                    </Link>
+                    {
+                        megaCat&&megaCat.map(
+                            cat =>
+                                <Link to={`/products/${cat.name}`}  >
+                                    <li className="py-2 px-3 " key={cat.id}>
+                                        {cat.name}
+                                        <ol className="sub-mega-menu px-5">
+                                            {
+                                                cat?.megas.map(
+                                                    catItems =>
+                                                        <li key={catItems.id}>
+                                                            <Link to={`/products/${catItems.name}`}>
+                                                                { catItems.name}
+                                                            </Link>
+                                                        </li>
+                                                )
+                                            }
+                                        </ol>
+                                    </li>
+                                </Link>
+                        )
+                    }
+                </ul>
+            </section>
         </>
     )
 };
 
 const mapDispatchToProps = dispatch => ({
-    openCart :() => dispatch(openCart())
+    openCart :() => dispatch(openCart()),
+    fetchMega:(data)=>dispatch(fetchMega(data))
 })
 
 const mapStateToProps = state => ({
     cartItems: cartItemsSelector(state),
+    megaCat:state.mega.megaCat
 })
 
 export default connect(mapStateToProps,mapDispatchToProps)(Nav)

@@ -30,7 +30,9 @@ const Carousel = ({carouselItem, carouselFetch}) => {
                 <Swiper
                     slidesPerView={1}
                     navigation={true}
-                    autoplay={{"delay": 2500}}
+                    autoplay={{"delay": 10000}}
+                    loop={true}
+                    speed={1000}
                 >
                     {
                         carouselItem.data.map(item => {

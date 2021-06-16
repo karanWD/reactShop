@@ -33,5 +33,8 @@
   padding: 5px;
   font-weight: bold;
 }
+.slider button {
+  opacity: 1 !important;
+}
 
 /*# sourceMappingURL=Slider.css.map */

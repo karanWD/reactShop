@@ -38,5 +38,37 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.item-container .colors {
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  opacity: 0;
+  transition: 0.2s;
+  color: #3E4DDB;
+  background-color: white;
+  width: 100%;
+  padding: 5px;
+}
+.item-container .colors .color-item {
+  border: 1px solid transparent;
+  border-radius: 7px;
+  width: calc(25% - 5px);
+  padding: 2.5px;
+}
+.item-container .colors .color-item img {
+  width: 100%;
+}
+.item-container .colors .color-item:hover {
+  border: 1px solid #eee;
+}
+.item-container:hover .colors {
+  opacity: 1;
+}
+.item-container button {
+  opacity: 0;
+}
+.item-container:hover button {
+  opacity: 1;
+}
 
 /*# sourceMappingURL=Item.css.map */

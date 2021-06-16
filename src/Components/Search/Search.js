@@ -77,7 +77,6 @@ const Search = ({history, location,searchResToggle,openSearchRes}) => {
             openSearchRes(true)
             axios.get(basicUrl+`/api/autocomplete/search?searchquery=${e.target.value}`)
                 .then(res => {
-                    // console.log(res.data.product)
                     setSearchRes(res)
                     if (res.data && res.data.product.length == 0 && res.data.category.length == 0 && res.data.brand.length == 0) {
                         setEmptySearchRes(true)
@@ -88,7 +87,6 @@ const Search = ({history, location,searchResToggle,openSearchRes}) => {
         }
         if (e.target.value.length == 0) {
             setSearchRes(null)
-            // console.log("aaaaa",searchRes)
         }
     }
 
@@ -196,7 +194,7 @@ const Search = ({history, location,searchResToggle,openSearchRes}) => {
                         </ul>
                     </div>
                     :
-                    console.log("aaaaaa")
+                null
             }
             <div
                 className="search py-3 pl-4 d-flex flex-row-reverse justify-content-between align-items-center"

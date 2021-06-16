@@ -1,6 +1,6 @@
 $primary-color: rgba(62, 77, 219, 0.95);
 $secondary-color:#D5E7FF;
-$lightText: #777777;
+$lightText: #999  ;
 @font-face {
   src: url("fonts/IRANSansWeb(FaNum).ttf");
   font-weight: normal;
@@ -57,7 +57,7 @@ a{
 }
 
 .desc{
-  font-size: 13px;
+  font-size: 12px;
   color: $lightText;
   width: 100%;
 }

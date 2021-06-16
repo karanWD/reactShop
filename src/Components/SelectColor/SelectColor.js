@@ -13,8 +13,11 @@ import Swiper from 'swiper';
 import 'swiper/swiper-bundle.css';
 import {basicUrl} from "../../basicUrl";
 import {fetchProductColorGallery} from "../../redux/ProductColorGallery/ProductColorGallery-actions";
+import {fetchPriceVar} from "../../redux/price/price-actions";
 
-const SelectColor = ({detailColor, sizeExist, match, fetchColorExist, proColorSelected , proColor,proSize,setLoading,fetchProColorGallery}) => {
+
+const SelectColor = ({detailColor, sizeExist, match, fetchColorExist, proColorSelected , proColor,proSize,setLoading
+                         ,fetchProColorGallery,fetchPrice,priceVar}) => {
 
     useEffect(() => {
         // if (sizeExist.length === 0) {
@@ -27,11 +30,20 @@ const SelectColor = ({detailColor, sizeExist, match, fetchColorExist, proColorSe
         // }
     }, [match.params.proname])
 
+
     const selectColor = (e) => {
         var target = document.querySelectorAll(".sizes li")
         target.forEach(item => {
                         item.classList.add("color-non-exist")
                 })
+
+        axios.get(`${basicUrl}api/detail/color/price/${e.target.parentElement.getAttribute("id")}`)
+            .then(
+                 res => {
+                    const data =  res.data
+                     fetchPrice(data.price)
+                }
+            )
 
         axios.get(`${basicUrl}api/detail/color/images/fetch/${e.target.parentElement.getAttribute("id")}`)
             .then(
@@ -133,7 +145,7 @@ const SelectColor = ({detailColor, sizeExist, match, fetchColorExist, proColorSe
                                              alt={item.name}
                                              title={item.name}
                                         />
-                                        {console.log(item.id , proColor)}
+                                        {/*{console.log(item.id , proColor)}*/}
                                         <div className={`d-none justify-content-center align-items-center ${proColor ? proColor == item.id ? "selected-color" : null : null}`}>
                                             <img className="col-7 px-0" src={Check} alt=""/>
                                         </div>
@@ -153,14 +165,15 @@ const mapDispatchToProps = dispatch => ({
     fetchColorExist: (color) => dispatch(fetchColorExist(color)),
     proColorSelected: (colorSelected) => dispatch(proColorSelected(colorSelected)),
     setLoading: data => dispatch(fetchLoading(data)),
-    fetchProColorGallery:data => dispatch(fetchProductColorGallery(data))
+    fetchProColorGallery:data => dispatch(fetchProductColorGallery(data)),
+    fetchPrice : data => dispatch(fetchPriceVar(data))
 })
 
 const mapStateToProps = state => ({
     detailColor: detailColorsSelector(state),
     sizeExist: selectSizeExistData(state),
     proColor:selectColorSelected(state),
-    proSize:selectSizeSelected(state)
+    proSize:selectSizeSelected(state),
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SelectColor))

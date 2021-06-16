@@ -10,10 +10,17 @@ import {fetchLoading} from "../../redux/Loading/Loading-actions";
 import Swiper from 'swiper';
 import 'swiper/swiper-bundle.css';
 import {basicUrl} from "../../basicUrl";
+import {fetchPriceSizeVar} from "../../redux/price/price-actions";
 
-const SelectSize = ({selectSize,fetchSelectSize,fetchSizeExist,match,sizeExist,colorExist,proSizeSelected,proSize,setLoading})=>{
+const SelectSize = ({selectSize,fetchSelectSize,fetchSizeExist,match,sizeExist,colorExist,proSizeSelected
+                        ,proSize,setLoading,fetchPriceSizeVar})=>{
     const selecctSize =  (event)=>{
          setLoading("true")
+        axios.get(`${basicUrl}api/detail/size/price/${match.params.proname}/${event.target.innerText}`)
+            .then(
+                res => fetchPriceSizeVar(res.data.value)
+            )
+
          axios
             .get(basicUrl+`/api/detail/product/exist/${match.params.proname}/${event.target.getAttribute("id")}/0`)
             .then(res =>fetchSizeExist(res))
@@ -27,8 +34,7 @@ const SelectSize = ({selectSize,fetchSelectSize,fetchSizeExist,match,sizeExist,c
             .then(
                 ()=>{
                     const swiper = new Swiper('.swiper-slider-size', {
-                        slidesPerView: 7,
-                        // slidesPerGroup: 9,
+                        slidesPerView: 6,
                         spaceBetween: 5,
                         // breakpoints:{
                         //     0:{
@@ -168,7 +174,8 @@ const mapDispatchToProps = dispatch => ({
     fetchSelectSize:size => dispatch(fetchSelectSize(size)),
     fetchSizeExist:size => dispatch(fetchSizeExist(size)),
     proSizeSelected : size => dispatch(proSizeSelected(size)),
-    setLoading: data => dispatch(fetchLoading(data))
+    setLoading: data => dispatch(fetchLoading(data)),
+    fetchPriceSizeVar : data => dispatch(fetchPriceSizeVar(data))
 })
 
 const mapStateToProps = state => ({

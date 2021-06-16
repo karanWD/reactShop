@@ -9,17 +9,17 @@ import SliderTitle from "./slider-title.png"
 import {fetchSlider} from "../../redux/slider/slider-actions";
 import {selectSlider, selectSliderItems} from "../../redux/slider/slider-selector";
 import {basicUrl} from "../../basicUrl";
+import SwiperCore, {Autoplay} from 'swiper';
+SwiperCore.use([Autoplay])
 
 
 const Slider = ({sliderItem, fetchSlider}) => {
-
     useEffect(() => {
         axios.get(basicUrl+"/api/suggest/fetch/all")
             .then(res => fetchSlider(res))
             .then(
                 () => {
                     const swiper = new Swiper('.swiper-slider', {
-
                         spaceBetween: 5,
                         loop: false,
                         breakpoints: {
@@ -27,17 +27,21 @@ const Slider = ({sliderItem, fetchSlider}) => {
                                 slidesPerView: 1
                             },
                             768: {
-                                slidesPerView: 2,
+                                slidesPerView: 3,
                             },
                             1200: {
                                 slidesPerView: 4,
                             }
                         },
                         autoplay: {
-                            delay: 3000,
-                            disableOnInteraction: false,
+                            delay: 5000,
                         },
+                        pagination:{
+                            el: '.swiper-pagination',
+                            type: 'bullets',
+                            clickable:true,
 
+                        },
                         navigation: {
                             nextEl: '.swiper-button-next',
                             prevEl: '.swiper-button-prev',
@@ -56,6 +60,7 @@ const Slider = ({sliderItem, fetchSlider}) => {
                     <img className="col-12 px-0" src={SliderTitle} alt=""/>
                     {/*<div className="swiper-pagination"></div>*/}
                     <div className="swiper-button-next"></div>
+                    <div className="swiper-pagination"></div>
                     <div className="swiper-button-prev"></div>
                 </div>
                 <div className="col-6 col-lg-9">

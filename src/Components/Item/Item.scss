@@ -1,9 +1,8 @@
-$lightText:#777;
-
 .item-container{
   text-align: right;
   background-color: white;
   border-radius: 7px;
+
   img{
     border-radius: 7px;
   }
@@ -45,6 +44,43 @@ $lightText:#777;
     white-space: nowrap;
     overflow: hidden;
     text-overflow:ellipsis;
+  }
+  .colors{
+    position: absolute;
+    bottom: 0px ;
+    right:0;
+    opacity: 0;
+    transition: 0.2s;
+    color: #3E4DDB;
+    background-color: white;
+    width: 100%;
+    padding: 5px;
+    .color-item{
+      border:1px solid transparent;
+      //padding:0 2.5px;
+      border-radius: 7px;
+      width: calc(25% - 5px);
+      //margin:0 2.5px;
+      padding: 2.5px;
+    img{
+        width: 100%;
+      }
+      &:hover{
+        border:1px solid #eee;
+      }
+    }
+
+  }
+  &:hover .colors{
+    opacity: 1;
+  }
+  button{
+    opacity: 0;
+  }
+  &:hover{
+    button{
+      opacity: 1;
+    }
   }
 }
 

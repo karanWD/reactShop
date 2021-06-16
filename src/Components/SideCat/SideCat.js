@@ -23,7 +23,7 @@ const SideCat = ({fetchCatList, catList}) => {
                     catList
                         ?
                         catList.map(item =>
-                            <Link to={`/products/${item.name}`}>
+                            <Link to={`/products/${item.name}`} key={item.id}>
                                 <li className="d-flex flex-row-reverse">
                                     <div className="cat-img col-12 px-0 d-flex align-items-center justify-content-center">
 

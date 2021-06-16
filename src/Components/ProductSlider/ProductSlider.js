@@ -5,11 +5,11 @@ import axios from "axios";
 import {connect} from "react-redux"
 import Swiper from 'swiper';
 import 'swiper/swiper-bundle.css';
-import SwiperCore, { Navigation, Pagination , Autoplay} from 'swiper';
 import Item from "../Item/Item";
 import {fetchProductSlider, fetchProductSliderSet} from "../../redux/product-slider/productSlider-actions";
 import {detailDataSelector} from "../../redux/detail/detail-selector";
 import {basicUrl} from "../../basicUrl";
+import SwiperCore, {Autoplay} from 'swiper';
 SwiperCore.use([Autoplay])
 
 const ProductSlider = ({fetchProductSlider,fetchProductSliderSet, productSliderItem, name, match, detailData, productSliderItemSet}) => {
@@ -74,8 +74,7 @@ const ProductSlider = ({fetchProductSlider,fetchProductSliderSet, productSliderI
                                     }
                                 },
                                 autoplay: {
-                                    delay: 3000,
-                                    disableOnInteraction: false,
+                                    delay: 5000,
                                 },
                                 pagination: {
                                     el: '.swiper-pagination',
@@ -97,19 +96,22 @@ const ProductSlider = ({fetchProductSlider,fetchProductSliderSet, productSliderI
                         () => {
                             const swiper = new Swiper('.swiper-product-slider', {
                                 slidesPerView: 2,
-                                spaceBetween: 0,
+                                spaceBetween:20,
                                 breakpoints: {
                                     768: {
                                         slidesPerView: 3,
                                     },
                                     1200: {
-                                        slidesPerView: 5,
+                                        slidesPerView: 4,
                                     }
                                 },
                                 navigation: {
                                     nextEl: '.swiper-button-next',
                                     prevEl: '.swiper-button-prev',
                                 },
+                                autoplay:{
+                                    delay:5000
+                                }
                             });
                         }
                     )
@@ -143,7 +145,7 @@ const ProductSlider = ({fetchProductSlider,fetchProductSliderSet, productSliderI
                     <div className="swiper-container swiper-product-slider">
                         <div className="swiper-wrapper">
                             {
-                                productSliderItem.data.map(item =>
+                                productSliderItem.data.map( item =>
                                     (
                                         item
                                             ?
