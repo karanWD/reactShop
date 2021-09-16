@@ -4,29 +4,7 @@
     <list default="true" id="a216b4fa-d2c5-426d-a860-668bb48e7b56" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Alert/Alert.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Alert/Alert.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Carousel/Carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Carousel/Carousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Item/Item.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Item/Item.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Item/Item.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Item/Item.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Item/Item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Item/Item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Item/Item.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Item/Item.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Nav/Nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Nav/Nav.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Nav/Nav.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Nav/Nav.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Nav/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Nav/Nav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Nav/Nav.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Nav/Nav.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ProductInfo/ProductInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProductInfo/ProductInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ProductSlider/ProductSlider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ProductSlider/ProductSlider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Search/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Search/Search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SelectColor/SelectColor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SelectColor/SelectColor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SelectSize/SelectSize.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SelectSize/SelectSize.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SideCat/SideCat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideCat/SideCat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Slider/Slider.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Slider/Slider.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Slider/Slider.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Slider/Slider.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Slider/Slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Slider/Slider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Slider/Slider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Slider/Slider.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/root-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/root-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +66,8 @@
       <workItem from="1623042659951" duration="3371000" />
       <workItem from="1623560070332" duration="16628000" />
       <workItem from="1623651945055" duration="14709000" />
-      <workItem from="1623829885512" duration="3645000" />
+      <workItem from="1623829885512" duration="8693000" />
+      <workItem from="1626607928821" duration="84000" />
     </task>
     <servers />
   </component>
@@ -96,14 +75,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="304" y="130" key="EditFileWatcherDialog" timestamp="1622006996030">
+    <state x="356" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1631772826436">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="304" y="130" key="EditFileWatcherDialog/0.0.1366.738@0.0.1366.738" timestamp="1622006996030" />
-    <state x="356" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1623829905153">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="356" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1623829905153" />
+    <state x="356" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1631772826436" />
     <state x="339" y="165" key="run.anything.popup" timestamp="1623585050410">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
